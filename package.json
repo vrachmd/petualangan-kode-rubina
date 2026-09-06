@@ -14,7 +14,7 @@
     "generate:pdf": "tsx src/scripts/generate-pdf.ts",
     "generate:png": "tsx src/scripts/generate-png.ts",
     "generate:svg": "tsx src/scripts/generate-svg.ts",
-    "generate:all": "npm run build && npm run generate:pdf && npm run generate:png && npm run generate:svg",
+    "generate:all": "npm run build && npm run generate:sw && npm run generate:pdf && npm run generate:png && npm run generate:svg",
     "validate": "tsx src/scripts/validate-output.ts",
     "package": "npm run generate:all && npm run validate",
     "clean": "rimraf dist output .astro"

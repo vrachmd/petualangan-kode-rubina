@@ -31,7 +31,7 @@ const url = (r: string) => `${base}${r.replace(/^\//, "")}`;
     <nav class="flex items-center justify-between px-4 py-3">
       <a href={url("/")} class="flex items-center gap-2">
         <Icon name="rubina-anak" size={44} />
-        <span class="font-display text-lg font-bold">Petualangan Kode Rubina</span>
+        <span class="font-display text-base font-bold sm:text-lg">Petualangan Kode Rubina</span>
       </a>
       <div class="flex gap-4 font-sans text-base font-bold">
         <a href={url("/game/")} class="text-rubina-pink-600">Main</a>
@@ -69,11 +69,11 @@ const url = (r: string) => `${base}${r.replace(/^\//, "")}`;
             <div class="flex flex-col items-center gap-2 rounded-xl bg-surface p-4 text-center shadow-card">
               <Icon name={m.ikon} size={72} />
               <Text variant="heading">{m.nama}</Text>
-              <div class="flex gap-2">
-                <a href={url(m.main)} class="game-tap flex min-h-[48px] items-center rounded-full bg-rubina-mint-100 px-5 font-display text-base font-bold text-rubina-mint-600">
+              <div class="flex w-full flex-col gap-2">
+                <a href={url(m.main)} class="game-tap flex min-h-[48px] items-center justify-center rounded-full bg-rubina-mint-100 px-5 font-display text-base font-bold text-rubina-mint-600">
                   ▶ Main
                 </a>
-                <a href={url(m.cetak)} class="game-tap flex min-h-[48px] items-center rounded-full bg-background px-5 font-display text-base font-bold text-muted">
+                <a href={url(m.cetak)} class="game-tap flex min-h-[48px] items-center justify-center rounded-full bg-background px-5 font-display text-base font-bold text-muted">
                   🖨 Cetak
                 </a>
               </div>

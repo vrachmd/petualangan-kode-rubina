@@ -16,12 +16,14 @@ export async function withPreview<T>(
     stdio: "ignore",
     shell: false,
   });
-  const baseUrl = `http://localhost:${port}${SITE_BASE}`;
+  const baseUrl = `http://localhost:${port}${SITE_BASE}/`;
   const deadline = Date.now() + 60_000;
   for (;;) {
     try {
-      const res = await fetch(baseUrl);
-      if (res.ok) break;
+      // Server dianggap siap jika merespons (status apa pun) —
+      // bukan res.ok, agar path base tanpa redirect tetap lolos.
+      await fetch(baseUrl);
+      break;
     } catch {
       /* belum siap */
     }

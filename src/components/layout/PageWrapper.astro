@@ -7,16 +7,17 @@ const { class: extra = "" } = Astro.props;
 ---
 
 <!--
-  Wrapper A4: proporsi 210:297, margin dalam 15mm.
-  Class .worksheet dipakai script extractor SVG — jangan ganti.
+  Wrapper A4: proporsi 210:297.
+  Padding layar responsif (2026+: p-4 HP, 15mm desktop); saat cetak 0
+  (margin kertas via @page 15mm). Class .worksheet dipakai script
+  SVG extractor — jangan ganti.
 -->
 <main class="flex min-h-screen items-start justify-center bg-background p-6 print:block print:p-0">
   <div
     class:list={[
-      "worksheet flex min-h-[calc(100vh-3rem)] w-full max-w-[820px] flex-col bg-surface shadow-card rounded-xl print:shadow-none print:rounded-none print:max-w-none",
+      "worksheet flex min-h-[calc(100vh-3rem)] w-full max-w-[820px] flex-col bg-surface shadow-card rounded-xl p-4 md:p-[15mm] print:shadow-none print:rounded-none print:max-w-none print:p-0",
       extra,
     ]}
-    style="padding: 15mm;"
   >
     <slot />
   </div>

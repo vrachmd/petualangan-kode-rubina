@@ -1,0 +1,21 @@
+/** Urutan level game (tanpa base path). Dipakai navigasi Sebelum/Lanjut otomatis. */
+export const ORDER: string[] = [
+  "/game/pola/01-ab",
+  "/game/pola/02-abb",
+  "/game/pola/03-abc",
+  "/game/pola/04-campuran",
+  "/game/sequencing/01-cuci-tangan",
+  "/game/sequencing/02-makan",
+  "/game/sequencing/03-tidur",
+  "/game/sequencing/04-main",
+  "/game/arah/01-lacak-garis",
+  "/game/arah/02-ikuti-panah",
+  "/game/arah/03-labirin",
+  "/game/arah/04-nina-cari-jalan",
+  "/game/sebab-akibat/01-tombol-lampu",
+  "/game/sebab-akibat/02-tarik-mainan",
+  "/game/sebab-akibat/03-tekan-bunyi",
+  "/game/kartu-aktivitas",
+  "/game/bebas/01-buat-pola",
+  "/game/bebas/02-gambar-robot",
+];
