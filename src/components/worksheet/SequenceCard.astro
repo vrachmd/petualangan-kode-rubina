@@ -1,0 +1,40 @@
+---
+import Icon from "../base/Icon.astro";
+import Text from "../base/Text.astro";
+import Arrow from "../base/Arrow.astro";
+
+/** Tepat 3 langkah — batas perhatian anak 2 tahun. */
+export interface Langkah {
+  /** nama file aset di src/assets (tanpa .svg), ex: "sabun" */
+  ikon: string;
+  /** 1–2 kata, ex: "Sabun" */
+  label: string;
+}
+
+interface Props {
+  langkah: [Langkah, Langkah, Langkah];
+  /** class bg lingkaran nomor, ex: "bg-rubina-peach-500" */
+  aksen?: string;
+}
+
+const { langkah, aksen = "bg-rubina-peach-500" } = Astro.props;
+---
+
+<ol class="flex items-stretch justify-center gap-2">
+  {langkah.map((s, i) => (
+    <>
+      <li class="flex flex-1 flex-col items-center gap-2 rounded-lg bg-surface border border-line shadow-soft p-4 text-center">
+        <span class:list={["flex h-10 w-10 items-center justify-center rounded-full font-display text-xl font-bold text-white", aksen]}>
+          {i + 1}
+        </span>
+        <Icon name={s.ikon} size={72} />
+        <Text variant="body"><strong>{s.label}</strong></Text>
+      </li>
+      {i < langkah.length - 1 && (
+        <li class="flex items-center" aria-hidden="true">
+          <Arrow arah="kanan" size={40} class="text-muted" />
+        </li>
+      )}
+    </>
+  ))}
+</ol>

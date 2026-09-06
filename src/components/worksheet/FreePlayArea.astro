@@ -1,0 +1,27 @@
+---
+import Text from "../base/Text.astro";
+
+interface Props {
+  /** judul area, ex: "Buat pola kesukaanmu!" */
+  judul: string;
+  /** "pola" = lingkaran kosong | "gambar" = kanvas kosong */
+  varian: "pola" | "gambar";
+  /** jumlah lingkaran (varian pola) */
+  jumlah?: number;
+}
+
+const { judul, varian, jumlah = 6 } = Astro.props;
+---
+
+<div class="rounded-lg border-2 border-dashed border-line bg-background p-6">
+  <Text variant="heading">{judul}</Text>
+  {varian === "pola" ? (
+    <div class="mt-4 flex flex-wrap gap-4">
+      {Array.from({ length: jumlah }).map(() => (
+        <span class="inline-block h-14 w-14 rounded-full bg-surface border-2 border-line shadow-soft" />
+      ))}
+    </div>
+  ) : (
+    <div class="mt-4 min-h-[280px] rounded-md bg-surface border border-line" />
+  )}
+</div>

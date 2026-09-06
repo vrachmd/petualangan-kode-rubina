@@ -20,6 +20,7 @@ Teks final Bahasa Indonesia, kalimat aktif pendek. Nama anak via `NAMA_ANAK` (de
 
 ### 01 — Panduan Orang Tua (`src/pages/panduan-orang-tua.astro`)
 - Isi ringkas dari `docs/05-PANDUAN_ORANG_TUA.md`: cara pakai, 3–5 menit/halaman, puji proses, tips laminasi.
+- Wajib ada kredit kecil: `Ikon: Twemoji © Twitter (CC-BY 4.0)`.
 - Lolos: muat 1 halaman A4, font ≥ 20px.
 
 ---

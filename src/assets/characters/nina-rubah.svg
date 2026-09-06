@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Nina si Rubah">
+  <!-- Telinga segitiga -->
+  <path d="M52 78L44 22l44 34z" fill="#38BDF8" stroke="#171717" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M148 78l8-56-44 34z" fill="#38BDF8" stroke="#171717" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M53 62l-3-24 20 16z" fill="#E0F2FE"/>
+  <path d="M147 62l3-24-20 16z" fill="#E0F2FE"/>
+  <!-- Kepala -->
+  <path d="M100 60c34 0 58 24 58 54 0 30-30 56-58 56s-58-26-58-56c0-30 24-54 58-54z" fill="#BAE6FD" stroke="#171717" stroke-width="5"/>
+  <!-- Moncong putih -->
+  <path d="M70 128c6 22 20 34 30 34s24-12 30-34c-8 6-18 9-30 9s-22-3-30-9z" fill="#FFFFFF" stroke="#171717" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Mata -->
+  <circle cx="80" cy="108" r="7" fill="#171717"/>
+  <circle cx="120" cy="108" r="7" fill="#171717"/>
+  <circle cx="82.5" cy="105.5" r="2.4" fill="#FFFFFF"/>
+  <circle cx="122.5" cy="105.5" r="2.4" fill="#FFFFFF"/>
+  <!-- Hidung -->
+  <circle cx="100" cy="140" r="7" fill="#171717"/>
+  <!-- Pipi -->
+  <circle cx="64" cy="124" r="7" fill="#38BDF8"/>
+  <circle cx="136" cy="124" r="7" fill="#38BDF8"/>
+</svg>

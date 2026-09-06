@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Bina si Beruang">
+  <!-- Telinga -->
+  <circle cx="58" cy="66" r="24" fill="#FED7AA" stroke="#171717" stroke-width="5"/>
+  <circle cx="142" cy="66" r="24" fill="#FED7AA" stroke="#171717" stroke-width="5"/>
+  <circle cx="58" cy="66" r="10" fill="#F97316"/>
+  <circle cx="142" cy="66" r="10" fill="#F97316"/>
+  <!-- Kepala -->
+  <circle cx="100" cy="122" r="56" fill="#FFEDD5" stroke="#171717" stroke-width="5"/>
+  <!-- Moncong -->
+  <ellipse cx="100" cy="142" rx="30" ry="22" fill="#FFFFFF" stroke="#171717" stroke-width="4"/>
+  <!-- Mata -->
+  <circle cx="78" cy="110" r="7" fill="#171717"/>
+  <circle cx="122" cy="110" r="7" fill="#171717"/>
+  <circle cx="80.5" cy="107.5" r="2.4" fill="#FFFFFF"/>
+  <circle cx="124.5" cy="107.5" r="2.4" fill="#FFFFFF"/>
+  <!-- Hidung + mulut -->
+  <ellipse cx="100" cy="134" rx="9" ry="7" fill="#171717"/>
+  <path d="M100 141v5M100 146c-3 5-10 6-14 3M100 146c3 5 10 6 14 3" stroke="#171717" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <!-- Pipi -->
+  <circle cx="62" cy="132" r="8" fill="#FED7AA"/>
+  <circle cx="138" cy="132" r="8" fill="#FED7AA"/>
+</svg>

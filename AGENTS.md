@@ -95,7 +95,8 @@ Global:
 
 ## 9. Larangan
 
-- Jangan pakai ilustrasi ber-lisensi non-komersial / tidak jelas. Hanya: unDraw (MIT), OpenDoodles (CC0), Humaaans (MIT), ikon dengan lisensi tercatat.
+- Hanya pakai aset yang tercatat di `docs/04-ASET_ILUSTRASI.md`: maskot buatan sendiri (MIT) + Twemoji (CC-BY 4.0, atribusi wajib). unDraw (MIT) hanya bila perlu, manual.
+- Jangan menambah sumber ilustrasi baru tanpa mencatat lisensi + alasan di `docs/04-ASET_ILUSTRASI.md`.
 - Jangan hardcode warna/font di luar token.
 - Jangan buat halaman tanpa `ParentNote`.
 - Jangan commit `output/`, `dist/`, file ZIP ke git.

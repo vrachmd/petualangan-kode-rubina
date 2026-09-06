@@ -78,8 +78,8 @@ docs/
 
 ## Lisensi & Atribusi
 
-- Kode: **MIT** (lihat `LICENSE`).
-- Ilustrasi: **unDraw (MIT)**, **OpenDoodles (CC0)**, **Humaaans (MIT)** — dimodifikasi warna ke palet Rubina. Daftar file + lisensi: `docs/04-ASET_ILUSTRASI.md`.
+- Kode + maskot karakter: **MIT** (lihat `LICENSE`).
+- Ikon/objek ilustrasi: **Twemoji © Twitter, CC-BY 4.0** — lihat `docs/04-ASET_ILUSTRASI.md`.
 - Ikon UI: Iconify/SVG Repo (cek lisensi per ikon di file aset).
 
 ## Kontribusi

@@ -1,0 +1,109 @@
+---
+// SEMENTARA Minggu 2 — galeri QA semua komponen + aset.
+// Dihapus di Minggu 3 saat halaman worksheet asli dibuat.
+import WorksheetLayout from "../layouts/WorksheetLayout.astro";
+import PageWrapper from "../components/layout/PageWrapper.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import ParentNote from "../components/layout/ParentNote.astro";
+import Box from "../components/base/Box.astro";
+import Text from "../components/base/Text.astro";
+import Icon from "../components/base/Icon.astro";
+import PatternRow from "../components/worksheet/PatternRow.astro";
+import SequenceCard from "../components/worksheet/SequenceCard.astro";
+import ArrowPath from "../components/worksheet/ArrowPath.astro";
+import IfThenPair from "../components/worksheet/IfThenPair.astro";
+import ActivityCard from "../components/worksheet/ActivityCard.astro";
+import FreePlayArea from "../components/worksheet/FreePlayArea.astro";
+---
+
+<WorksheetLayout title="Galeri Komponen (QA)">
+  <PageWrapper>
+    <Header judul="Galeri Komponen" karakter="Tim QA" emoji="🧪" maskot="rubi-kelinci" tint="bg-rubina-pink-100" />
+
+    <div class="mt-6 flex flex-col gap-6">
+      <Box variant="card" class="p-6">
+        <Text variant="heading">1. Maskot + Ikon</Text>
+        <div class="mt-4 flex flex-wrap items-end gap-4">
+          <Icon name="rubi-kelinci" size={96} />
+          <Icon name="bina-beruang" size={96} />
+          <Icon name="nina-rubah" size={96} />
+          <Icon name="rina-robot" size={96} />
+          <Icon name="rubina-anak" size={96} />
+          <Icon name="sabun" size={64} />
+          <Icon name="wortel" size={64} />
+          <Icon name="lampu" size={64} />
+        </div>
+      </Box>
+
+      <Box variant="card" class="p-6">
+        <Text variant="heading">2. PatternRow AB</Text>
+        <div class="mt-4">
+          <PatternRow
+            items={[
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-sunny-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-sunny-500" },
+            ]}
+            kosong={2}
+          />
+        </div>
+        <Text variant="heading">ABB campur bentuk (lolos B&W)</Text>
+        <div class="mt-4">
+          <PatternRow
+            items={[
+              { bentuk: "lingkaran", kelas: "bg-rubina-mint-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-mint-500" },
+              { bentuk: "bintang", kelas: "text-rubina-sky-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-mint-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-mint-500" },
+            ]}
+            kosong={1}
+          />
+        </div>
+      </Box>
+
+      <Box variant="card" class="p-6">
+        <Text variant="heading">3. SequenceCard cuci tangan</Text>
+        <div class="mt-4">
+          <SequenceCard
+            langkah={[
+              { ikon: "keran", label: "Buka keran" },
+              { ikon: "sabun", label: "Sabun" },
+              { ikon: "tetes-air", label: "Bilas" },
+            ]}
+          />
+        </div>
+      </Box>
+
+      <Box variant="card" class="p-6">
+        <Text variant="heading">4. ArrowPath</Text>
+        <div class="mt-4">
+          <ArrowPath sel={["kanan", "kanan", "bawah", "kiri", "kiri", "bawah"]} kolom={3} />
+        </div>
+      </Box>
+
+      <Box variant="card" class="p-6">
+        <Text variant="heading">5. IfThenPair</Text>
+        <div class="mt-4">
+          <IfThenPair aksi={{ ikon: "bel", label: "Tekan bel" }} hasil={{ ikon: "speaker", label: "Bunyi!" }} />
+        </div>
+      </Box>
+
+      <Box variant="card" class="p-6">
+        <Text variant="heading">6. ActivityCard</Text>
+        <div class="mt-4 grid grid-cols-2 gap-4">
+          <ActivityCard ikon="lompat" perintah="Lompat 2 kali" />
+          <ActivityCard ikon="tepuk" perintah="Tepuk tangan" />
+        </div>
+      </Box>
+
+      <FreePlayArea judul="7a. Buat pola kesukaanmu!" varian="pola" jumlah={6} />
+      <FreePlayArea judul="7b. Gambar robotmu!" varian="gambar" />
+    </div>
+
+    <ParentNote instruksi="Halaman ini hanya untuk uji komponen, bukan untuk anak." />
+    <Footer nomor={99} />
+  </PageWrapper>
+</WorksheetLayout>

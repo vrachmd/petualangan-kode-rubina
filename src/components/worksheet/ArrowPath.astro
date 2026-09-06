@@ -1,0 +1,33 @@
+---
+import Arrow from "../base/Arrow.astro";
+import type { ArahMata } from "../../types";
+
+interface Props {
+  /** urutan arah yang dilalui anak dengan jari/krayon */
+  sel: ArahMata[];
+  /** jumlah kolom grid */
+  kolom?: number;
+  /** sisi sel px, min 48 */
+  ukuranSel?: number;
+  /** class warna panah, ex: "text-rubina-sky-600" */
+  warna?: string;
+}
+
+const { sel, kolom = 3, ukuranSel = 64, warna = "text-rubina-sky-600" } = Astro.props;
+---
+
+<div
+  class="grid gap-2"
+  style={`grid-template-columns: repeat(${kolom}, ${ukuranSel}px);`}
+  role="img"
+  aria-label="Jalur panah untuk diikuti"
+>
+  {sel.map((arah) => (
+    <span
+      class="flex items-center justify-center rounded-md bg-surface border border-line shadow-soft"
+      style={`width:${ukuranSel}px;height:${ukuranSel}px`}
+    >
+      <Arrow arah={arah} size={Math.round(ukuranSel * 0.65)} class={warna} />
+    </span>
+  ))}
+</div>

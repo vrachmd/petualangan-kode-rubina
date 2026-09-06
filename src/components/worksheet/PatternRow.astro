@@ -1,0 +1,47 @@
+---
+/**
+ * Baris pola untuk diwarnai/dilanjutkan anak.
+ * `kelas`: utility Tailwind lengkap dari token rubina,
+ * ex: "bg-rubina-pink-500" (lingkaran) atau "text-rubina-sunny-500" (bintang).
+ * Bedakan BENTUK selain warna agar lolos cetak B&W.
+ */
+export interface PolaItem {
+  bentuk: "lingkaran" | "bintang";
+  kelas: string;
+}
+
+interface Props {
+  items: PolaItem[];
+  /** jumlah kotak kosong (dashed) untuk diisi anak */
+  kosong?: number;
+  /** diameter px, min 32 (default 40 untuk 2th) */
+  ukuran?: number;
+}
+
+const { items, kosong = 2, ukuran = 40 } = Astro.props;
+const px = `${ukuran}px`;
+---
+
+<div class="flex flex-wrap items-center gap-3" role="img" aria-label="Pola untuk dilengkapi">
+  {items.map((item) =>
+    item.bentuk === "lingkaran" ? (
+      <span
+        class:list={["inline-block rounded-full border-2 border-white shadow-soft", item.kelas]}
+        style={`width:${px};height:${px}`}
+      />
+    ) : (
+      <svg viewBox="0 0 24 24" class={item.kelas} style={`width:${px};height:${px}`} aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M12 2l2.9 6.26 6.6 1.04-4.75 4.87L17.8 21 12 17.77 6.2 21l1.05-6.83L2.5 9.3l6.6-1.04z"
+        />
+      </svg>
+    )
+  )}
+  {Array.from({ length: kosong }).map(() => (
+    <span
+      class="inline-block rounded-full border-2 border-dashed border-line bg-background"
+      style={`width:${px};height:${px}`}
+    />
+  ))}
+</div>

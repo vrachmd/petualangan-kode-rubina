@@ -1,0 +1,19 @@
+---
+import Icon from "../base/Icon.astro";
+import Text from "../base/Text.astro";
+
+interface Props {
+  /** nama file aset (tanpa .svg), ex: "lompat" */
+  ikon: string;
+  /** perintah ≤ 3 kata, ex: "Lompat 2 kali" */
+  perintah: string;
+}
+
+const { ikon, perintah } = Astro.props;
+---
+
+<div class="flex flex-col items-center gap-3 rounded-lg border-2 border-dashed border-line bg-surface p-5 text-center">
+  <Icon name={ikon} size={88} />
+  <Text as="p" variant="heading">{perintah}</Text>
+  <Text variant="note">Gunting di garis putus-putus</Text>
+</div>
