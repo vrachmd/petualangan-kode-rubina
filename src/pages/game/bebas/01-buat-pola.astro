@@ -8,7 +8,7 @@ import { WARNA_GAME } from "../../../components/interactive/palet";
 ---
 
 <WorksheetLayout title="Game Pola Kreasiku">
-  <GameLayout judul="Pola Kreasiku" kembali="/game/" autoAudioKey="game/bebas-pola" autoAudioText="Buat pola kesukaanmu! Bebas!" client:load>
+  <GameLayout judul="Pola Kreasiku" kembali="/game/" client:load>
     <div class="flex items-center justify-between">
       <AudioButton audioKey="game/bebas-pola" text="Buat pola kesukaanmu! Bebas!" client:load />
       <ProgressBar ids={["18-bebas-buat-pola"]} client:load />

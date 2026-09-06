@@ -9,7 +9,7 @@ import benderaSvg from "../../../assets/illustrations/bendera-finish.svg?raw";
 ---
 
 <WorksheetLayout title="Game Jalan Lurus">
-  <GameLayout judul="Jalan Lurus" kembali="/game/" autoAudioKey="game/arah-lurus" autoAudioText="Ketuk kotak berikutnya! Maju terus!" client:load>
+  <GameLayout judul="Jalan Lurus" kembali="/game/" client:load>
     <div class="flex items-center justify-between">
       <AudioButton audioKey="game/arah-lurus" text="Ketuk kotak berikutnya! Maju terus!" client:load />
       <ProgressBar ids={["10-arah-lacak-garis"]} client:load />

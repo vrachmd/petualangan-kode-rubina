@@ -10,7 +10,7 @@ import tetesSvg from "../../../assets/illustrations/tetes-air.svg?raw";
 ---
 
 <WorksheetLayout title="Game Cuci Tangan">
-  <GameLayout judul="Cuci Tangan Dulu" kembali="/game/" autoAudioKey="game/seq-cuci" autoAudioText="Ketuk gambar nomor satu, dua, tiga!" client:load>
+  <GameLayout judul="Cuci Tangan Dulu" kembali="/game/" client:load>
     <div class="flex items-center justify-between">
       <AudioButton audioKey="game/seq-cuci" text="Ketuk gambar nomor satu, dua, tiga!" client:load />
       <ProgressBar ids={["06-sequencing-cuci-tangan"]} client:load />

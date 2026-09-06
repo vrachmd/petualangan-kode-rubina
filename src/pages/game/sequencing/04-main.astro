@@ -10,7 +10,7 @@ import bonekaSvg from "../../../assets/illustrations/boneka.svg?raw";
 ---
 
 <WorksheetLayout title="Game Beres Mainan">
-  <GameLayout judul="Beres Mainan" kembali="/game/" autoAudioKey="game/seq-main" autoAudioText="Ketuk gambar nomor satu, dua, tiga!" client:load>
+  <GameLayout judul="Beres Mainan" kembali="/game/" client:load>
     <div class="flex items-center justify-between">
       <AudioButton audioKey="game/seq-main" text="Ketuk gambar nomor satu, dua, tiga!" client:load />
       <ProgressBar ids={["09-sequencing-main"]} client:load />

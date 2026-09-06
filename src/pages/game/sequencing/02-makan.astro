@@ -10,7 +10,7 @@ import makanSvg from "../../../assets/illustrations/senyum-makan.svg?raw";
 ---
 
 <WorksheetLayout title="Game Waktunya Makan">
-  <GameLayout judul="Waktunya Makan" kembali="/game/" autoAudioKey="game/seq-makan" autoAudioText="Ketuk gambar nomor satu, dua, tiga!" client:load>
+  <GameLayout judul="Waktunya Makan" kembali="/game/" client:load>
     <div class="flex items-center justify-between">
       <AudioButton audioKey="game/seq-makan" text="Ketuk gambar nomor satu, dua, tiga!" client:load />
       <ProgressBar ids={["07-sequencing-makan"]} client:load />

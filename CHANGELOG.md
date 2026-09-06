@@ -24,6 +24,7 @@ Format: Keep a Changelog (ID ringkas). Tanggal: YYYY-MM-DD.
 - Landing website di `/`: hero + pilih aktivitas (Main/Cetak per kategori) + download PDF + panduan. Cover cetak pindah ke `/sampul/`.
 - SEO share (WhatsApp): OG/Twitter Card + canonical + theme-color; favicon Rubina (SVG/PNG/apple-touch); og-cover.jpg 1200×630.
 - Auto-narasi: bunyi sendiri saat layar pertama disentuh (18 level); tombol 🔊 tetap untuk ulang.
+- Revert auto-narasi: narasi hanya via tombol 🔊 (keputusan produk).
 
 ## [0.1.0] — TBD (Setup Repo)
 - Rencana: init Astro + Tailwind + Playwright, design tokens, base components.

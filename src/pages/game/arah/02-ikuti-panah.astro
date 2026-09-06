@@ -9,7 +9,7 @@ import rumahSvg from "../../../assets/illustrations/rumah.svg?raw";
 ---
 
 <WorksheetLayout title="Game Belok-Belok">
-  <GameLayout judul="Belok-Belok" kembali="/game/" autoAudioKey="game/arah-belok" autoAudioText="Ikuti panahnya! Belok kanan, turun!" client:load>
+  <GameLayout judul="Belok-Belok" kembali="/game/" client:load>
     <div class="flex items-center justify-between">
       <AudioButton audioKey="game/arah-belok" text="Ikuti panahnya! Belok kanan, turun!" client:load />
       <ProgressBar ids={["11-arah-ikuti-panah"]} client:load />

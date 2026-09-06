@@ -11,7 +11,7 @@ import bulanSvg from "../../../assets/illustrations/bulan.svg?raw";
 ---
 
 <WorksheetLayout title="Game Tombol Ajaib">
-  <GameLayout judul="Tombol Ajaib" kembali="/game/" autoAudioKey="game/sebab-tombol" autoAudioText="Ketuk tombolnya! Apa yang terjadi?" client:load>
+  <GameLayout judul="Tombol Ajaib" kembali="/game/" client:load>
     <div class="flex items-center justify-between">
       <AudioButton audioKey="game/sebab-tombol" text="Ketuk tombolnya! Apa yang terjadi?" client:load />
       <ProgressBar ids={["14-sebab-tombol-lampu"]} client:load />

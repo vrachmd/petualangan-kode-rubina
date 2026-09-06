@@ -1,7 +1,6 @@
 import type { ComponentChildren } from "preact";
-import { useEffect, useRef, useState } from "preact/hooks";
+import { useRef, useState } from "preact/hooks";
 import ModeOrtu from "./ModeOrtu";
-import { narasi } from "../../utils/tts";
 import "../../styles/game.css";
 
 interface Props {
@@ -9,28 +8,14 @@ interface Props {
   judul: string;
   /** URL kembali (biasanya /game/) */
   kembali?: string;
-  /** Narasi pembuka: bunyi otomatis saat layar pertama disentuh
-   *  (autoplay murni dilarang browser — ini pola standar aplikasi anak) */
-  autoAudioKey?: string;
-  autoAudioText?: string;
   children: ComponentChildren;
 }
 
 /** Layar penuh game: tombol kembali besar + judul + area main. */
-export default function GameLayout({ judul, kembali, autoAudioKey, autoAudioText, children }: Props) {
+export default function GameLayout({ judul, kembali, children }: Props) {
   const base = import.meta.env.BASE_URL;
   const [ortu, setOrtu] = useState(false);
   const ketuk = useRef<number[]>([]);
-
-  // Auto-narasi: sentuhan PERTAMA di mana pun = izin browser → langsung bunyi.
-  useEffect(() => {
-    if (!autoAudioKey || !autoAudioText) return;
-    const mulai = () => {
-      void narasi(autoAudioKey, autoAudioText);
-    };
-    window.addEventListener("pointerdown", mulai, { once: true });
-    return () => window.removeEventListener("pointerdown", mulai);
-  }, []);
 
   /** Triple-tap judul < 1,5 detik → panel orang tua (aman dari tap acak anak). */
   const cekOrtu = () => {

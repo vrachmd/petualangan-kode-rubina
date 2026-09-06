@@ -13,7 +13,7 @@ import lariSvg from "../../assets/illustrations/lari.svg?raw";
 ---
 
 <WorksheetLayout title="Game Kartu Gerak">
-  <GameLayout judul="Kartu Gerak" kembali="/game/" autoAudioKey="game/kartu" autoAudioText="Ketuk putar, ikuti gerakannya!" client:load>
+  <GameLayout judul="Kartu Gerak" kembali="/game/" client:load>
     <div class="flex items-center justify-between">
       <AudioButton audioKey="game/kartu" text="Ketuk putar, ikuti gerakannya!" client:load />
       <ProgressBar ids={["17-kartu-aktivitas"]} client:load />

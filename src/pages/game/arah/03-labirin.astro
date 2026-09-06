@@ -9,7 +9,7 @@ import wortelSvg from "../../../assets/illustrations/wortel.svg?raw";
 ---
 
 <WorksheetLayout title="Game Jalan ke Wortel">
-  <GameLayout judul="Jalan ke Wortel" kembali="/game/" autoAudioKey="game/arah-wortel" autoAudioText="Antar Nina ke wortel! Ikuti panahnya!" client:load>
+  <GameLayout judul="Jalan ke Wortel" kembali="/game/" client:load>
     <div class="flex items-center justify-between">
       <AudioButton audioKey="game/arah-wortel" text="Antar Nina ke wortel! Ikuti panahnya!" client:load />
       <ProgressBar ids={["12-arah-labirin"]} client:load />
