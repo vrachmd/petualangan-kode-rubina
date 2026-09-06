@@ -5,19 +5,19 @@
   <!-- Dalam telinga krem -->
   <path d="M60 70l-5-32 33 20z" fill="#FFEDD5" stroke="#171717" stroke-width="3" stroke-linejoin="round"/>
   <path d="M140 70l5-32-33 20z" fill="#FFEDD5" stroke="#171717" stroke-width="3" stroke-linejoin="round"/>
-  <!-- Kepala bulat dengan jambul pipi kecil -->
-  <path d="M52 94l-16 12 14 6-10 14 16 2c6 28 22 48 44 48s38-20 44-48l16-2-10-14 14-6-16-12c-4-22-24-36-48-36s-44 14-48 36z" fill="#F97316" stroke="#171717" stroke-width="5" stroke-linejoin="round"/>
-  <!-- Pipi krem bulat ala Kurama -->
-  <path d="M64 124c2 26 16 40 36 40s34-14 36-40c-12 10-24 14-36 14s-24-4-36-14z" fill="#FFEDD5" stroke="#171717" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Kepala bulat, jambul pipi ramping -->
+  <path d="M52 94l-12 10 12 5-9 12 14 2c6 29 21 53 43 53s37-24 43-53l14-2-9-12 12-5-12-10c-4-22-24-36-48-36s-44 14-48 36z" fill="#F97316" stroke="#171717" stroke-width="5" stroke-linejoin="round"/>
+  <!-- Moncong krem bulat -->
+  <path d="M70 120c2 28 14 42 30 42s28-14 30-42c-10 10-20 14-30 14s-20-4-30-14z" fill="#FFEDD5" stroke="#171717" stroke-width="4" stroke-linejoin="round"/>
   <!-- Mata bulat besar -->
-  <circle cx="78" cy="108" r="9" fill="#171717"/>
-  <circle cx="122" cy="108" r="9" fill="#171717"/>
-  <circle cx="81" cy="105" r="3" fill="#FFFFFF"/>
-  <circle cx="125" cy="105" r="3" fill="#FFFFFF"/>
-  <!-- Pipi merona -->
-  <circle cx="60" cy="130" r="7" fill="#FFADB8"/>
-  <circle cx="140" cy="130" r="7" fill="#FFADB8"/>
+  <circle cx="78" cy="110" r="9" fill="#171717"/>
+  <circle cx="122" cy="110" r="9" fill="#171717"/>
+  <circle cx="81" cy="107" r="3" fill="#FFFFFF"/>
+  <circle cx="125" cy="107" r="3" fill="#FFFFFF"/>
+  <!-- Pipi merona di dalam moncong -->
+  <circle cx="74" cy="146" r="6.5" fill="#FFADB8"/>
+  <circle cx="126" cy="146" r="6.5" fill="#FFADB8"/>
   <!-- Hidung mungil + senyum -->
   <ellipse cx="100" cy="140" rx="7" ry="5.5" fill="#171717"/>
-  <path d="M87 150q13 11 26 0" stroke="#171717" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M86 150q14 12 28 0" stroke="#171717" stroke-width="4" stroke-linecap="round" fill="none"/>
 </svg>
