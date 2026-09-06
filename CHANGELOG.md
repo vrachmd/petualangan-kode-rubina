@@ -12,6 +12,7 @@ Format: Keep a Changelog (ID ringkas). Tanggal: YYYY-MM-DD.
 - 6 komponen worksheet: PatternRow, SequenceCard, ArrowPath, IfThenPair, ActivityCard, FreePlayArea.
 - Halaman sementara `contoh-komponen` untuk QA visual (dihapus di Minggu 3).
 - Redesain maskot Nina si Rubah: warna Kurama (oranye + krem), versi lucu selaras maskot lain (mata bulat, pipi merona).
+- Ganti 3 maskot hewan ke Twemoji (Rubi 🐰, Bina 🐻, Nina 🦊) — langsung dikenali anak; Rina + Rubina tetap custom.
 
 ## [0.1.0] — TBD (Setup Repo)
 - Rencana: init Astro + Tailwind + Playwright, design tokens, base components.

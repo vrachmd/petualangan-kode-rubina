@@ -6,8 +6,8 @@ Setiap file di `src/assets/` wajib tercatat di tabel bawah.
 
 | Sumber | Lisensi | Cakupan | Catatan |
 |--------|---------|---------|---------|
-| **Buatan sendiri** (`characters/`) | MIT (bagian repo ini) | 5 maskot: Rubi, Bina, Nina, Rina, Rubina | Geometris sederhana, palet rubina, outline ink (terbaca B&W) |
-| **Twemoji** (`illustrations/`) | CC-BY 4.0 © Twitter | 31 objek/ikon (sabun, bola, bel, ... ) | **Wajib atribusi** (lihat bawah). Diambil via `npm run download-assets` |
+| **Buatan sendiri** (`characters/` rina, rubina) | MIT (bagian repo ini) | Robot Rina + Rubina | Geometris sederhana, palet rubina, outline ink (terbaca B&W) |
+| **Twemoji** (`characters/` hewan + `illustrations/`) | CC-BY 4.0 © Twitter | 3 maskot hewan + 31 objek/ikon | **Wajib atribusi**. Maskot hewan pakai Twemoji karena langsung dikenali anak |
 | unDraw | MIT | Cadangan scene cover/panduan | API lama mati (404); hanya manual bila perlu |
 | OpenDoodles | CC0 | Tidak dipakai | Gaya manusia-sketsa tidak cocok untuk usia 2th |
 | Humaaans | MIT | Tidak dipakai | Butuh Figma manual; ditunda |
@@ -32,9 +32,9 @@ Setiap file di `src/assets/` wajib tercatat di tabel bawah.
 
 | File | Sumber | Lisensi |
 |------|--------|---------|
-| `characters/rubi-kelinci.svg` | Buatan sendiri | MIT |
-| `characters/bina-beruang.svg` | Buatan sendiri | MIT |
-| `characters/nina-rubah.svg` | Buatan sendiri (terinspirasi warna Kurama: oranye + krem; gaya lucu selaras maskot lain) | MIT |
+| `characters/rubi-kelinci.svg` | Twemoji © Twitter 🐰 | CC-BY 4.0 |
+| `characters/bina-beruang.svg` | Twemoji © Twitter 🐻 | CC-BY 4.0 |
+| `characters/nina-rubah.svg` | Twemoji © Twitter 🦊 | CC-BY 4.0 |
 | `characters/rina-robot.svg` | Buatan sendiri | MIT |
 | `characters/rubina-anak.svg` | Buatan sendiri | MIT |
 | `illustrations/*.svg` (31 file, lihat `src/scripts/download-assets.ts` MANIFEST) | Twemoji © Twitter | CC-BY 4.0 |

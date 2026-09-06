@@ -17,6 +17,8 @@ interface Aset {
   file: string;
   code: string; // hex Twemoji tanpa FE0F, ex: "1f9fc"
   guna: string;
+  /** subfolder di src/assets (default "illustrations") */
+  dir?: string;
 }
 
 const MANIFEST: Aset[] = [
@@ -59,6 +61,11 @@ const MANIFEST: Aset[] = [
   { file: "matahari.svg", code: "2600", guna: "dekorasi cover" },
   { file: "bunga.svg", code: "1f338", guna: "dekorasi" },
   { file: "awan.svg", code: "2601", guna: "dekorasi" },
+  // Maskot hewan — Twemoji (profesional, langsung dikenali anak).
+  // Custom Rina (robot) + Rubina (anak) tetap buatan sendiri.
+  { file: "rubi-kelinci.svg", code: "1f430", guna: "maskot Rubi", dir: "characters" },
+  { file: "bina-beruang.svg", code: "1f43b", guna: "maskot Bina", dir: "characters" },
+  { file: "nina-rubah.svg", code: "1f98a", guna: "maskot Nina", dir: "characters" },
 ];
 
 async function main() {
@@ -82,7 +89,7 @@ async function main() {
           "removeDimensions",
         ],
       });
-      writeFileSync(join(OUT_DIR, aset.file), data);
+      writeFileSync(join(ROOT, "src", "assets", aset.dir ?? "illustrations", aset.file), data);
       ok++;
       console.log(`OK  ${aset.file} (${aset.guna})`);
     } catch (err) {
