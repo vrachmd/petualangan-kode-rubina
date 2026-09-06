@@ -1,21 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Nina si Rubah">
-  <!-- Telinga segitiga -->
-  <path d="M52 78L44 22l44 34z" fill="#38BDF8" stroke="#171717" stroke-width="5" stroke-linejoin="round"/>
-  <path d="M148 78l8-56-44 34z" fill="#38BDF8" stroke="#171717" stroke-width="5" stroke-linejoin="round"/>
-  <path d="M53 62l-3-24 20 16z" fill="#E0F2FE"/>
-  <path d="M147 62l3-24-20 16z" fill="#E0F2FE"/>
-  <!-- Kepala -->
-  <path d="M100 60c34 0 58 24 58 54 0 30-30 56-58 56s-58-26-58-56c0-30 24-54 58-54z" fill="#BAE6FD" stroke="#171717" stroke-width="5"/>
-  <!-- Moncong putih -->
-  <path d="M70 128c6 22 20 34 30 34s24-12 30-34c-8 6-18 9-30 9s-22-3-30-9z" fill="#FFFFFF" stroke="#171717" stroke-width="4" stroke-linejoin="round"/>
-  <!-- Mata -->
-  <circle cx="80" cy="108" r="7" fill="#171717"/>
-  <circle cx="120" cy="108" r="7" fill="#171717"/>
-  <circle cx="82.5" cy="105.5" r="2.4" fill="#FFFFFF"/>
-  <circle cx="122.5" cy="105.5" r="2.4" fill="#FFFFFF"/>
-  <!-- Hidung -->
-  <circle cx="100" cy="140" r="7" fill="#171717"/>
-  <!-- Pipi -->
-  <circle cx="64" cy="124" r="7" fill="#38BDF8"/>
-  <circle cx="136" cy="124" r="7" fill="#38BDF8"/>
+  <!-- Telinga segitiga besar -->
+  <path d="M52 88L38 16l60 38z" fill="#F97316" stroke="#171717" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M148 88l14-72-60 38z" fill="#F97316" stroke="#171717" stroke-width="5" stroke-linejoin="round"/>
+  <!-- Dalam telinga krem -->
+  <path d="M55 72l-6-40 35 23z" fill="#FFEDD5" stroke="#171717" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M145 72l6-40-35 23z" fill="#FFEDD5" stroke="#171717" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Kepala rubah dengan jambul pipi -->
+  <path d="M50 92l-20 16 16 8-14 18 18 4c8 22 26 40 50 40s42-18 50-40l18-4-14-18 16-8-20-16c-4-20-26-34-50-34s-46 14-50 34z" fill="#F97316" stroke="#171717" stroke-width="5" stroke-linejoin="round"/>
+  <!-- Jambul dahi -->
+  <path d="M80 64l10-22 8 18 8-20 10 22z" fill="#F97316" stroke="#171717" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Masker krem ala Kurama -->
+  <path d="M60 122c4 30 20 46 40 46s36-16 40-46c-12 10-26 14-40 14s-28-4-40-14z" fill="#FFEDD5" stroke="#171717" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Mata merah Kurama -->
+  <circle cx="78" cy="104" r="9" fill="#D64963" stroke="#171717" stroke-width="3"/>
+  <circle cx="122" cy="104" r="9" fill="#D64963" stroke="#171717" stroke-width="3"/>
+  <ellipse cx="78" cy="104" rx="2.8" ry="6" fill="#171717"/>
+  <ellipse cx="122" cy="104" rx="2.8" ry="6" fill="#171717"/>
+  <circle cx="80.8" cy="100.8" r="2.2" fill="#FFFFFF"/>
+  <circle cx="124.8" cy="100.8" r="2.2" fill="#FFFFFF"/>
+  <!-- Hidung + mulut -->
+  <path d="M91 136h18l-9 11z" fill="#171717" stroke="#171717" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M100 147v4M100 151c-3 5-10 6-14 3M100 151c3 5 10 6 14 3" stroke="#171717" stroke-width="4" stroke-linecap="round" fill="none"/>
 </svg>

@@ -34,7 +34,7 @@ Setiap file di `src/assets/` wajib tercatat di tabel bawah.
 |------|--------|---------|
 | `characters/rubi-kelinci.svg` | Buatan sendiri | MIT |
 | `characters/bina-beruang.svg` | Buatan sendiri | MIT |
-| `characters/nina-rubah.svg` | Buatan sendiri | MIT |
+| `characters/nina-rubah.svg` | Buatan sendiri (terinspirasi warna Kurama: oranye + krem + mata merah) | MIT |
 | `characters/rina-robot.svg` | Buatan sendiri | MIT |
 | `characters/rubina-anak.svg` | Buatan sendiri | MIT |
 | `illustrations/*.svg` (31 file, lihat `src/scripts/download-assets.ts` MANIFEST) | Twemoji © Twitter | CC-BY 4.0 |

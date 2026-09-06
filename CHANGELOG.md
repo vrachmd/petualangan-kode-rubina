@@ -11,6 +11,7 @@ Format: Keep a Changelog (ID ringkas). Tanggal: YYYY-MM-DD.
 - Aset: 5 maskot custom (Rubi, Bina, Nina, Rina, Rubina) + 31 ikon Twemoji via `npm run download-assets`.
 - 6 komponen worksheet: PatternRow, SequenceCard, ArrowPath, IfThenPair, ActivityCard, FreePlayArea.
 - Halaman sementara `contoh-komponen` untuk QA visual (dihapus di Minggu 3).
+- Redesain maskot Nina si Rubah: gaya Kurama (oranye + masker krem + mata merah slit), tetap token rubina.
 
 ## [0.1.0] — TBD (Setup Repo)
 - Rencana: init Astro + Tailwind + Playwright, design tokens, base components.
