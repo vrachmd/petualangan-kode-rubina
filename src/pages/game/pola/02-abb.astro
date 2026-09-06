@@ -8,7 +8,7 @@ import { palet } from "../../../components/interactive/palet";
 ---
 
 <WorksheetLayout title="Game Pola Dua-Satu">
-  <GameLayout judul="Pola Dua-Satu" kembali="/game/" client:load>
+  <GameLayout judul="Pola Dua-Satu" kembali="/game/" autoAudioKey="game/pola-abb" autoAudioText="Dua hijau, satu biru! Ketuk warnanya!" client:load>
     <div class="flex items-center justify-between">
       <AudioButton audioKey="game/pola-abb" text="Dua hijau, satu biru! Ketuk warnanya!" client:load />
       <ProgressBar ids={["03-pola-abb"]} client:load />

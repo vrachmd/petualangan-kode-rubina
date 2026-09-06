@@ -10,10 +10,25 @@ import "@fontsource/nunito/700.css";
 
 interface Props {
   title: string;
+  /** deskripsi preview saat link di-share (WhatsApp/dll) */
+  description?: string;
+  /** path halaman untuk canonical, ex: "/game/" (default: path aktif) */
+  path?: string;
 }
 
 const { title } = Astro.props;
+const description =
+  Astro.props.description ??
+  "Belajar pola, urutan, dan logika untuk anak 2 tahun — main di HP/tablet atau cetak worksheet-nya. Gratis!";
+const site = "https://vrachmd.github.io";
+// Astro.url.pathname SUDAH mengandung base path (/petualangan-kode-rubina/...)
+const pageUrl = `${site}${Astro.props.path ?? Astro.url.pathname}`;
+const ogImage = `${site}/petualangan-kode-rubina/og-cover.jpg`;
+const judulPenuh = `${title} — Petualangan Kode Rubina`;
 const swUrl = `${import.meta.env.BASE_URL}sw.js`;
+const faviconSvg = `${import.meta.env.BASE_URL}favicon.svg`;
+const faviconPng = `${import.meta.env.BASE_URL}favicon-32x32.png`;
+const appleTouch = `${import.meta.env.BASE_URL}apple-touch-icon.png`;
 ---
 
 <!doctype html>
@@ -21,7 +36,29 @@ const swUrl = `${import.meta.env.BASE_URL}sw.js`;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} — Petualangan Kode Rubina</title>
+    <title>{judulPenuh}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={pageUrl} />
+    <meta name="theme-color" content="#E85D75" />
+    <link rel="icon" type="image/svg+xml" href={faviconSvg} />
+    <link rel="icon" type="image/png" sizes="32x32" href={faviconPng} />
+    <link rel="apple-touch-icon" href={appleTouch} />
+    <!-- Open Graph (preview WhatsApp/FB/Telegram) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:site_name" content="Petualangan Kode Rubina" />
+    <meta property="og:title" content={judulPenuh} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Petualangan Kode Rubina — Main dan Worksheet Coding Anak 2 Tahun" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={judulPenuh} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
     <script is:inline define:vars={{ swUrl }}>
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {

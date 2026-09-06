@@ -10,7 +10,7 @@ import speakerSvg from "../../../assets/illustrations/speaker.svg?raw";
 ---
 
 <WorksheetLayout title="Game Bunyi Apa">
-  <GameLayout judul="Bunyi Apa?" kembali="/game/" client:load>
+  <GameLayout judul="Bunyi Apa?" kembali="/game/" autoAudioKey="game/sebab-bunyi" autoAudioText="Ketuk gambarnya! Bunyi apa?" client:load>
     <div class="flex items-center justify-between">
       <AudioButton audioKey="game/sebab-bunyi" text="Ketuk gambarnya! Bunyi apa?" client:load />
       <ProgressBar ids={["16-sebab-tekan-bunyi"]} client:load />
