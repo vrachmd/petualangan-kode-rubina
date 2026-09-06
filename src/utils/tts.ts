@@ -48,6 +48,11 @@ export function speakWeb(text: string): void {
  * @param text teks fallback untuk Web Speech, ex: "Ayo warnai lingkaran merah!"
  */
 export async function narasi(key: string, text: string): Promise<void> {
+  try {
+    if (localStorage.getItem("rubina-suara") === "mati") return;
+  } catch {
+    /* lanjut */
+  }
   const ok = await playMp3(key);
   if (!ok) speakWeb(text);
 }

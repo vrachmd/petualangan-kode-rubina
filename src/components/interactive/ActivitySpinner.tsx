@@ -6,6 +6,8 @@ import { tambahXp, xpHalaman } from "../../utils/progress";
 export interface AktivitasGame {
   svg: string;
   perintah: string;
+  /** teks narasi (default = perintah) */
+  suara?: string;
 }
 
 interface Props {
@@ -30,7 +32,7 @@ export default function ActivitySpinner({ idHalaman, aktivitas, audioKey, audioT
     setPop(false);
     requestAnimationFrame(() => setPop(true));
     const a = aktivitas[n];
-    void narasi(audioKey, a.perintah);
+    void narasi(`${audioKey}-${n + 1}`, a.suara ?? a.perintah);
     // XP kecil, dibatasi agar tidak di-farming
     if (xpHalaman(idHalaman) < 10) tambahXp(idHalaman, false);
   };

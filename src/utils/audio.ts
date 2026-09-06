@@ -5,6 +5,25 @@
 
 let ctx: AudioContext | null = null;
 
+const SUARA_KEY = "rubina-suara";
+
+/** Preferensi suara ortu (default nyala). */
+export function suaraAktif(): boolean {
+  try {
+    return localStorage.getItem(SUARA_KEY) !== "mati";
+  } catch {
+    return true;
+  }
+}
+
+export function setSuaraAktif(aktif: boolean): void {
+  try {
+    localStorage.setItem(SUARA_KEY, aktif ? "nyala" : "mati");
+  } catch {
+    /* abaikan */
+  }
+}
+
 function dapatkanCtx(): AudioContext | null {
   try {
     if (!ctx) {
@@ -19,6 +38,7 @@ function dapatkanCtx(): AudioContext | null {
 }
 
 function nada(freq: number, mulai: number, durasi: number, tipe: OscillatorType = "sine", volume = 0.15): void {
+  if (!suaraAktif()) return;
   const ac = dapatkanCtx();
   if (!ac) return;
   try {

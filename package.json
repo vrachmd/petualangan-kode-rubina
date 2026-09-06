@@ -9,6 +9,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "download-assets": "tsx src/scripts/download-assets.ts",
+    "generate:audio": "python scripts/generate-audio.py",
+    "generate:sw": "tsx src/scripts/generate-sw.ts",
     "generate:pdf": "tsx src/scripts/generate-pdf.ts",
     "generate:png": "tsx src/scripts/generate-png.ts",
     "generate:svg": "tsx src/scripts/generate-svg.ts",
