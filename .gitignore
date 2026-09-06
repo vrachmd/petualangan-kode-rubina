@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Astro
+dist/
+.astro/
+
+# Generated output (jangan commit — selalu regenerate)
+output/
+*.zip
+tmp/
+
+# Env & OS
+.env
+.env.*
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Playwright
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Logs
+npm-debug.log*
+*.log
