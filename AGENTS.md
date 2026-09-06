@@ -48,7 +48,8 @@ src/utils/nama.ts           # NAMA_ANAK, sapaan
 ```
 
 Aturan:
-- Setiap page **wajib** pakai `WorksheetLayout` + `PageWrapper` (margin cetak 15mm) + `Header` (judul + karakter kategori) + `Footer` + `ParentNote` (instruksi ortu Bahasa Indonesia).
+- Setiap page **wajib** pakai `WorksheetLayout` + `PageWrapper` (margin cetak 15mm) + `Header` (judul + karakter kategori) + `ParentNote` (instruksi ortu Bahasa Indonesia). `Footer` kecil (14px) wajib di semua halaman **kecuali cover**.
+- Cover (`src/pages/index.astro`) tanpa `Footer` dan tanpa `Header` standar (desain khusus).
 - Root visual tiap halaman: `<div class="worksheet" ...>` — dipakai script SVG extractor. Jangan ganti class ini.
 - Props komponen wajib di-type (TypeScript interface di atas file `.astro`).
 - Teks UI Bahasa Indonesia, kalimat aktif pendek ("Ayo warnai...", "Bantu Rubi..."). Tidak ada istilah Inggris tanpa penjelasan.
