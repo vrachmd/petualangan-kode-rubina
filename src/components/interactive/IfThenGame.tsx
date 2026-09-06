@@ -1,6 +1,5 @@
 import { useState } from "preact/hooks";
 import { narasi } from "../../utils/tts";
-import { bunyiBenar } from "../../utils/audio";
 import { tambahXp } from "../../utils/progress";
 import Perayaan from "./Perayaan";
 
@@ -27,7 +26,7 @@ export default function IfThenGame({ idHalaman, pasangan, audioKey, audioText }:
 
   const ketuk = (i: number) => {
     if (selesai || buka[i]) return;
-    bunyiBenar();
+    // Satu tap = satu suara: narasi hasil saja
     void narasi(`${audioKey}-${i + 1}`, pasangan[i].suara);
     const next = [...buka];
     next[i] = true;
@@ -54,7 +53,7 @@ export default function IfThenGame({ idHalaman, pasangan, audioKey, audioText }:
             aria-label={p.aksiLabel}
             class="game-tap flex flex-1 flex-col items-center gap-1 rounded-xl border-2 border-rubina-lavender-200 bg-rubina-lavender-50 p-3 text-center shadow-card"
           >
-            <span class="inline-block h-16 w-16" dangerouslySetInnerHTML={{ __html: p.aksiSvg }} />
+            <span class="inline-block h-16 w-16 sm:h-20 sm:w-20" dangerouslySetInnerHTML={{ __html: p.aksiSvg }} />
             <span class="font-sans text-base font-bold">{p.aksiLabel}</span>
           </button>
           <div class="flex items-center" aria-hidden="true">
@@ -65,12 +64,12 @@ export default function IfThenGame({ idHalaman, pasangan, audioKey, audioText }:
           <div class="flex flex-1 flex-col items-center gap-1 rounded-xl border-2 border-rubina-sunny-200 bg-rubina-sunny-50 p-3 text-center shadow-card">
             {buka[i] ? (
               <>
-                <span class="game-pop inline-block h-16 w-16" dangerouslySetInnerHTML={{ __html: p.hasilSvg }} />
+                <span class="game-pop inline-block h-16 w-16 sm:h-20 sm:w-20" dangerouslySetInnerHTML={{ __html: p.hasilSvg }} />
                 <span class="font-sans text-base font-bold">{p.hasilLabel}</span>
               </>
             ) : (
               <>
-                <span class="flex h-16 w-16 items-center justify-center text-3xl" aria-hidden="true">❓</span>
+                <span class="flex h-16 w-16 items-center justify-center text-3xl sm:h-20 sm:w-20" aria-hidden="true">❓</span>
                 <span class="font-sans text-base text-muted">Ketuk kiri!</span>
               </>
             )}

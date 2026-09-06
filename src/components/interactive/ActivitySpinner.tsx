@@ -1,6 +1,5 @@
 import { useState } from "preact/hooks";
 import { narasi } from "../../utils/tts";
-import { bunyiTap } from "../../utils/audio";
 import { tambahXp, xpHalaman } from "../../utils/progress";
 
 export interface AktivitasGame {
@@ -23,7 +22,7 @@ export default function ActivitySpinner({ idHalaman, aktivitas, audioKey, audioT
   const [pop, setPop] = useState(false);
 
   const putar = () => {
-    bunyiTap();
+    // Satu tap = satu suara: narasi perintah saja
     let n = Math.floor(Math.random() * aktivitas.length);
     if (aktivitas.length > 1) {
       while (n === jalan) n = Math.floor(Math.random() * aktivitas.length);
@@ -46,7 +45,7 @@ export default function ActivitySpinner({ idHalaman, aktivitas, audioKey, audioT
           <>
             <span
               key={jalan}
-              class={`inline-block h-28 w-28 ${pop ? "game-pop" : ""}`}
+              class={`inline-block h-28 w-28 sm:h-36 sm:w-36 ${pop ? "game-pop" : ""}`}
               dangerouslySetInnerHTML={{ __html: aktivitas[jalan].svg }}
             />
             <p class="font-display text-2xl font-bold">{aktivitas[jalan].perintah}</p>

@@ -25,6 +25,8 @@ Format: Keep a Changelog (ID ringkas). Tanggal: YYYY-MM-DD.
 - SEO share (WhatsApp): OG/Twitter Card + canonical + theme-color; favicon Rubina (SVG/PNG/apple-touch); og-cover.jpg 1200×630.
 - Auto-narasi: bunyi sendiri saat layar pertama disentuh (18 level); tombol 🔊 tetap untuk ulang.
 - Revert auto-narasi: narasi hanya via tombol 🔊 (keputusan produk).
+- Fix audio dobel: 1 tap = 1 suara (narasi saja saat maju/buka/putar).
+- Responsif HP/tablet: grid Arrow fluid, ukuran membesar di sm:, kolom game max 560px.
 
 ## [0.1.0] — TBD (Setup Repo)
 - Rencana: init Astro + Tailwind + Playwright, design tokens, base components.

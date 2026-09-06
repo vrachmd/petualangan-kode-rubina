@@ -43,7 +43,7 @@ export default function GameLayout({ judul, kembali, children }: Props) {
           {judul}
         </h1>
       </header>
-      <main class="flex flex-1 flex-col px-4 pb-6">{children}</main>
+      <main class="mx-auto flex w-full max-w-[560px] flex-1 flex-col px-4 pb-6">{children}</main>
       <ModeOrtu terbuka={ortu} onTutup={() => setOrtu(false)} />
     </div>
   );

@@ -131,7 +131,7 @@ export default function FreePlayCanvas({ idHalaman }: Props) {
             onClick={() => { bunyiTap(); setWarna(w.hex); }}
             aria-label={w.label}
             title={w.label}
-            class={`game-tap h-14 w-14 rounded-full border-4 shadow-card ${warna === w.hex ? "border-ink" : "border-white"}`}
+            class={`game-tap h-14 w-14 rounded-full border-4 shadow-card sm:h-16 sm:w-16 ${warna === w.hex ? "border-ink" : "border-white"}`}
             style={{ background: w.hex }}
           />
         ))}

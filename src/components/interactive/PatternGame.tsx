@@ -78,23 +78,24 @@ export default function PatternGame({ idHalaman, warna, pola, jawaban, bebas = f
   return (
     <div class="flex flex-col items-center gap-5">
       <div class="flex flex-wrap justify-center gap-3">
-        {isian.map((v, i) =>
-          pola[i] === null && v === null ? (
+        {isian.map((v, i) => {
+          const kosong = pola[i] === null && v === null;
+          return kosong ? (
             <button
               key={i}
               type="button"
               onClick={() => ketukSlot(i)}
               aria-label={`Lingkaran kosong ${i + 1}`}
-              class={`game-tap h-16 w-16 rounded-full border-4 border-dashed border-line bg-background ${goyang === i ? "game-goyang" : ""}`}
+              class={`game-tap h-16 w-16 rounded-full border-4 border-dashed border-line bg-background sm:h-20 sm:w-20 ${goyang === i ? "game-goyang" : ""}`}
             />
           ) : (
             <span
               key={i}
-              class="game-pop inline-block h-16 w-16 rounded-full border-2 border-white shadow-card"
+              class="game-pop inline-block h-16 w-16 rounded-full border-2 border-white shadow-card sm:h-20 sm:w-20"
               style={{ background: hexOf(v ?? "") }}
             />
-          )
-        )}
+          );
+        })}
       </div>
 
       <p class="font-sans text-base text-muted">Ketuk warna, lalu ketuk lingkaran kosong!</p>
@@ -106,7 +107,7 @@ export default function PatternGame({ idHalaman, warna, pola, jawaban, bebas = f
             onClick={() => ketukWarna(w.key)}
             aria-label={w.label}
             title={w.label}
-            class={`game-tap h-20 w-20 rounded-full border-4 shadow-card ${pilihan === w.key ? "border-ink" : "border-white"}`}
+            class={`game-tap h-20 w-20 rounded-full border-4 shadow-card sm:h-24 sm:w-24 ${pilihan === w.key ? "border-ink" : "border-white"}`}
             style={{ background: w.hex }}
           />
         ))}

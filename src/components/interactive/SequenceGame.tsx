@@ -75,7 +75,7 @@ export default function SequenceGame({ idHalaman, langkah, audioKey, audioText, 
                   {i + 1}
                 </span>
                 <span
-                  class="inline-block h-16 w-16"
+                  class="inline-block h-16 w-16 sm:h-20 sm:w-20"
                   style={{ opacity: aktif || berikut ? 1 : 0.45 }}
                   dangerouslySetInnerHTML={{ __html: s.svg }}
                 />
