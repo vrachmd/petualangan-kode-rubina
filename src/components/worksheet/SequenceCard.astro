@@ -13,11 +13,11 @@ export interface Langkah {
 
 interface Props {
   langkah: [Langkah, Langkah, Langkah];
-  /** class bg lingkaran nomor, ex: "bg-rubina-peach-500" */
+  /** class bg lingkaran nomor, ex: "bg-rubina-peach-600" (600 agar kontras putih ≥ 3:1) */
   aksen?: string;
 }
 
-const { langkah, aksen = "bg-rubina-peach-500" } = Astro.props;
+const { langkah, aksen = "bg-rubina-peach-600" } = Astro.props;
 ---
 
 <ol class="flex items-stretch justify-center gap-2">
