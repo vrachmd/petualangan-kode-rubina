@@ -61,23 +61,20 @@ async function main() {
     cek(`svg ${h.id} < 200KB`, statSync(p).size < 200_000);
   }
 
-  // 5) Konten wajib di HTML (instruksi ortu + footer nomor)
+  // 5) Konten wajib di HTML worksheet (instruksi ortu + root visual).
+  // Halaman game (/game/*) dikecualikan — layout interaktif, bukan cetak.
   const dist = join(process.cwd(), "dist");
-  const htmlFiles: string[] = [];
-  const kumpul = (dir: string) => {
-    for (const e of readdirSync(dir, { withFileTypes: true })) {
-      const full = join(dir, e.name);
-      if (e.isDirectory()) kumpul(full);
-      else if (e.name.endsWith(".html")) htmlFiles.push(full);
+  cek("20 halaman worksheet", PAGES.length === 20, `${PAGES.length} terdaftar`);
+  for (const h of PAGES) {
+    const rel = h.route === "/" ? "index.html" : `${h.route.slice(1)}.html`;
+    const f = join(dist, rel);
+    if (!existsSync(f)) {
+      cek(`dist/${rel} ada`, false);
+      continue;
     }
-  };
-  kumpul(dist);
-  cek("20 halaman HTML", htmlFiles.length === 20, `${htmlFiles.length} file`);
-  for (const f of htmlFiles) {
     const s = readFileSync(f, "utf8");
-    const pendek = f.replace(process.cwd(), "");
-    cek(`${pendek} ada worksheet`, s.includes("worksheet"));
-    cek(`${pendek} ada ParentNote`, s.includes("Bantu anak:"));
+    cek(`dist/${rel} ada worksheet`, s.includes("worksheet"));
+    cek(`dist/${rel} ada ParentNote`, s.includes("Bantu anak:"));
   }
 
   console.log(gagal === 0 ? "\nSEMUA CEK LOLOS" : `\n${gagal} CEK GAGAL`);

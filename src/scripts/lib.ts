@@ -2,6 +2,7 @@
 import { spawn, spawnSync, type ChildProcess } from "node:child_process";
 import { mkdirSync } from "node:fs";
 import { join } from "node:path";
+import { SITE_BASE } from "./pages.js";
 
 export async function withPreview<T>(
   port: number,
@@ -15,7 +16,7 @@ export async function withPreview<T>(
     stdio: "ignore",
     shell: false,
   });
-  const baseUrl = `http://localhost:${port}`;
+  const baseUrl = `http://localhost:${port}${SITE_BASE}`;
   const deadline = Date.now() + 60_000;
   for (;;) {
     try {

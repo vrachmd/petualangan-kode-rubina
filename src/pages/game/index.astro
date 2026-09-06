@@ -1,0 +1,53 @@
+---
+import WorksheetLayout from "../../layouts/WorksheetLayout.astro";
+import Text from "../../components/base/Text.astro";
+import Icon from "../../components/base/Icon.astro";
+import ProgressBar from "../../components/interactive/ProgressBar";
+import { PAGES } from "../../scripts/pages";
+
+const base = import.meta.env.BASE_URL;
+
+interface Kategori {
+  nama: string;
+  maskot: string;
+  tint: string;
+  ids: string[];
+  cetak: string;
+}
+
+const idsMulai = (prefix: string) => PAGES.filter((p) => p.id.includes(prefix)).map((p) => p.id);
+
+const KATEGORI: Kategori[] = [
+  { nama: "Pola", maskot: "rubi-kelinci", tint: "bg-rubina-pink-100", ids: idsMulai("pola"), cetak: "/pola/01-ab" },
+  { nama: "Urutan", maskot: "bina-beruang", tint: "bg-rubina-peach-100", ids: idsMulai("sequencing"), cetak: "/sequencing/01-cuci-tangan" },
+  { nama: "Arah", maskot: "nina-rubah", tint: "bg-rubina-sky-100", ids: idsMulai("arah"), cetak: "/arah/01-lacak-garis" },
+  { nama: "Sebab-Akibat", maskot: "rina-robot", tint: "bg-rubina-lavender-100", ids: idsMulai("sebab"), cetak: "/sebab-akibat/01-tombol-lampu" },
+  { nama: "Kartu Gerak", maskot: "rubina-anak", tint: "bg-rubina-mint-100", ids: ["17-kartu-aktivitas"], cetak: "/kartu-aktivitas" },
+  { nama: "Main Bebas", maskot: "rubina-anak", tint: "bg-rubina-sunny-100", ids: idsMulai("bebas"), cetak: "/bebas/01-buat-pola" },
+];
+---
+
+<WorksheetLayout title="Pilih Permainan">
+  <div class="flex min-h-screen flex-col items-center bg-background px-4 py-6">
+    <Text as="h1" variant="title" class="text-center">Pilih Permainan 🎮</Text>
+    <Text variant="body" class="mt-1 text-center">Ketuk gambarnya untuk mulai!</Text>
+
+    <div class="mt-5 grid w-full max-w-[720px] grid-cols-2 gap-4">
+      {KATEGORI.map((k) => (
+        <div class:list={["flex flex-col items-center gap-2 rounded-xl p-5 shadow-card", k.tint]}>
+          <Icon name={k.maskot} size={96} />
+          <Text variant="heading">{k.nama}</Text>
+          <ProgressBar ids={k.ids} kompak client:load />
+          <a
+            href={`${base}${k.cetak.replace(/^\//, "")}`}
+            class="game-tap mt-1 flex min-h-[56px] items-center rounded-full bg-surface px-6 font-display text-lg font-bold shadow-soft"
+          >
+            Buka ▶
+          </a>
+        </div>
+      ))}
+    </div>
+
+    <a href={`${base}`} class="mt-6 font-sans text-base text-muted">← Kembali ke sampul</a>
+  </div>
+</WorksheetLayout>
