@@ -1,5 +1,5 @@
 import type { ComponentChildren } from "preact";
-import "../styles/game.css";
+import "../../styles/game.css";
 
 interface Props {
   /** Judul level, ex: "Pola Merah-Kuning" */

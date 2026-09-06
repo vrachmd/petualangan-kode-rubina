@@ -17,6 +17,7 @@ Format: Keep a Changelog (ID ringkas). Tanggal: YYYY-MM-DD.
 - Pipeline generate: PDF (A4 + merge) + PNG (±300 DPI) + SVG (standalone) + `npm run validate` (SEMUA LOLOS).
 - Perbaikan pipeline: spawn preview tanpa shell + kill tree proses (anti yatim), SVG tulis mentah (SVGO crash pseudo-element).
 - Perbaikan cetak: background abu-abu hilang di PDF (reset main saat print), footer fix di bawah via min-height 267mm, cover tanpa footer, ParentNote cover nempel bawah, cek PDF tepat 1 halaman.
+- Game interaktif Sprint 0-2: Preact + base GitHub Pages + deploy workflow, utils TTS/progress/audio, galeri /game/, 7 komponen (Perayaan, Pattern, Sequence, Arrow, IfThen, Spinner, Canvas) — lolos uji tap Playwright + XP tersimpan.
 
 ## [0.1.0] — TBD (Setup Repo)
 - Rencana: init Astro + Tailwind + Playwright, design tokens, base components.
