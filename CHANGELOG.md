@@ -27,6 +27,7 @@ Format: Keep a Changelog (ID ringkas). Tanggal: YYYY-MM-DD.
 - Revert auto-narasi: narasi hanya via tombol 🔊 (keputusan produk).
 - Fix audio dobel: 1 tap = 1 suara (narasi saja saat maju/buka/putar).
 - Responsif HP/tablet: grid Arrow fluid, ukuran membesar di sm:, kolom game max 560px.
+- Game Arah tanpa TTS per langkah (klik lembut saja); narasi tetap via tombol 🔊.
 
 ## [0.1.0] — TBD (Setup Repo)
 - Rencana: init Astro + Tailwind + Playwright, design tokens, base components.

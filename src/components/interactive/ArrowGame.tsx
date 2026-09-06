@@ -1,5 +1,4 @@
 import { useState } from "preact/hooks";
-import { narasi } from "../../utils/tts";
 import { bunyiTap, bunyiCobaLagi } from "../../utils/audio";
 import { tambahXp } from "../../utils/progress";
 import Perayaan from "./Perayaan";
@@ -16,14 +15,12 @@ interface Props {
   rumahSvg: string;
   /** label tujuan, ex: "Rumah" / "Wortel" / "Bendera" */
   tujuanLabel?: string;
-  audioKey: string;
-  audioText: string;
 }
 
 const ROTASI: Record<ArahMata, number> = { atas: -90, kanan: 0, bawah: 90, kiri: 180 };
 
 /** Game arah: ketuk kotak berikutnya agar maskot berjalan sampai rumah. */
-export default function ArrowGame({ idHalaman, jalur, kolom = 3, maskotSvg, rumahSvg, tujuanLabel = "Rumah", audioKey, audioText }: Props) {
+export default function ArrowGame({ idHalaman, jalur, kolom = 3, maskotSvg, rumahSvg, tujuanLabel = "Rumah" }: Props) {
   const [pos, setPos] = useState(0);
   const [salah, setSalah] = useState(0);
   const [goyang, setGoyang] = useState<number | null>(null);
@@ -33,9 +30,9 @@ export default function ArrowGame({ idHalaman, jalur, kolom = 3, maskotSvg, ruma
   const ketuk = (i: number) => {
     if (selesai) return;
     if (i === pos + 1) {
-      // Satu tap = satu suara: narasi panduan saja (tanpa efek dobel)
+      // Maju: klik lembut saja, TANPA narasi TTS (tidak berisik di tiap langkah)
+      bunyiTap();
       setPos(i);
-      void narasi(audioKey, audioText);
       if (i === terakhir) {
         tambahXp(idHalaman, salah === 0);
         setSelesai(true);
