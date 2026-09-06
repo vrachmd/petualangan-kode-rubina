@@ -1,0 +1,15 @@
+---
+import { NAMA_ANAK } from "../../utils/nama";
+
+interface Props {
+  nomor: number;
+}
+
+const { nomor } = Astro.props;
+---
+
+<footer class="mt-auto border-t border-line pt-3 text-center">
+  <p class="font-sans text-base text-muted">
+    Petualangan Kode {NAMA_ANAK} • Halaman {nomor} • Gratis dicetak & dibagikan
+  </p>
+</footer>

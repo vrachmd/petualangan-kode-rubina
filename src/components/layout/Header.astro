@@ -1,0 +1,23 @@
+---
+import Text from "../base/Text.astro";
+
+interface Props {
+  judul: string;
+  /** ex: "Rubi si Kelinci" */
+  karakter: string;
+  /** emoji karakter, ex: "🐰" */
+  emoji: string;
+  /** tint header per kategori, ex: "bg-rubina-pink-100" */
+  tint?: string;
+}
+
+const { judul, karakter, emoji, tint = "bg-rubina-pink-100" } = Astro.props;
+---
+
+<header class:list={["flex items-center gap-4 rounded-lg px-5 py-4", tint]}>
+  <span class="text-3xl" aria-hidden="true">{emoji}</span>
+  <div>
+    <Text as="h1" variant="title">{judul}</Text>
+    <Text variant="note">Bersama {karakter}</Text>
+  </div>
+</header>

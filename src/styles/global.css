@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ukuran kertas A4 untuk cetak: margin 15mm semua sisi */
+@page {
+  size: A4 portrait;
+  margin: 15mm;
+}
+
+@media print {
+  html,
+  body {
+    background: #ffffff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .worksheet {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: auto !important;
+    min-height: auto !important;
+  }
+}

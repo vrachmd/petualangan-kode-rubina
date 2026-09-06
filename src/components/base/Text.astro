@@ -1,0 +1,23 @@
+---
+interface Props {
+  /** title | heading | body | note */
+  variant?: "title" | "heading" | "body" | "note";
+  as?: "h1" | "h2" | "p" | "span";
+  class?: string;
+}
+
+const { variant = "body", as = "p", class: extra = "" } = Astro.props;
+
+const variants: Record<string, string> = {
+  title: "font-display font-bold text-2xl text-ink",
+  heading: "font-display font-semibold text-xl text-ink",
+  body: "font-sans text-base text-ink",
+  note: "font-sans text-base text-muted",
+};
+
+const Tag = as;
+---
+
+<Tag class:list={[variants[variant], extra]}>
+  <slot />
+</Tag>

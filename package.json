@@ -1,0 +1,38 @@
+{
+  "name": "petualangan-kode-rubina",
+  "version": "0.1.0",
+  "description": "Printable worksheet coding Bahasa Indonesia untuk anak 2 tahun",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "download-assets": "tsx src/scripts/download-assets.ts",
+    "generate:pdf": "tsx src/scripts/generate-pdf.ts",
+    "generate:png": "tsx src/scripts/generate-png.ts",
+    "generate:svg": "tsx src/scripts/generate-svg.ts",
+    "generate:all": "npm run build && npm run generate:pdf && npm run generate:png && npm run generate:svg",
+    "validate": "tsx src/scripts/validate-output.ts",
+    "package": "npm run generate:all && npm run validate",
+    "clean": "rimraf dist output .astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "@fontsource/nunito": "^5.2.5",
+    "@fontsource/quicksand": "^5.2.5",
+    "astro": "^5.13.2",
+    "sharp": "^0.34.2",
+    "svgo": "^3.3.2",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "autoprefixer": "^10.4.20",
+    "playwright": "^1.49.1",
+    "postcss": "^8.4.49",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

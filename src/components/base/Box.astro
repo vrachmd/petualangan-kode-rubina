@@ -1,0 +1,19 @@
+---
+interface Props {
+  /** card | soft | dashed (area kerja anak) */
+  variant?: "card" | "soft" | "dashed";
+  class?: string;
+}
+
+const { variant = "card", class: extra = "" } = Astro.props;
+
+const variants: Record<string, string> = {
+  card: "bg-surface border border-line shadow-card rounded-lg",
+  soft: "bg-rubina-pink-50 rounded-md",
+  dashed: "border-2 border-dashed border-line bg-background rounded-lg",
+};
+---
+
+<div class:list={[variants[variant], extra]}>
+  <slot />
+</div>

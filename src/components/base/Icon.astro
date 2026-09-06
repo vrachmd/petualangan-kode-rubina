@@ -1,0 +1,34 @@
+---
+interface Props {
+  /** Nama ikon di folder src/assets/illustrations atau characters (tanpa .svg) */
+  name: string;
+  /** Ukuran kotak ikon, min 32px untuk anak 2th */
+  size?: number;
+  class?: string;
+}
+
+const { name, size = 40, class: extra = "" } = Astro.props;
+
+// Muat semua SVG sebagai raw string saat build
+const modules = import.meta.glob<string>("../../assets/**/*.svg", {
+  eager: true,
+  query: "?raw",
+  import: "default",
+});
+
+const key = Object.keys(modules).find((k) => k.endsWith(`/${name}.svg`));
+const svg = key ? modules[key] : "";
+---
+
+<span
+  class:list={["inline-flex items-center justify-center", extra]}
+  style={`width:${size}px;height:${size}px`}
+  set:html={svg}
+/>
+
+<style>
+  span :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+</style>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: extra = "" } = Astro.props;
+---
+
+<!--
+  Wrapper A4: proporsi 210:297, margin dalam 15mm.
+  Class .worksheet dipakai script extractor SVG — jangan ganti.
+-->
+<main class="flex min-h-screen items-start justify-center bg-background p-6 print:block print:p-0">
+  <div
+    class:list={[
+      "worksheet flex min-h-[calc(100vh-3rem)] w-full max-w-[820px] flex-col bg-surface shadow-card rounded-xl print:shadow-none print:rounded-none print:max-w-none",
+      extra,
+    ]}
+    style="padding: 15mm;"
+  >
+    <slot />
+  </div>
+</main>
