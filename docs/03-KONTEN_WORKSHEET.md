@@ -13,7 +13,7 @@ Teks final Bahasa Indonesia, kalimat aktif pendek. Nama anak via `NAMA_ANAK` (de
 
 ## Cover + Panduan (2 hal)
 
-### 00 — Cover (`src/pages/index.astro`)
+### 00 — Cover (`src/pages/index.astro` → pindah ke `src/pages/sampul.astro`, route `/sampul/`)
 - Judul: **Petualangan Kode Rubina** (pakai `NAMA_ANAK`). Subtitle: *Worksheet Coding untuk Anak 2 Tahun*.
 - Visual: Rubina + Rubi/Bina/Nina/Rina mengelilingi laptop mainan. 3 badge: Pola • Urutan • Arah.
 - Lolos: judul terbaca dari jarak 1m saat print; nama ganti otomatis via `nama.ts`.

@@ -17,7 +17,7 @@ export function distRel(route: string): string {
 }
 
 export const PAGES: Halaman[] = [
-  { id: "00-sampul", route: "/" },
+  { id: "00-sampul", route: "/sampul" },
   { id: "01-panduan-orang-tua", route: "/panduan-orang-tua" },
   { id: "02-pola-ab", route: "/pola/01-ab" },
   { id: "03-pola-abb", route: "/pola/02-abb" },

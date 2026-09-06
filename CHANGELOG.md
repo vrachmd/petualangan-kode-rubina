@@ -21,6 +21,7 @@ Format: Keep a Changelog (ID ringkas). Tanggal: YYYY-MM-DD.
 - Sprint 3: 18 level game asli (/game/pola, sequencing, arah, sebab-akibat, kartu, bebas) + galeri tombol Main/Versi cetak + mode bebas pola + label tujuan ArrowGame.
 - Sprint 4: 30 narasi MP3 Bahasa Indonesia (edge-tts, di-commit untuk offline) + service worker precache 113 file (teruji offline) + Mode Ortu (triple-tap: statistik, suara, reset).
 - Fix deploy: build.format directory agar /game/ resolve di Pages (file → game.html hanya dimengerti preview lokal) + guard src-dist di validate + nama script audio + install browser di CI.
+- Landing website di `/`: hero + pilih aktivitas (Main/Cetak per kategori) + download PDF + panduan. Cover cetak pindah ke `/sampul/`.
 
 ## [0.1.0] — TBD (Setup Repo)
 - Rencana: init Astro + Tailwind + Playwright, design tokens, base components.
