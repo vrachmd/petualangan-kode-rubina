@@ -1,0 +1,32 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import AudioButton from "../../../components/interactive/AudioButton";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import SequenceGame from "../../../components/interactive/SequenceGame";
+import sendokSvg from "../../../assets/illustrations/sendok.svg?raw";
+import nasiSvg from "../../../assets/illustrations/nasi.svg?raw";
+import makanSvg from "../../../assets/illustrations/senyum-makan.svg?raw";
+---
+
+<WorksheetLayout title="Game Waktunya Makan">
+  <GameLayout judul="Waktunya Makan" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <AudioButton audioKey="game/seq-makan" text="Ketuk gambar nomor satu, dua, tiga!" client:load />
+      <ProgressBar ids={["07-sequencing-makan"]} client:load />
+    </div>
+    <div class="mt-4">
+      <SequenceGame
+        idHalaman="07-sequencing-makan"
+        langkah={[
+          { svg: sendokSvg, label: "Ambil sendok" },
+          { svg: nasiSvg, label: "Ambil nasi" },
+          { svg: makanSvg, label: "Makan!" },
+        ]}
+        audioKey="game/seq-makan"
+        audioText="Pertama sendok, lalu nasi, terakhir makan!"
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

@@ -1,0 +1,29 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import AudioButton from "../../../components/interactive/AudioButton";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import PatternGame from "../../../components/interactive/PatternGame";
+import { WARNA_GAME } from "../../../components/interactive/palet";
+---
+
+<WorksheetLayout title="Game Pola Kreasiku">
+  <GameLayout judul="Pola Kreasiku" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <AudioButton audioKey="game/bebas-pola" text="Buat pola kesukaanmu! Bebas!" client:load />
+      <ProgressBar ids={["18-bebas-buat-pola"]} client:load />
+    </div>
+    <div class="mt-4">
+      <PatternGame
+        idHalaman="18-bebas-buat-pola"
+        warna={WARNA_GAME}
+        pola={[null, null, null, null, null, null]}
+        jawaban={[]}
+        bebas
+        audioKey="game/bebas-pola"
+        audioText="Warnai sesukamu! Semua benar!"
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

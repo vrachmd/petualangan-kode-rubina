@@ -1,0 +1,30 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import AudioButton from "../../../components/interactive/AudioButton";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import ArrowGame from "../../../components/interactive/ArrowGame";
+import ninaSvg from "../../../assets/characters/nina-rubah.svg?raw";
+import rumahSvg from "../../../assets/illustrations/rumah.svg?raw";
+---
+
+<WorksheetLayout title="Game Nina Pulang">
+  <GameLayout judul="Nina Pulang" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <AudioButton audioKey="game/arah-pulang" text="Bantu Nina pulang! Kanan, kanan, turun!" client:load />
+      <ProgressBar ids={["13-arah-nina-pulang"]} client:load />
+    </div>
+    <div class="mt-4">
+      <ArrowGame
+        idHalaman="13-arah-nina-pulang"
+        jalur={["kanan", "kanan", "bawah"]}
+        kolom={3}
+        maskotSvg={ninaSvg}
+        rumahSvg={rumahSvg}
+        audioKey="game/arah-pulang"
+        audioText="Kanan, kanan, turun, sampai rumah!"
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

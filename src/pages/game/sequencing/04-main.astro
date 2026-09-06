@@ -1,0 +1,32 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import AudioButton from "../../../components/interactive/AudioButton";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import SequenceGame from "../../../components/interactive/SequenceGame";
+import bolaSvg from "../../../assets/illustrations/bola.svg?raw";
+import kotakSvg from "../../../assets/illustrations/kotak.svg?raw";
+import bonekaSvg from "../../../assets/illustrations/boneka.svg?raw";
+---
+
+<WorksheetLayout title="Game Beres Mainan">
+  <GameLayout judul="Beres Mainan" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <AudioButton audioKey="game/seq-main" text="Ketuk gambar nomor satu, dua, tiga!" client:load />
+      <ProgressBar ids={["09-sequencing-main"]} client:load />
+    </div>
+    <div class="mt-4">
+      <SequenceGame
+        idHalaman="09-sequencing-main"
+        langkah={[
+          { svg: bolaSvg, label: "Ambil mainan" },
+          { svg: kotakSvg, label: "Masukkan kotak" },
+          { svg: bonekaSvg, label: "Tutup, hore!" },
+        ]}
+        audioKey="game/seq-main"
+        audioText="Pertama ambil, lalu masukkan kotak, terakhir tutup!"
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

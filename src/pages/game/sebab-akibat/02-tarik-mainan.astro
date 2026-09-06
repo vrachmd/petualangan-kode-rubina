@@ -1,0 +1,32 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import AudioButton from "../../../components/interactive/AudioButton";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import IfThenGame from "../../../components/interactive/IfThenGame";
+import taliSvg from "../../../assets/illustrations/tali.svg?raw";
+import tanganSvg from "../../../assets/illustrations/tangan.svg?raw";
+import mobilSvg from "../../../assets/illustrations/mobil.svg?raw";
+import stopSvg from "../../../assets/illustrations/stop.svg?raw";
+---
+
+<WorksheetLayout title="Game Tarik Talinya">
+  <GameLayout judul="Tarik Talinya" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <AudioButton audioKey="game/sebab-tali" text="Tarik talinya! Apa yang terjadi?" client:load />
+      <ProgressBar ids={["15-sebab-tarik-mainan"]} client:load />
+    </div>
+    <div class="mt-4">
+      <IfThenGame
+        idHalaman="15-sebab-tarik-mainan"
+        pasangan={[
+          { aksiSvg: taliSvg, aksiLabel: "Tarik tali", hasilSvg: mobilSvg, hasilLabel: "Mobil jalan!", suara: "Tarik tali, mobil jalan!" },
+          { aksiSvg: tanganSvg, aksiLabel: "Tahan dulu", hasilSvg: stopSvg, hasilLabel: "Berhenti!", suara: "Tahan, mobil berhenti!" },
+        ]}
+        audioKey="game/sebab-tali"
+        audioText="Ketuk tali dan tangan!"
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

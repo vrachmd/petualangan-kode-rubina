@@ -18,6 +18,8 @@ interface Props {
   pola: (string | null)[];
   /** kunci jawaban lengkap (tanpa null), ex: ["pink","sunny","pink","sunny"] */
   jawaban: string[];
+  /** mode bebas: warna apa pun diterima (untuk halaman kreasi) */
+  bebas?: boolean;
   audioKey: string;
   audioText: string;
 }
@@ -26,7 +28,7 @@ interface Props {
  * Game pola: ketuk warna di palet, lalu ketuk lingkaran kosong.
  * Benar → pop + XP. Salah → goyang lembut + "coba lagi".
  */
-export default function PatternGame({ idHalaman, warna, pola, jawaban, audioKey, audioText }: Props) {
+export default function PatternGame({ idHalaman, warna, pola, jawaban, bebas = false, audioKey, audioText }: Props) {
   const [pilihan, setPilihan] = useState<string | null>(null);
   const [isian, setIsian] = useState<(string | null)[]>(() => pola.map((p) => (p === null ? null : p)));
   const [salah, setSalah] = useState(0);
@@ -46,8 +48,9 @@ export default function PatternGame({ idHalaman, warna, pola, jawaban, audioKey,
       void narasi(audioKey, audioText);
       return;
     }
-    // Kunci jawaban = dari props (ditentukan pembuat level)
-    const kunci = jawaban[i];
+    // Kunci jawaban = dari props (ditentukan pembuat level).
+    // Mode bebas: warna apa pun yang dipilih diterima.
+    const kunci = bebas ? pilihan : jawaban[i];
     if (pilihan === kunci) {
       const next = [...isian];
       next[i] = pilihan;

@@ -14,6 +14,8 @@ interface Props {
   maskotSvg: string;
   /** SVG tujuan, ex: rumah */
   rumahSvg: string;
+  /** label tujuan, ex: "Rumah" / "Wortel" / "Bendera" */
+  tujuanLabel?: string;
   audioKey: string;
   audioText: string;
 }
@@ -21,7 +23,7 @@ interface Props {
 const ROTASI: Record<ArahMata, number> = { atas: -90, kanan: 0, bawah: 90, kiri: 180 };
 
 /** Game arah: ketuk kotak berikutnya agar maskot berjalan sampai rumah. */
-export default function ArrowGame({ idHalaman, jalur, kolom = 3, maskotSvg, rumahSvg, audioKey, audioText }: Props) {
+export default function ArrowGame({ idHalaman, jalur, kolom = 3, maskotSvg, rumahSvg, tujuanLabel = "Rumah", audioKey, audioText }: Props) {
   const [pos, setPos] = useState(0);
   const [salah, setSalah] = useState(0);
   const [goyang, setGoyang] = useState<number | null>(null);
@@ -65,7 +67,7 @@ export default function ArrowGame({ idHalaman, jalur, kolom = 3, maskotSvg, ruma
               key={i}
               type="button"
               onClick={() => ketuk(i)}
-              aria-label={tujuan ? "Rumah" : `Langkah ${i + 1}: ke ${arah}`}
+              aria-label={tujuan ? tujuanLabel : `Langkah ${i + 1}: ke ${arah}`}
               class={`game-tap relative flex items-center justify-center rounded-xl border-2 shadow-card ${
                 tujuan ? "border-line bg-rubina-mint-50" : "border-line bg-surface"
               } ${goyang === i ? "game-goyang" : ""}`}

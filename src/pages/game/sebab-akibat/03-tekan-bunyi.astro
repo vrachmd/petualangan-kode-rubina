@@ -1,0 +1,31 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import AudioButton from "../../../components/interactive/AudioButton";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import IfThenGame from "../../../components/interactive/IfThenGame";
+import belSvg from "../../../assets/illustrations/bel.svg?raw";
+import tepukSvg from "../../../assets/illustrations/tepuk.svg?raw";
+import speakerSvg from "../../../assets/illustrations/speaker.svg?raw";
+---
+
+<WorksheetLayout title="Game Bunyi Apa">
+  <GameLayout judul="Bunyi Apa?" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <AudioButton audioKey="game/sebab-bunyi" text="Ketuk gambarnya! Bunyi apa?" client:load />
+      <ProgressBar ids={["16-sebab-tekan-bunyi"]} client:load />
+    </div>
+    <div class="mt-4">
+      <IfThenGame
+        idHalaman="16-sebab-tekan-bunyi"
+        pasangan={[
+          { aksiSvg: belSvg, aksiLabel: "Tekan bel", hasilSvg: speakerSvg, hasilLabel: "Ting!", suara: "Tekan bel, ting!" },
+          { aksiSvg: tepukSvg, aksiLabel: "Tepuk tangan", hasilSvg: speakerSvg, hasilLabel: "Plok!", suara: "Tepuk tangan, plok!" },
+        ]}
+        audioKey="game/sebab-bunyi"
+        audioText="Ketuk bel dan tangan!"
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

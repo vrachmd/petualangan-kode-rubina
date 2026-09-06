@@ -1,0 +1,38 @@
+---
+import WorksheetLayout from "../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../components/interactive/GameLayout";
+import AudioButton from "../../components/interactive/AudioButton";
+import ProgressBar from "../../components/interactive/ProgressBar";
+import ActivitySpinner from "../../components/interactive/ActivitySpinner";
+import lompatSvg from "../../assets/illustrations/lompat.svg?raw";
+import putarSvg from "../../assets/illustrations/putar.svg?raw";
+import hidungSvg from "../../assets/illustrations/hidung.svg?raw";
+import kursiSvg from "../../assets/illustrations/kursi.svg?raw";
+import tepukSvg from "../../assets/illustrations/tepuk.svg?raw";
+import lariSvg from "../../assets/illustrations/lari.svg?raw";
+---
+
+<WorksheetLayout title="Game Kartu Gerak">
+  <GameLayout judul="Kartu Gerak" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <AudioButton audioKey="game/kartu" text="Ketuk putar, ikuti gerakannya!" client:load />
+      <ProgressBar ids={["17-kartu-aktivitas"]} client:load />
+    </div>
+    <div class="mt-4">
+      <ActivitySpinner
+        idHalaman="17-kartu-aktivitas"
+        aktivitas={[
+          { svg: lompatSvg, perintah: "Lompat 2 kali" },
+          { svg: putarSvg, perintah: "Putar badan" },
+          { svg: hidungSvg, perintah: "Sentuh hidung" },
+          { svg: kursiSvg, perintah: "Duduk manis" },
+          { svg: tepukSvg, perintah: "Tepuk tangan" },
+          { svg: lariSvg, perintah: "Lari di tempat" },
+        ]}
+        audioKey="game/kartu"
+        audioText="Ketuk PUTAR lalu ikuti!"
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

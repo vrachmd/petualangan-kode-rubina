@@ -12,18 +12,19 @@ interface Kategori {
   maskot: string;
   tint: string;
   ids: string[];
+  main: string;
   cetak: string;
 }
 
 const idsMulai = (prefix: string) => PAGES.filter((p) => p.id.includes(prefix)).map((p) => p.id);
 
 const KATEGORI: Kategori[] = [
-  { nama: "Pola", maskot: "rubi-kelinci", tint: "bg-rubina-pink-100", ids: idsMulai("pola"), cetak: "/pola/01-ab" },
-  { nama: "Urutan", maskot: "bina-beruang", tint: "bg-rubina-peach-100", ids: idsMulai("sequencing"), cetak: "/sequencing/01-cuci-tangan" },
-  { nama: "Arah", maskot: "nina-rubah", tint: "bg-rubina-sky-100", ids: idsMulai("arah"), cetak: "/arah/01-lacak-garis" },
-  { nama: "Sebab-Akibat", maskot: "rina-robot", tint: "bg-rubina-lavender-100", ids: idsMulai("sebab"), cetak: "/sebab-akibat/01-tombol-lampu" },
-  { nama: "Kartu Gerak", maskot: "rubina-anak", tint: "bg-rubina-mint-100", ids: ["17-kartu-aktivitas"], cetak: "/kartu-aktivitas" },
-  { nama: "Main Bebas", maskot: "rubina-anak", tint: "bg-rubina-sunny-100", ids: idsMulai("bebas"), cetak: "/bebas/01-buat-pola" },
+  { nama: "Pola", maskot: "rubi-kelinci", tint: "bg-rubina-pink-100", ids: idsMulai("pola"), main: "/game/pola/01-ab", cetak: "/pola/01-ab" },
+  { nama: "Urutan", maskot: "bina-beruang", tint: "bg-rubina-peach-100", ids: idsMulai("sequencing"), main: "/game/sequencing/01-cuci-tangan", cetak: "/sequencing/01-cuci-tangan" },
+  { nama: "Arah", maskot: "nina-rubah", tint: "bg-rubina-sky-100", ids: idsMulai("arah"), main: "/game/arah/01-lacak-garis", cetak: "/arah/01-lacak-garis" },
+  { nama: "Sebab-Akibat", maskot: "rina-robot", tint: "bg-rubina-lavender-100", ids: idsMulai("sebab"), main: "/game/sebab-akibat/01-tombol-lampu", cetak: "/sebab-akibat/01-tombol-lampu" },
+  { nama: "Kartu Gerak", maskot: "rubina-anak", tint: "bg-rubina-mint-100", ids: ["17-kartu-aktivitas"], main: "/game/kartu-aktivitas", cetak: "/kartu-aktivitas" },
+  { nama: "Main Bebas", maskot: "rubina-anak", tint: "bg-rubina-sunny-100", ids: idsMulai("bebas"), main: "/game/bebas/01-buat-pola", cetak: "/bebas/01-buat-pola" },
 ];
 ---
 
@@ -39,10 +40,13 @@ const KATEGORI: Kategori[] = [
           <Text variant="heading">{k.nama}</Text>
           <ProgressBar ids={k.ids} kompak client:load />
           <a
-            href={`${base}${k.cetak.replace(/^\//, "")}`}
+            href={`${base}${k.main.replace(/^\//, "")}`}
             class="game-tap mt-1 flex min-h-[56px] items-center rounded-full bg-surface px-6 font-display text-lg font-bold shadow-soft"
           >
-            Buka ▶
+            Main ▶
+          </a>
+          <a href={`${base}${k.cetak.replace(/^\//, "")}`} class="font-sans text-base text-muted">
+            🖨 Versi cetak
           </a>
         </div>
       ))}
