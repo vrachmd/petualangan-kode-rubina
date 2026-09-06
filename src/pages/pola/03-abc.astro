@@ -1,0 +1,53 @@
+---
+import WorksheetLayout from "../../layouts/WorksheetLayout.astro";
+import PageWrapper from "../../components/layout/PageWrapper.astro";
+import Header from "../../components/layout/Header.astro";
+import Footer from "../../components/layout/Footer.astro";
+import ParentNote from "../../components/layout/ParentNote.astro";
+import Box from "../../components/base/Box.astro";
+import Text from "../../components/base/Text.astro";
+import PatternRow from "../../components/worksheet/PatternRow.astro";
+---
+
+<WorksheetLayout title="Pola A-B-C">
+  <PageWrapper>
+    <Header judul="Pola A-B-C" karakter="Rubi si Kelinci" emoji="🐰" maskot="rubi-kelinci" tint="bg-rubina-pink-100" />
+
+    <div class="mt-6 flex flex-col gap-6">
+      <Box variant="card" class="p-6">
+        <Text variant="heading">Tiga sahabat bergantian. Warnai yang kosong!</Text>
+        <div class="mt-4">
+          <PatternRow
+            items={[
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "bintang", kelas: "text-rubina-sunny-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-sky-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "bintang", kelas: "text-rubina-sunny-500" },
+            ]}
+            kosong={1}
+            labels={["A", "B", "C", "A", "B", "C"]}
+          />
+        </div>
+      </Box>
+
+      <Box variant="card" class="p-6">
+        <Text variant="heading">Urutkan A-B-C lagi!</Text>
+        <div class="mt-4">
+          <PatternRow
+            items={[
+              { bentuk: "bintang", kelas: "text-rubina-mint-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-lavender-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-peach-500" },
+            ]}
+            kosong={3}
+            labels={["A", "B", "C", "A", "B", "C"]}
+          />
+        </div>
+      </Box>
+    </div>
+
+    <ParentNote instruksi="Sebut 'A-B-C' sambil menunjuk tiap bentuk. Minta anak menunjuk huruf A." />
+    <Footer nomor={5} />
+  </PageWrapper>
+</WorksheetLayout>

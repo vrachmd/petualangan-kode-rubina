@@ -16,10 +16,12 @@
   .no-print {
     display: none !important;
   }
+  /* Margin kertas diatur @page (15mm); padding layar dihapus saat cetak */
   .worksheet {
     box-shadow: none !important;
     border-radius: 0 !important;
     width: auto !important;
     min-height: auto !important;
+    padding: 0 !important;
   }
 }

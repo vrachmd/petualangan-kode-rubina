@@ -1,0 +1,52 @@
+---
+import WorksheetLayout from "../../layouts/WorksheetLayout.astro";
+import PageWrapper from "../../components/layout/PageWrapper.astro";
+import Header from "../../components/layout/Header.astro";
+import Footer from "../../components/layout/Footer.astro";
+import ParentNote from "../../components/layout/ParentNote.astro";
+import Box from "../../components/base/Box.astro";
+import Text from "../../components/base/Text.astro";
+import PatternRow from "../../components/worksheet/PatternRow.astro";
+---
+
+<WorksheetLayout title="Pola Merah-Kuning">
+  <PageWrapper>
+    <Header judul="Pola Merah-Kuning" karakter="Rubi si Kelinci" emoji="🐰" maskot="rubi-kelinci" tint="bg-rubina-pink-100" />
+
+    <div class="mt-6 flex flex-col gap-6">
+      <Box variant="card" class="p-6">
+        <Text variant="heading">Ayo warnai lingkaran kosongnya!</Text>
+        <div class="mt-4">
+          <PatternRow
+            items={[
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-sunny-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-sunny-500" },
+            ]}
+            kosong={2}
+          />
+        </div>
+      </Box>
+
+      <Box variant="card" class="p-6">
+        <Text variant="heading">Satu lagi, sedikit lebih panjang!</Text>
+        <div class="mt-4">
+          <PatternRow
+            items={[
+              { bentuk: "lingkaran", kelas: "bg-rubina-sunny-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-sunny-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-sunny-500" },
+            ]}
+            kosong={1}
+          />
+        </div>
+      </Box>
+    </div>
+
+    <ParentNote instruksi="Sebut 'merah, kuning, merah, kuning...' sambil menunjuk. Lalu tanya 'berikutnya apa?'" />
+    <Footer nomor={3} />
+  </PageWrapper>
+</WorksheetLayout>

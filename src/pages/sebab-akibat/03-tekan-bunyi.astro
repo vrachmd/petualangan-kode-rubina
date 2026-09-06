@@ -1,0 +1,35 @@
+---
+import WorksheetLayout from "../../layouts/WorksheetLayout.astro";
+import PageWrapper from "../../components/layout/PageWrapper.astro";
+import Header from "../../components/layout/Header.astro";
+import Footer from "../../components/layout/Footer.astro";
+import ParentNote from "../../components/layout/ParentNote.astro";
+import Box from "../../components/base/Box.astro";
+import Text from "../../components/base/Text.astro";
+import IfThenPair from "../../components/worksheet/IfThenPair.astro";
+---
+
+<WorksheetLayout title="Bunyi Apa?">
+  <PageWrapper>
+    <Header judul="Bunyi Apa?" karakter="Rina si Robot" emoji="🤖" maskot="rina-robot" tint="bg-rubina-lavender-100" />
+
+    <div class="mt-6 flex flex-col gap-6">
+      <Box variant="card" class="p-6">
+        <Text variant="heading">Tekan belnya... bunyi apa?</Text>
+        <div class="mt-4">
+          <IfThenPair aksi={{ ikon: "bel", label: "Tekan bel" }} hasil={{ ikon: "speaker", label: "Ting!" }} />
+        </div>
+      </Box>
+
+      <Box variant="card" class="p-6">
+        <Text variant="heading">Kalau tepuk tangan?</Text>
+        <div class="mt-4">
+          <IfThenPair aksi={{ ikon: "tepuk", label: "Tepuk tangan" }} hasil={{ ikon: "speaker", label: "Plok!" }} />
+        </div>
+      </Box>
+    </div>
+
+    <ParentNote instruksi="Bunyikan bel/benda di rumah dulu. Lalu tunjuk gambar sambil menirukan bunyinya: 'ting! plok!'" />
+    <Footer nomor={17} />
+  </PageWrapper>
+</WorksheetLayout>

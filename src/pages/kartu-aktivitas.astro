@@ -1,0 +1,30 @@
+---
+import WorksheetLayout from "../layouts/WorksheetLayout.astro";
+import PageWrapper from "../components/layout/PageWrapper.astro";
+import Header from "../components/layout/Header.astro";
+import Footer from "../components/layout/Footer.astro";
+import ParentNote from "../components/layout/ParentNote.astro";
+import Text from "../components/base/Text.astro";
+import ActivityCard from "../components/worksheet/ActivityCard.astro";
+---
+
+<WorksheetLayout title="Kartu Gerak">
+  <PageWrapper>
+    <Header judul="Kartu Gerak" karakter="Semua Teman" emoji="🎪" maskot="rubina-anak" tint="bg-rubina-mint-100" />
+
+    <div class="mt-5">
+      <Text variant="body" class="mb-3 text-center">Gunting kartunya, acak, mainkan satu per satu!</Text>
+      <div class="grid grid-cols-3 gap-3">
+        <ActivityCard ikon="lompat" perintah="Lompat 2 kali" />
+        <ActivityCard ikon="putar" perintah="Putar badan" />
+        <ActivityCard ikon="hidung" perintah="Sentuh hidung" />
+        <ActivityCard ikon="kursi" perintah="Duduk manis" />
+        <ActivityCard ikon="tepuk" perintah="Tepuk tangan" />
+        <ActivityCard ikon="lari" perintah="Lari di tempat" />
+      </div>
+    </div>
+
+    <ParentNote instruksi="Bacakan kartunya satu per satu. Ikut bergerak bersama anak. Ulangi kartu favoritnya!" />
+    <Footer nomor={18} />
+  </PageWrapper>
+</WorksheetLayout>

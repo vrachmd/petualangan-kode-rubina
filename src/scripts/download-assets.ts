@@ -66,6 +66,12 @@ const MANIFEST: Aset[] = [
   { file: "rubi-kelinci.svg", code: "1f430", guna: "maskot Rubi", dir: "characters" },
   { file: "bina-beruang.svg", code: "1f43b", guna: "maskot Bina", dir: "characters" },
   { file: "nina-rubah.svg", code: "1f98a", guna: "maskot Nina", dir: "characters" },
+  // Sebab-akibat tambahan
+  { file: "lingkaran-merah.svg", code: "1f534", guna: "tombol merah" },
+  { file: "lingkaran-biru.svg", code: "1f535", guna: "tombol biru" },
+  { file: "tali.svg", code: "1faa2", guna: "tarik tali" },
+  { file: "tangan.svg", code: "1f590", guna: "tahan/dorong" },
+  { file: "stop.svg", code: "1f6d1", guna: "berhenti" },
 ];
 
 async function main() {

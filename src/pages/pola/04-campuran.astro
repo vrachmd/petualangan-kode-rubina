@@ -1,0 +1,63 @@
+---
+import WorksheetLayout from "../../layouts/WorksheetLayout.astro";
+import PageWrapper from "../../components/layout/PageWrapper.astro";
+import Header from "../../components/layout/Header.astro";
+import Footer from "../../components/layout/Footer.astro";
+import ParentNote from "../../components/layout/ParentNote.astro";
+import Box from "../../components/base/Box.astro";
+import Text from "../../components/base/Text.astro";
+import PatternRow from "../../components/worksheet/PatternRow.astro";
+---
+
+<WorksheetLayout title="Tantangan Pola Rubi">
+  <PageWrapper>
+    <Header judul="Tantangan Pola Rubi" karakter="Rubi si Kelinci" emoji="🐰" maskot="rubi-kelinci" tint="bg-rubina-pink-100" />
+
+    <div class="mt-6 flex flex-col gap-6">
+      <Box variant="card" class="p-6">
+        <Text variant="heading">Contohnya seperti ini:</Text>
+        <div class="mt-4">
+          <PatternRow
+            items={[
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "bintang", kelas: "text-rubina-sky-500" },
+            ]}
+            kosong={0}
+          />
+        </div>
+      </Box>
+
+      <Box variant="dashed" class="p-6">
+        <Text variant="heading">Lingkari baris yang SAMA dengan contoh!</Text>
+        <div class="mt-4">
+          <PatternRow
+            items={[
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "bintang", kelas: "text-rubina-sky-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+            ]}
+            kosong={0}
+          />
+        </div>
+      </Box>
+
+      <Box variant="dashed" class="p-6">
+        <Text variant="heading">Bagaimana dengan yang ini?</Text>
+        <div class="mt-4">
+          <PatternRow
+            items={[
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "lingkaran", kelas: "bg-rubina-pink-500" },
+              { bentuk: "bintang", kelas: "text-rubina-sky-500" },
+            ]}
+            kosong={0}
+          />
+        </div>
+      </Box>
+    </div>
+
+    <ParentNote instruksi="Minta anak menunjuk (bukan menjelaskan). Rayakan saat menemukan yang sama: 'Betul! Sama persis!'" />
+    <Footer nomor={6} />
+  </PageWrapper>
+</WorksheetLayout>

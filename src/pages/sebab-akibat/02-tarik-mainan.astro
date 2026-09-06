@@ -1,0 +1,35 @@
+---
+import WorksheetLayout from "../../layouts/WorksheetLayout.astro";
+import PageWrapper from "../../components/layout/PageWrapper.astro";
+import Header from "../../components/layout/Header.astro";
+import Footer from "../../components/layout/Footer.astro";
+import ParentNote from "../../components/layout/ParentNote.astro";
+import Box from "../../components/base/Box.astro";
+import Text from "../../components/base/Text.astro";
+import IfThenPair from "../../components/worksheet/IfThenPair.astro";
+---
+
+<WorksheetLayout title="Tarik Talinya">
+  <PageWrapper>
+    <Header judul="Tarik Talinya" karakter="Rina si Robot" emoji="🤖" maskot="rina-robot" tint="bg-rubina-lavender-100" />
+
+    <div class="mt-6 flex flex-col gap-6">
+      <Box variant="card" class="p-6">
+        <Text variant="heading">Tarik talinya... apa yang terjadi?</Text>
+        <div class="mt-4">
+          <IfThenPair aksi={{ ikon: "tali", label: "Tarik tali" }} hasil={{ ikon: "mobil", label: "Mobil jalan!" }} />
+        </div>
+      </Box>
+
+      <Box variant="card" class="p-6">
+        <Text variant="heading">Kalau ditahan pakai tangan?</Text>
+        <div class="mt-4">
+          <IfThenPair aksi={{ ikon: "tangan", label: "Tahan dulu" }} hasil={{ ikon: "stop", label: "Mobil berhenti!" }} />
+        </div>
+      </Box>
+    </div>
+
+    <ParentNote instruksi="Mainkan dulu dengan mobil mainan dan tali. Lalu tunjuk gambar: 'tarik... jadi apa?'" />
+    <Footer nomor={16} />
+  </PageWrapper>
+</WorksheetLayout>

@@ -1,0 +1,35 @@
+---
+import WorksheetLayout from "../../layouts/WorksheetLayout.astro";
+import PageWrapper from "../../components/layout/PageWrapper.astro";
+import Header from "../../components/layout/Header.astro";
+import Footer from "../../components/layout/Footer.astro";
+import ParentNote from "../../components/layout/ParentNote.astro";
+import Box from "../../components/base/Box.astro";
+import Text from "../../components/base/Text.astro";
+import ArrowPath from "../../components/worksheet/ArrowPath.astro";
+---
+
+<WorksheetLayout title="Panah ke Atas">
+  <PageWrapper>
+    <Header judul="Panah ke Atas" karakter="Nina si Rubah" emoji="🦊" maskot="nina-rubah" tint="bg-rubina-sky-100" />
+
+    <div class="mt-6 flex flex-col gap-6">
+      <Box variant="card" class="p-6">
+        <Text variant="heading">Lingkari semua panah yang menunjuk ke ATAS!</Text>
+        <div class="mt-4 flex justify-center">
+          <ArrowPath sel={["atas", "kanan", "atas", "kiri", "atas", "bawah"]} kolom={3} ukuranSel={72} />
+        </div>
+      </Box>
+
+      <Box variant="card" class="p-6">
+        <Text variant="heading">Sekarang yang menunjuk ke KANAN!</Text>
+        <div class="mt-4 flex justify-center">
+          <ArrowPath sel={["kanan", "bawah", "kiri", "kanan", "atas", "kanan"]} kolom={3} ukuranSel={72} />
+        </div>
+      </Box>
+    </div>
+
+    <ParentNote instruksi="Tunjuk satu panah, tanya 'ini ke mana?'. Gerakkan tangan ke arah yang sama bersama anak." />
+    <Footer nomor={12} />
+  </PageWrapper>
+</WorksheetLayout>

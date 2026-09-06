@@ -13,6 +13,9 @@ Format: Keep a Changelog (ID ringkas). Tanggal: YYYY-MM-DD.
 - Halaman sementara `contoh-komponen` untuk QA visual (dihapus di Minggu 3).
 - Redesain maskot Nina si Rubah: warna Kurama (oranye + krem), versi lucu selaras maskot lain (mata bulat, pipi merona).
 - Ganti 3 maskot hewan ke Twemoji (Rubi 🐰, Bina 🐻, Nina 🦊) — langsung dikenali anak; Rina + Rubina tetap custom.
+- 20 halaman worksheet asli (sampul, panduan, pola ×4, sequencing ×4, arah ×4, sebab-akibat ×3, kartu, bebas ×2).
+- Pipeline generate: PDF (A4 + merge) + PNG (±300 DPI) + SVG (standalone) + `npm run validate` (SEMUA LOLOS).
+- Perbaikan pipeline: spawn preview tanpa shell + kill tree proses (anti yatim), SVG tulis mentah (SVGO crash pseudo-element).
 
 ## [0.1.0] — TBD (Setup Repo)
 - Rencana: init Astro + Tailwind + Playwright, design tokens, base components.
