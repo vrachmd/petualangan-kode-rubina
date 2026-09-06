@@ -13,15 +13,23 @@
   body {
     background: #ffffff !important;
   }
+  /* Bungkus layar (abu-abu + padding 24px) wajib hilang saat cetak */
+  body > main {
+    background: #ffffff !important;
+    padding: 0 !important;
+    display: block !important;
+    min-height: auto !important;
+  }
   .no-print {
     display: none !important;
   }
-  /* Margin kertas diatur @page (15mm); padding layar dihapus saat cetak */
+  /* Tinggi pas kotak konten A4 (297 - 2×15mm) agar footer mt-auto
+     nempel di bawah halaman, tidak tumpah ke halaman 2 */
   .worksheet {
     box-shadow: none !important;
     border-radius: 0 !important;
     width: auto !important;
-    min-height: auto !important;
+    min-height: 267mm !important;
     padding: 0 !important;
   }
 }

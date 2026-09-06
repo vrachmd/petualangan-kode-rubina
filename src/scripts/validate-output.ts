@@ -2,6 +2,7 @@
 import { existsSync, readFileSync, statSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
+import { PDFDocument } from "pdf-lib";
 import { PAGES } from "./pages.js";
 
 const OUT = process.cwd() + "/output";
@@ -29,9 +30,10 @@ async function main() {
   }
   for (const h of PAGES) {
     const p = join(OUT, "pdf", `${h.id}.pdf`);
-    if (existsSync(p)) {
-      cek(`pdf ${h.id} < 500KB`, statSync(p).size < 500_000, `${(statSync(p).size / 1e3).toFixed(0)}KB`);
-    }
+    if (!existsSync(p)) continue;
+    cek(`pdf ${h.id} < 500KB`, statSync(p).size < 500_000, `${(statSync(p).size / 1e3).toFixed(0)}KB`);
+    const pages = (await PDFDocument.load(readFileSync(p))).getPageCount();
+    cek(`pdf ${h.id} tepat 1 halaman`, pages === 1, `${pages} hal`);
   }
 
   // 3) Dimensi PNG

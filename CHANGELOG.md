@@ -16,6 +16,7 @@ Format: Keep a Changelog (ID ringkas). Tanggal: YYYY-MM-DD.
 - 20 halaman worksheet asli (sampul, panduan, pola ×4, sequencing ×4, arah ×4, sebab-akibat ×3, kartu, bebas ×2).
 - Pipeline generate: PDF (A4 + merge) + PNG (±300 DPI) + SVG (standalone) + `npm run validate` (SEMUA LOLOS).
 - Perbaikan pipeline: spawn preview tanpa shell + kill tree proses (anti yatim), SVG tulis mentah (SVGO crash pseudo-element).
+- Perbaikan cetak: background abu-abu hilang di PDF (reset main saat print), footer fix di bawah via min-height 267mm, cover tanpa footer, ParentNote cover nempel bawah, cek PDF tepat 1 halaman.
 
 ## [0.1.0] — TBD (Setup Repo)
 - Rencana: init Astro + Tailwind + Playwright, design tokens, base components.
