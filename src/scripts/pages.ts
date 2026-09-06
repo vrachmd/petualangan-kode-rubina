@@ -9,6 +9,13 @@ export interface Halaman {
 /** Base path situs (sinkron dengan astro.config.mjs). */
 export const SITE_BASE = process.env.SITE_BASE ?? "/petualangan-kode-rubina";
 
+/** Petakan route ke file dist (sinkron dengan build.format="directory"). */
+export function distRel(route: string): string {
+  let r = route.replace(/\/index$/, ""); // "/game/index" → "/game"
+  if (r === "") r = "/";
+  return r === "/" ? "index.html" : `${r.slice(1)}/index.html`;
+}
+
 export const PAGES: Halaman[] = [
   { id: "00-sampul", route: "/" },
   { id: "01-panduan-orang-tua", route: "/panduan-orang-tua" },

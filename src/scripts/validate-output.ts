@@ -3,7 +3,7 @@ import { existsSync, readFileSync, statSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 import { PDFDocument } from "pdf-lib";
-import { PAGES } from "./pages.js";
+import { PAGES, distRel } from "./pages.js";
 
 const OUT = process.cwd() + "/output";
 let gagal = 0;
@@ -66,15 +66,29 @@ async function main() {
   const dist = join(process.cwd(), "dist");
   cek("20 halaman worksheet", PAGES.length === 20, `${PAGES.length} terdaftar`);
   for (const h of PAGES) {
-    const rel = h.route === "/" ? "index.html" : `${h.route.slice(1)}.html`;
-    const f = join(dist, rel);
+    const f = join(dist, distRel(h.route));
     if (!existsSync(f)) {
-      cek(`dist/${rel} ada`, false);
+      cek(`dist/${distRel(h.route)} ada`, false);
       continue;
     }
     const s = readFileSync(f, "utf8");
-    cek(`dist/${rel} ada worksheet`, s.includes("worksheet"));
-    cek(`dist/${rel} ada ParentNote`, s.includes("Bantu anak:"));
+    cek(`dist/${distRel(h.route)} ada worksheet`, s.includes("worksheet"));
+    cek(`dist/${distRel(h.route)} ada ParentNote`, s.includes("Bantu anak:"));
+  }
+
+  // 6) Guard: tiap src/pages/**/*.astro wajib punya padanan file dist.
+  // (Pernah lolos bug: format:"file" memetakan /game/ → game.html.)
+  const srcPages: string[] = [];
+  const susur = (dir: string, prefix: string) => {
+    for (const e of readdirSync(dir, { withFileTypes: true })) {
+      if (e.isDirectory()) susur(join(dir, e.name), `${prefix}${e.name}/`);
+      else if (e.name.endsWith(".astro")) srcPages.push(`${prefix}${e.name.replace(/\.astro$/, "")}`);
+    }
+  };
+  susur(join(process.cwd(), "src", "pages"), "/");
+  for (const route of srcPages) {
+    const f = join(dist, distRel(route));
+    cek(`route ${route} ter-build`, existsSync(f));
   }
 
   console.log(gagal === 0 ? "\nSEMUA CEK LOLOS" : `\n${gagal} CEK GAGAL`);

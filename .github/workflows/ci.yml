@@ -19,5 +19,6 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+      - run: npx playwright install --with-deps chromium
       - run: npm run generate:all
       - run: npm run validate

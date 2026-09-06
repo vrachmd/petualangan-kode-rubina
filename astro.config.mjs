@@ -19,6 +19,9 @@ export default defineConfig({
     preact({ compat: false }),
   ],
   build: {
-    format: "file",
+    // "directory" (default Astro): pola/01-ab → pola/01-ab/index.html.
+    // WAJIB untuk GitHub Pages agar URL /game/ ter-resolve.
+    // ("file" memetakan /game/ → game.html yang hanya dimengerti preview lokal.)
+    format: "directory",
   },
 });
