@@ -1,0 +1,40 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import AnimalSoundGame from "../../../components/interactive/AnimalSoundGame";
+
+const SEMUA_HEWAN = [
+  { key: "kucing", emoji: "🐱", label: "Kucing" },
+  { key: "anjing", emoji: "🐶", label: "Anjing" },
+  { key: "burung", emoji: "🐦", label: "Burung" },
+  { key: "katak", emoji: "🐸", label: "Katak" },
+  { key: "sapi", emoji: "🐮", label: "Sapi" },
+];
+
+/** Pick a random target from semua hewan */
+const targets = ["kucing", "anjing", "burung", "katak", "sapi"] as const;
+const targetIdx = Math.floor(Math.random() * targets.length);
+const target = targets[targetIdx];
+
+// Always show all 5 animals for mixed mode
+const hewanList = SEMUA_HEWAN;
+---
+
+<WorksheetLayout title="Game Suara Hewan Campuran">
+  <GameLayout judul="Tebak Suara Hewan 🐾" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <p class="font-sans text-base text-muted">Dengarkan suaranya!</p>
+      <ProgressBar ids={["hewan-campuran"]} client:load />
+    </div>
+    <div class="mt-4">
+      <AnimalSoundGame
+        idHalaman="hewan-campuran"
+        hewanList={hewanList}
+        target={target}
+        pesanMenang="Hebat! Kamu jago tebak suara hewan! 🏆"
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

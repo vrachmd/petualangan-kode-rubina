@@ -13,15 +13,31 @@ import bulanSvg from "../../../assets/illustrations/bulan.svg?raw";
 <WorksheetLayout title="Game Tombol Ajaib">
   <GameLayout judul="Tombol Ajaib" kembali="/game/" client:load>
     <div class="flex items-center justify-between">
-      <AudioButton audioKey="game/sebab-tombol" text="Ketuk tombolnya! Apa yang terjadi?" client:load />
+      <AudioButton
+        audioKey="game/sebab-tombol"
+        text="Ketuk tombolnya! Apa yang terjadi?"
+        client:load
+      />
       <ProgressBar ids={["14-sebab-tombol-lampu"]} client:load />
     </div>
     <div class="mt-4">
       <IfThenGame
         idHalaman="14-sebab-tombol-lampu"
         pasangan={[
-          { aksiSvg: merahSvg, aksiLabel: "Tekan merah", hasilSvg: lampuSvg, hasilLabel: "Lampu nyala!", suara: "Tekan merah, lampu nyala!" },
-          { aksiSvg: biruSvg, aksiLabel: "Tekan biru", hasilSvg: bulanSvg, hasilLabel: "Gelap, bobo!", suara: "Tekan biru, gelap, bobo!" },
+          {
+            aksiSvg: merahSvg,
+            aksiLabel: "Tekan merah",
+            hasilSvg: lampuSvg,
+            hasilLabel: "Lampu nyala!",
+            suara: "Tekan merah, lampu nyala!",
+          },
+          {
+            aksiSvg: biruSvg,
+            aksiLabel: "Tekan biru",
+            hasilSvg: bulanSvg,
+            hasilLabel: "Gelap, bobo!",
+            suara: "Tekan biru, gelap, bobo!",
+          },
         ]}
         audioKey="game/sebab-tombol"
         audioText="Ketuk tombol merah dan biru!"

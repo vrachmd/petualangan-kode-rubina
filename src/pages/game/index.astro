@@ -1,12 +1,11 @@
 ---
 import WorksheetLayout from "../../layouts/WorksheetLayout.astro";
 import Text from "../../components/base/Text.astro";
-import Icon from "../../components/base/Icon.astro";
-import ProgressBar from "../../components/interactive/ProgressBar";
+import GameCard from "../../components/interactive/GameCard";
+import "../../styles/game.css";
 import { PAGES } from "../../scripts/pages";
 
 const base = import.meta.env.BASE_URL;
-
 interface Kategori {
   nama: string;
   maskot: string;
@@ -19,39 +18,127 @@ interface Kategori {
 const idsMulai = (prefix: string) => PAGES.filter((p) => p.id.includes(prefix)).map((p) => p.id);
 
 const KATEGORI: Kategori[] = [
-  { nama: "Pola", maskot: "rubi-kelinci", tint: "bg-rubina-pink-100", ids: idsMulai("pola"), main: "/game/pola/01-ab", cetak: "/pola/01-ab" },
-  { nama: "Urutan", maskot: "bina-beruang", tint: "bg-rubina-peach-100", ids: idsMulai("sequencing"), main: "/game/sequencing/01-cuci-tangan", cetak: "/sequencing/01-cuci-tangan" },
-  { nama: "Arah", maskot: "nina-rubah", tint: "bg-rubina-sky-100", ids: idsMulai("arah"), main: "/game/arah/01-lacak-garis", cetak: "/arah/01-lacak-garis" },
-  { nama: "Sebab-Akibat", maskot: "rina-robot", tint: "bg-rubina-lavender-100", ids: idsMulai("sebab"), main: "/game/sebab-akibat/01-tombol-lampu", cetak: "/sebab-akibat/01-tombol-lampu" },
-  { nama: "Kartu Gerak", maskot: "rubina-anak", tint: "bg-rubina-mint-100", ids: ["17-kartu-aktivitas"], main: "/game/kartu-aktivitas", cetak: "/kartu-aktivitas" },
-  { nama: "Main Bebas", maskot: "rubina-anak", tint: "bg-rubina-sunny-100", ids: idsMulai("bebas"), main: "/game/bebas/01-buat-pola", cetak: "/bebas/01-buat-pola" },
+  {
+    nama: "Pola",
+    maskot: "rubi-kelinci",
+    tint: "bg-rubina-pink-100",
+    ids: idsMulai("pola"),
+    main: "/game/pola/01-ab",
+    cetak: "/pola/01-ab",
+  },
+  {
+    nama: "Urutan",
+    maskot: "bina-beruang",
+    tint: "bg-rubina-peach-100",
+    ids: idsMulai("sequencing"),
+    main: "/game/sequencing/01-cuci-tangan",
+    cetak: "/sequencing/01-cuci-tangan",
+  },
+  {
+    nama: "Arah",
+    maskot: "nina-rubah",
+    tint: "bg-rubina-sky-100",
+    ids: idsMulai("arah"),
+    main: "/game/arah/01-lacak-garis",
+    cetak: "/arah/01-lacak-garis",
+  },
+  {
+    nama: "Sebab-Akibat",
+    maskot: "rina-robot",
+    tint: "bg-rubina-lavender-100",
+    ids: idsMulai("sebab"),
+    main: "/game/sebab-akibat/01-tombol-lampu",
+    cetak: "/sebab-akibat/01-tombol-lampu",
+  },
+  {
+    nama: "Kartu Gerak",
+    maskot: "rubina-anak",
+    tint: "bg-rubina-mint-100",
+    ids: ["17-kartu-aktivitas"],
+    main: "/game/kartu-aktivitas",
+    cetak: "/kartu-aktivitas",
+  },
+  {
+    nama: "Main Bebas",
+    maskot: "rubina-anak",
+    tint: "bg-rubina-sunny-100",
+    ids: idsMulai("bebas"),
+    main: "/game/bebas/01-buat-pola",
+    cetak: "/bebas/01-buat-pola",
+  },
+  {
+    nama: "Musik",
+    maskot: "rubina-anak",
+    tint: "bg-rubina-lavender-100",
+    ids: ["musik-dua-not", "musik-tiga-not", "musik-empat-not", "musik-lima-not"],
+    main: "/game/musik/01-dua-not",
+    cetak: "",
+  },
+  {
+    nama: "Warna",
+    maskot: "rubina-anak",
+    tint: "bg-rubina-peach-100",
+    ids: ["warna-merah-kuning", "warna-biru-kuning", "warna-merah-biru", "warna-campuran"],
+    main: "/game/warna/01-merah-kuning",
+    cetak: "",
+  },
+  {
+    nama: "Bentuk",
+    maskot: "rubina-anak",
+    tint: "bg-rubina-sky-100",
+    ids: ["bentuk-lingkaran", "bentuk-segitiga", "bentuk-kotak", "bentuk-campuran"],
+    main: "/game/bentuk/01-lingkaran",
+    cetak: "",
+  },
+  {
+    nama: "Suara Hewan",
+    maskot: "rubina-anak",
+    tint: "bg-rubina-mint-100",
+    ids: ["hewan-kucing", "hewan-anjing", "hewan-burung", "hewan-campuran"],
+    main: "/game/hewan/01-kucing",
+    cetak: "",
+  },
+  {
+    nama: "Memory",
+    maskot: "rubina-anak",
+    tint: "bg-rubina-sunny-100",
+    ids: ["memory-dua-pasang", "memory-tiga-pasang", "memory-empat-pasang", "memory-lima-pasang"],
+    main: "/game/memory/01-dua-pasang",
+    cetak: "",
+  },
 ];
 ---
 
 <WorksheetLayout title="Pilih Permainan">
   <div class="flex min-h-screen flex-col items-center bg-background px-4 py-6">
-    <Text as="h1" variant="title" class="text-center">Pilih Permainan 🎮</Text>
-    <Text variant="body" class="mt-1 text-center">Ketuk gambarnya untuk mulai!</Text>
+    {/* ── Back navigation ── */}
+    <a href={`${base}`} class="game-header-back self-start mb-2">
+      ← Beranda
+    </a>
 
-    <div class="mt-5 grid w-full max-w-[720px] grid-cols-2 gap-4">
-      {KATEGORI.map((k) => (
-        <div class:list={["flex flex-col items-center gap-2 rounded-xl p-5 shadow-card", k.tint]}>
-          <Icon name={k.maskot} size={96} />
-          <Text variant="heading">{k.nama}</Text>
-          <ProgressBar ids={k.ids} kompak client:load />
-          <a
-            href={`${base}${k.main.replace(/^\//, "")}`}
-            class="game-tap mt-1 flex min-h-[56px] items-center rounded-full bg-surface px-6 font-display text-lg font-bold shadow-soft"
-          >
-            Main ▶
-          </a>
-          <a href={`${base}${k.cetak.replace(/^\//, "")}`} class="font-sans text-base text-muted">
-            🖨 Versi cetak
-          </a>
-        </div>
+    {/* ── Header ── */}
+    <Text as="h1" variant="title" class="text-center text-gradient">
+      Pilih Permainan 🎮
+    </Text>
+    <Text variant="body" class="mt-1 text-center">
+      Ketuk gambarnya untuk mulai!
+    </Text>
+
+    {/* ── Responsive grid: 2 → 3 → 4 columns ── */}
+    <div class="mt-6 grid w-full max-w-[960px] grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+      {KATEGORI.map((k, i) => (
+        <GameCard
+          client:load
+          nama={k.nama}
+          maskot={k.maskot}
+          tint={k.tint}
+          ids={k.ids}
+          main={k.main}
+          cetak={k.cetak}
+          index={i}
+          base={base}
+        />
       ))}
     </div>
-
-    <a href={`${base}`} class="mt-6 font-sans text-base text-muted">← Beranda</a>
   </div>
 </WorksheetLayout>

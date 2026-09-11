@@ -4,13 +4,13 @@ Setiap file di `src/assets/` wajib tercatat di tabel bawah.
 
 ## Sumber Dipakai
 
-| Sumber | Lisensi | Cakupan | Catatan |
-|--------|---------|---------|---------|
-| **Buatan sendiri** (`characters/` rina, rubina) | MIT (bagian repo ini) | Robot Rina + Rubina | Geometris sederhana, palet rubina, outline ink (terbaca B&W) |
-| **Twemoji** (`characters/` hewan + `illustrations/`) | CC-BY 4.0 © Twitter | 3 maskot hewan + 31 objek/ikon | **Wajib atribusi**. Maskot hewan pakai Twemoji karena langsung dikenali anak |
-| unDraw | MIT | Cadangan scene cover/panduan | API lama mati (404); hanya manual bila perlu |
-| OpenDoodles | CC0 | Tidak dipakai | Gaya manusia-sketsa tidak cocok untuk usia 2th |
-| Humaaans | MIT | Tidak dipakai | Butuh Figma manual; ditunda |
+| Sumber                                               | Lisensi               | Cakupan                        | Catatan                                                                      |
+| ---------------------------------------------------- | --------------------- | ------------------------------ | ---------------------------------------------------------------------------- |
+| **Buatan sendiri** (`characters/` rina, rubina)      | MIT (bagian repo ini) | Robot Rina + Rubina            | Geometris sederhana, palet rubina, outline ink (terbaca B&W)                 |
+| **Twemoji** (`characters/` hewan + `illustrations/`) | CC-BY 4.0 © Twitter   | 3 maskot hewan + 31 objek/ikon | **Wajib atribusi**. Maskot hewan pakai Twemoji karena langsung dikenali anak |
+| unDraw                                               | MIT                   | Cadangan scene cover/panduan   | API lama mati (404); hanya manual bila perlu                                 |
+| OpenDoodles                                          | CC0                   | Tidak dipakai                  | Gaya manusia-sketsa tidak cocok untuk usia 2th                               |
+| Humaaans                                             | MIT                   | Tidak dipakai                  | Butuh Figma manual; ditunda                                                  |
 
 > Keputusan: maskot digambar sendiri agar konsisten per kategori + bentuk besar
 > sederhana (optimal motorik 2th). Objek kecil pakai Twemoji (konsisten, bold,
@@ -30,17 +30,44 @@ Setiap file di `src/assets/` wajib tercatat di tabel bawah.
 
 ## Inventaris Aset
 
-| File | Sumber | Lisensi |
-|------|--------|---------|
-| `characters/rubi-kelinci.svg` | Twemoji © Twitter 🐰 | CC-BY 4.0 |
-| `characters/bina-beruang.svg` | Twemoji © Twitter 🐻 | CC-BY 4.0 |
-| `characters/nina-rubah.svg` | Twemoji © Twitter 🦊 | CC-BY 4.0 |
-| `characters/rina-robot.svg` | Buatan sendiri | MIT |
-| `characters/rubina-anak.svg` | Buatan sendiri | MIT |
-| `illustrations/*.svg` (31 file, lihat `src/scripts/download-assets.ts` MANIFEST) | Twemoji © Twitter | CC-BY 4.0 |
+| File                                                                             | Sumber               | Lisensi   |
+| -------------------------------------------------------------------------------- | -------------------- | --------- |
+| `characters/rubi-kelinci.svg`                                                    | Twemoji © Twitter 🐰 | CC-BY 4.0 |
+| `characters/bina-beruang.svg`                                                    | Twemoji © Twitter 🐻 | CC-BY 4.0 |
+| `characters/nina-rubah.svg`                                                      | Twemoji © Twitter 🦊 | CC-BY 4.0 |
+| `characters/rina-robot.svg`                                                      | Buatan sendiri       | MIT       |
+| `characters/rubina-anak.svg`                                                     | Buatan sendiri       | MIT       |
+| `illustrations/*.svg` (31 file, lihat `src/scripts/download-assets.ts` MANIFEST) | Twemoji © Twitter    | CC-BY 4.0 |
+
+## Efek Suara (`public/audio/sfx/`)
+
+Efek suara pendek untuk game interaktif. Semua CC0 (dibuat dengan ffmpeg/sintesis).
+
+| File              | Kegunaan                   | Lisensi |
+| ----------------- | -------------------------- | ------- |
+| `celebration.mp3` | Fanfare level selesai      | CC0     |
+| `star.mp3`        | Sparkle saat dapat bintang | CC0     |
+| `ding.mp3`        | Notifikasi suara           | CC0     |
+
+> Suara sinthesi (tap/benar/cobaLagi) tetap di `src/utils/audio.ts` via Web Audio API.
+
+## Ikon Hewan SVG (`public/audio/hewan/`)
+
+Ikon hewan sederhana untuk game suara hewan. Buatan sendiri (MIT).
+
+| File         | Hewan  | Lisensi |
+| ------------ | ------ | ------- |
+| `kucing.svg` | Kucing | MIT     |
+| `anjing.svg` | Anjing | MIT     |
+| `burung.svg` | Burung | MIT     |
+| `katak.svg`  | Katak  | MIT     |
+| `sapi.svg`   | Sapi   | MIT     |
+
+> Gaya: bulat, ramah, tebal 3px, palet cerah. Cocok usia 2 tahun.
 
 ## Batas Teknis
 
 - Tiap SVG < 200KB (aktual: maks ~6KB, total ~36KB).
+- Tiap suara < 100KB (aktual: maks ~15KB).
 - Jangan commit `output/` atau `dist/`.
 - Karakter per kategori konsisten (lihat `AGENTS.md` §6).

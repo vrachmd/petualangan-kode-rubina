@@ -4,18 +4,19 @@ Token resmi. Implementasi di `tailwind.config.mjs`. Jangan hardcode nilai di kom
 
 ## Warna
 
-| Token | 50 | 100 | 200 | 500 | 600 | Pakai |
-|-------|----|-----|-----|-----|-----|-------|
-| `rubina.pink` | #FFF0F3 | #FFD6DC | #FFADB8 | #E85D75 | #D64963 | Pola / Rubi 🐰 |
-| `rubina.peach` | #FFF7ED | #FFEDD5 | #FED7AA | #F97316 | #EA580C | Sequencing / Bina 🐻 |
-| `rubina.sky` | #F0F9FF | #E0F2FE | #BAE6FD | #38BDF8 | #0EA5E9 | Arah / Nina 🦊 |
+| Token             | 50      | 100     | 200     | 500     | 600     | Pakai                  |
+| ----------------- | ------- | ------- | ------- | ------- | ------- | ---------------------- |
+| `rubina.pink`     | #FFF0F3 | #FFD6DC | #FFADB8 | #E85D75 | #D64963 | Pola / Rubi 🐰         |
+| `rubina.peach`    | #FFF7ED | #FFEDD5 | #FED7AA | #F97316 | #EA580C | Sequencing / Bina 🐻   |
+| `rubina.sky`      | #F0F9FF | #E0F2FE | #BAE6FD | #38BDF8 | #0EA5E9 | Arah / Nina 🦊         |
 | `rubina.lavender` | #FAF5FF | #F3E8FF | #E9D5FF | #A855F7 | #9333EA | Sebab-akibat / Rina 🤖 |
-| `rubina.mint` | #F0FDF4 | #DCFCE7 | #BBF7D0 | #4ADE80 | #22C55E | Sukses / centang |
-| `rubina.sunny` | #FEFCE8 | #FEF9C3 | #FDE047 | #FACC15 | #EAB308 | Aksen / bintang |
+| `rubina.mint`     | #F0FDF4 | #DCFCE7 | #BBF7D0 | #4ADE80 | #22C55E | Sukses / centang       |
+| `rubina.sunny`    | #FEFCE8 | #FEF9C3 | #FDE047 | #FACC15 | #EAB308 | Aksen / bintang        |
 
 Netral: background `#FAFAFA`, surface `#FFFFFF`, teks `#171717`, muted `#737373`, border `#E5E5E5`.
 
 Aturan:
+
 - Teks di atas warna 500/600 harus kontras WCAG AA (putih `#FFFFFF` atau teks `#171717` — cek via `npm run validate`).
 - Jangan sampaikan info hanya lewat warna. Selalu tambah bentuk/label (ex: pola lingkaran vs bintang, bukan merah vs hijau saja).
 

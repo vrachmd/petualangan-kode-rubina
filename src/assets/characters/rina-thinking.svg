@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Rina thinking">
+  <line x1="50" y1="20" x2="50" y2="30" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="50" cy="17" r="5" fill="#FACC15" stroke="#171717" stroke-width="2.5"/>
+  <rect x="22" y="42" width="8" height="14" rx="4" fill="#E9D5FF" stroke="#171717" stroke-width="2"/>
+  <rect x="70" y="42" width="8" height="14" rx="4" fill="#E9D5FF" stroke="#171717" stroke-width="2"/>
+  <rect x="30" y="68" width="40" height="24" rx="8" fill="#A855F7" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="50" cy="78" r="4" fill="#FACC15" stroke="#171717" stroke-width="2"/>
+  <rect x="18" y="70" width="10" height="18" rx="5" fill="#E9D5FF" stroke="#171717" stroke-width="2"/>
+  <!-- Right arm up to chin -->
+  <rect x="58" y="58" width="10" height="14" rx="5" fill="#E9D5FF" stroke="#171717" stroke-width="2" transform="rotate(30 63 65)"/>
+  <rect x="36" y="90" width="10" height="10" rx="3" fill="#A855F7" stroke="#171717" stroke-width="2"/>
+  <rect x="54" y="90" width="10" height="10" rx="3" fill="#A855F7" stroke="#171717" stroke-width="2"/>
+  <rect x="26" y="30" width="48" height="36" rx="14" fill="#E9D5FF" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="34" y="42" width="12" height="14" rx="6" fill="#A855F7" stroke="#171717" stroke-width="2"/>
+  <rect x="54" y="42" width="12" height="14" rx="6" fill="#A855F7" stroke="#171717" stroke-width="2"/>
+  <circle cx="38" cy="46" r="2.5" fill="white"/>
+  <circle cx="58" cy="46" r="2.5" fill="white"/>
+  <rect x="42" y="60" width="16" height="4" rx="2" fill="#171717"/>
+  <circle cx="74" cy="36" r="2" fill="#171717"/>
+  <circle cx="78" cy="30" r="2.5" fill="#171717"/>
+  <circle cx="82" cy="23" r="3" fill="#171717"/>
+</svg>

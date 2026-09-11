@@ -48,6 +48,7 @@ src/utils/nama.ts           # NAMA_ANAK, sapaan
 ```
 
 Aturan:
+
 - Setiap page **wajib** pakai `WorksheetLayout` + `PageWrapper` (margin cetak 15mm) + `Header` (judul + karakter kategori) + `ParentNote` (instruksi ortu Bahasa Indonesia). `Footer` kecil (14px) wajib di semua halaman **kecuali cover**.
 - Cover (`src/pages/sampul.astro`, route `/sampul/`) tanpa `Footer` dan tanpa `Header` standar (desain khusus).
 - Landing (`src/pages/index.astro`, route `/`) adalah beranda website (bukan worksheet): hero + pilih aktivitas + download PDF. Tanpa `Header`/`Footer`/`ParentNote` worksheet.
@@ -66,17 +67,18 @@ Aturan:
 
 ## 6. Karakter per Kategori (Jangan Tertukar)
 
-| Kategori | Karakter | Warna | Folder aset |
-|----------|----------|-------|-------------|
-| pola | Rubi 🐰 | rubina.pink | characters/rubi-*.svg |
-| sequencing | Bina 🐻 | rubina.peach | characters/bina-*.svg |
-| arah | Nina 🦊 | rubina.sky | characters/nina-*.svg |
-| sebab-akibat | Rina 🤖 | rubina.lavender | characters/rina-*.svg |
-| kartu/free/cover | Rubina ✨ + semua | multi | characters/rubina-*.svg |
+| Kategori         | Karakter          | Warna           | Folder aset             |
+| ---------------- | ----------------- | --------------- | ----------------------- |
+| pola             | Rubi 🐰           | rubina.pink     | characters/rubi-*.svg   |
+| sequencing       | Bina 🐻           | rubina.peach    | characters/bina-*.svg   |
+| arah             | Nina 🦊           | rubina.sky      | characters/nina-*.svg   |
+| sebab-akibat     | Rina 🤖           | rubina.lavender | characters/rina-*.svg   |
+| kartu/free/cover | Rubina ✨ + semua | multi           | characters/rubina-*.svg |
 
 ## 7. Definition of Done (Wajib Cek)
 
 Per halaman:
+
 - [ ] Render `astro build` tanpa error; tidak ada console error di Playwright.
 - [ ] PDF A4 margin 15mm, font embedded, < 500KB.
 - [ ] PNG 2480×3508, tajam, tidak terpotong.
@@ -85,6 +87,7 @@ Per halaman:
 - [ ] Uji logika: cetak B&W masih terbaca; instruksi ortu jelas.
 
 Global:
+
 - [ ] Total merged PDF < 5MB. Semua 20 halaman sukses generate.
 
 ## 8. Alur Kerja yang Diharapkan

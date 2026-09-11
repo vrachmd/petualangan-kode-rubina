@@ -22,7 +22,7 @@ export default function ModeOrtu({ terbuka, onTutup }: Props) {
     setTotalXp(xpKategori(PAGES.map((h) => h.id)));
     setDibuka(p.dibuka.length);
     setDireset(false);
-  }, [terbuka ]);
+  }, [terbuka]);
 
   if (!terbuka) return null;
 

@@ -12,7 +12,11 @@ import tidurSvg from "../../../assets/illustrations/tempat-tidur.svg?raw";
 <WorksheetLayout title="Game Bobo Malam">
   <GameLayout judul="Bobo Malam" kembali="/game/" client:load>
     <div class="flex items-center justify-between">
-      <AudioButton audioKey="game/seq-tidur" text="Ketuk gambar nomor satu, dua, tiga!" client:load />
+      <AudioButton
+        audioKey="game/seq-tidur"
+        text="Ketuk gambar nomor satu, dua, tiga!"
+        client:load
+      />
       <ProgressBar ids={["08-sequencing-tidur"]} client:load />
     </div>
     <div class="mt-4">

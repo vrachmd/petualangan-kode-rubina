@@ -1,0 +1,39 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import AudioButton from "../../../components/interactive/AudioButton";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import ShapeBuilderGame from "../../../components/interactive/ShapeBuilderGame";
+---
+
+<WorksheetLayout title="Game Bentuk Kotak">
+  <GameLayout judul="Buat Rumah Kotak" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <AudioButton
+        audioKey="game/bentuk-kotak"
+        text="Pilih bentuk kotak, lalu ketuk kotak yang benar untuk membuat rumah!"
+        client:load
+      />
+      <ProgressBar ids={["bentuk-kotak"]} client:load />
+    </div>
+    <div class="mt-4">
+      <ShapeBuilderGame
+        idHalaman="bentuk-kotak"
+        gridSize={3}
+        targets={[
+          { row: 0, col: 1, shape: { type: "kotak", color: "#A855F7", label: "Kotak ungu" } },
+          { row: 1, col: 0, shape: { type: "kotak", color: "#F97316", label: "Kotak oranye" } },
+          { row: 1, col: 1, shape: { type: "kotak", color: "#F97316", label: "Kotak oranye" } },
+          { row: 1, col: 2, shape: { type: "kotak", color: "#F97316", label: "Kotak oranye" } },
+          { row: 2, col: 1, shape: { type: "kotak", color: "#E85D75", label: "Kotak merah muda" } },
+        ]}
+        palette={[
+          { type: "kotak", color: "#A855F7", label: "Kotak ungu" },
+          { type: "kotak", color: "#F97316", label: "Kotak oranye" },
+          { type: "kotak", color: "#E85D75", label: "Kotak merah muda" },
+        ]}
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

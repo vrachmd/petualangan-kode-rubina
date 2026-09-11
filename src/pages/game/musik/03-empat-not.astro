@@ -1,0 +1,18 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import AudioPatternGame from "../../../components/interactive/AudioPatternGame";
+---
+
+<WorksheetLayout title="Game Pola Empat Nada">
+  <GameLayout judul="Pola Empat Nada 🎵" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <p class="font-sans text-base text-muted">Dengarkan, lalu ulangi!</p>
+      <ProgressBar ids={["musik-empat-not"]} client:load />
+    </div>
+    <div class="mt-4">
+      <AudioPatternGame idHalaman="musik-empat-not" panjang={4} client:load />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

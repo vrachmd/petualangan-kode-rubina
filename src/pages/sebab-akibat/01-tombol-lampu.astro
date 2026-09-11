@@ -11,20 +11,32 @@ import IfThenPair from "../../components/worksheet/IfThenPair.astro";
 
 <WorksheetLayout title="Tombol Ajaib">
   <PageWrapper>
-    <Header judul="Tombol Ajaib" karakter="Rina si Robot" emoji="🤖" maskot="rina-robot" tint="bg-rubina-lavender-100" />
+    <Header
+      judul="Tombol Ajaib"
+      karakter="Rina si Robot"
+      emoji="🤖"
+      maskot="rina-robot"
+      tint="bg-rubina-lavender-100"
+    />
 
     <div class="mt-6 flex flex-col gap-6">
       <Box variant="card" class="p-6">
         <Text variant="heading">Tekan tombolnya... apa yang terjadi?</Text>
         <div class="mt-4">
-          <IfThenPair aksi={{ ikon: "lingkaran-merah", label: "Tekan merah" }} hasil={{ ikon: "lampu", label: "Lampu nyala!" }} />
+          <IfThenPair
+            aksi={{ ikon: "lingkaran-merah", label: "Tekan merah" }}
+            hasil={{ ikon: "lampu", label: "Lampu nyala!" }}
+          />
         </div>
       </Box>
 
       <Box variant="card" class="p-6">
         <Text variant="heading">Kalau tombol biru?</Text>
         <div class="mt-4">
-          <IfThenPair aksi={{ ikon: "lingkaran-biru", label: "Tekan biru" }} hasil={{ ikon: "bulan", label: "Gelap, bobo!" }} />
+          <IfThenPair
+            aksi={{ ikon: "lingkaran-biru", label: "Tekan biru" }}
+            hasil={{ ikon: "bulan", label: "Gelap, bobo!" }}
+          />
         </div>
       </Box>
     </div>

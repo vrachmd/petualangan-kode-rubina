@@ -19,7 +19,13 @@ interface Props {
 }
 
 /** Game urutan: ketuk kartu 1 → 2 → 3 sesuai nomor. */
-export default function SequenceGame({ idHalaman, langkah, audioKey, audioText, aksen = "#F97316" }: Props) {
+export default function SequenceGame({
+  idHalaman,
+  langkah,
+  audioKey,
+  audioText,
+  aksen = "#F97316",
+}: Props) {
   const [lanjut, setLanjut] = useState(0);
   const [salah, setSalah] = useState(0);
   const [goyang, setGoyang] = useState<number | null>(null);

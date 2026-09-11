@@ -1,0 +1,35 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import AudioButton from "../../../components/interactive/AudioButton";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import ColorMixingGame from "../../../components/interactive/ColorMixingGame";
+---
+
+<WorksheetLayout title="Game Warna Merah Kuning">
+  <GameLayout judul="Merah + Kuning = Oranye" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <AudioButton
+        audioKey="game/warna-merah-kuning"
+        text="Ketuk warna merah, lalu ketuk warna kuning untuk membuat oranye!"
+        client:load
+      />
+      <ProgressBar ids={["warna-merah-kuning"]} client:load />
+    </div>
+    <div class="mt-4">
+      <ColorMixingGame
+        idHalaman="warna-merah-kuning"
+        warna={[
+          { key: "merah", label: "Merah", hex: "#E85D75" },
+          { key: "kuning", label: "Kuning", hex: "#FACC15" },
+        ]}
+        targetHex="#F97316"
+        targetLabel="Oranye"
+        jawaban={["merah", "kuning"]}
+        audioKey="game/warna-merah-kuning"
+        audioText="Ketuk warna merah, lalu kuning!"
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

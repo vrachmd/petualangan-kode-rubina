@@ -1,0 +1,44 @@
+---
+interface Props {
+  type: "dots" | "stars" | "clouds" | "wave" | "bubbles";
+  position?: "top-left" | "top-right" | "bottom-left" | "bottom-right" | "center";
+  opacity?: number;
+  color?: string;
+  class?: string;
+}
+
+import dots from "../../assets/decorations/polkadot.svg";
+import stars from "../../assets/decorations/stars.svg";
+import clouds from "../../assets/decorations/clouds.svg";
+import wave from "../../assets/decorations/wave.svg";
+import bubbles from "../../assets/decorations/bubbles.svg";
+
+const { type, position = "top-right", opacity = 0.4, color, class: className = "" } = Astro.props;
+
+const svgMap: Record<string, string> = {
+  dots: dots.src,
+  stars: stars.src,
+  clouds: clouds.src,
+  wave: wave.src,
+  bubbles: bubbles.src,
+};
+
+const positionClasses: Record<string, string> = {
+  "top-left": "top-0 left-0",
+  "top-right": "top-0 right-0",
+  "bottom-left": "bottom-0 left-0",
+  "bottom-right": "bottom-0 right-0",
+  center: "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
+};
+
+const svgSrc = svgMap[type];
+const posClass = positionClasses[position] || positionClasses["top-right"];
+---
+
+<div
+  class={`absolute pointer-events-none select-none ${posClass} ${className}`}
+  aria-hidden="true"
+  style={`opacity: ${opacity}; ${color ? `filter: brightness(0) saturate(0); background: ${color}; mask: url(${svgSrc}); -webkit-mask: url(${svgSrc});` : ""}`}
+>
+  {!color && <img src={svgSrc} alt="" class="w-full h-full object-contain" aria-hidden="true" />}
+</div>

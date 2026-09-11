@@ -28,9 +28,19 @@ interface Props {
  * Game pola: ketuk warna di palet, lalu ketuk lingkaran kosong.
  * Benar → pop + XP. Salah → goyang lembut + "coba lagi".
  */
-export default function PatternGame({ idHalaman, warna, pola, jawaban, bebas = false, audioKey, audioText }: Props) {
+export default function PatternGame({
+  idHalaman,
+  warna,
+  pola,
+  jawaban,
+  bebas = false,
+  audioKey,
+  audioText,
+}: Props) {
   const [pilihan, setPilihan] = useState<string | null>(null);
-  const [isian, setIsian] = useState<(string | null)[]>(() => pola.map((p) => (p === null ? null : p)));
+  const [isian, setIsian] = useState<(string | null)[]>(() =>
+    pola.map((p) => (p === null ? null : p)),
+  );
   const [salah, setSalah] = useState(0);
   const [goyang, setGoyang] = useState<number | null>(null);
   const [selesai, setSelesai] = useState(false);

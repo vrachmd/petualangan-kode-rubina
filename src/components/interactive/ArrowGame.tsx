@@ -20,7 +20,14 @@ interface Props {
 const ROTASI: Record<ArahMata, number> = { atas: -90, kanan: 0, bawah: 90, kiri: 180 };
 
 /** Game arah: ketuk kotak berikutnya agar maskot berjalan sampai rumah. */
-export default function ArrowGame({ idHalaman, jalur, kolom = 3, maskotSvg, rumahSvg, tujuanLabel = "Rumah" }: Props) {
+export default function ArrowGame({
+  idHalaman,
+  jalur,
+  kolom = 3,
+  maskotSvg,
+  rumahSvg,
+  tujuanLabel = "Rumah",
+}: Props) {
   const [pos, setPos] = useState(0);
   const [salah, setSalah] = useState(0);
   const [goyang, setGoyang] = useState<number | null>(null);
@@ -55,7 +62,10 @@ export default function ArrowGame({ idHalaman, jalur, kolom = 3, maskotSvg, ruma
 
   return (
     <div class="flex flex-col items-center gap-4">
-      <div class="grid w-full max-w-[420px] gap-2 sm:gap-3" style={{ gridTemplateColumns: `repeat(${kolom}, minmax(0, 1fr))` }}>
+      <div
+        class="grid w-full max-w-[420px] gap-2 sm:gap-3"
+        style={{ gridTemplateColumns: `repeat(${kolom}, minmax(0, 1fr))` }}
+      >
         {jalur.map((arah, i) => {
           const diSini = i === pos;
           const tujuan = i === terakhir;
@@ -70,10 +80,25 @@ export default function ArrowGame({ idHalaman, jalur, kolom = 3, maskotSvg, ruma
               } ${goyang === i ? "game-goyang" : ""}`}
             >
               {tujuan ? (
-                <span class="block h-[72%] w-[72%]" dangerouslySetInnerHTML={{ __html: rumahSvg }} />
+                <span
+                  class="block h-[72%] w-[72%]"
+                  dangerouslySetInnerHTML={{ __html: rumahSvg }}
+                />
               ) : (
-                <svg viewBox="0 0 48 48" fill="none" class="h-[62%] w-[62%]" style={{ transform: `rotate(${ROTASI[arah]}deg)` }} aria-hidden="true">
-                  <path d="M8 24h28M26 14l10 10-10 10" stroke="#0EA5E9" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" />
+                <svg
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  class="h-[62%] w-[62%]"
+                  style={{ transform: `rotate(${ROTASI[arah]}deg)` }}
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M8 24h28M26 14l10 10-10 10"
+                    stroke="#0EA5E9"
+                    stroke-width="3.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
                 </svg>
               )}
               {diSini && !selesai && (
@@ -86,7 +111,9 @@ export default function ArrowGame({ idHalaman, jalur, kolom = 3, maskotSvg, ruma
           );
         })}
       </div>
-      <p class="font-sans text-base text-muted">Ketuk kotak berikutnya! Antar maskotnya pulang 🏠</p>
+      <p class="font-sans text-base text-muted">
+        Ketuk kotak berikutnya! Antar maskotnya pulang 🏠
+      </p>
       <Perayaan tampil={selesai} pesan="Sampai! Hore! 🎉" onMainLagi={ulangi} />
     </div>
   );

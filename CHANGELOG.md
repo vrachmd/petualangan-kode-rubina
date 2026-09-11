@@ -5,6 +5,11 @@ Format: Keep a Changelog (ID ringkas). Tanggal: YYYY-MM-DD.
 ## [Unreleased]
 
 ### Ditambahkan
+
+- Quality infrastructure: ESLint (flat config, Astro + TypeScript + jsx-a11y), Prettier (Astro plugin), Playwright E2E tests.
+- CI workflow: lint, format check, E2E tests di GitHub Actions.
+- `.env.example` untuk variabel environment yang didukung.
+- npm scripts: `lint`, `lint:fix`, `format`, `format:fix`, `test`, `test:ui`.
 - Dokumentasi awal: README, AGENTS.md, docs/01–05, CONTRIBUTING.
 - Spesifikasi 20 halaman + design system "Rubina" + panduan orang tua.
 - Scaffold Astro 5 + Tailwind token rubina + 8 komponen dasar + halaman contoh.
@@ -30,4 +35,5 @@ Format: Keep a Changelog (ID ringkas). Tanggal: YYYY-MM-DD.
 - Game Arah tanpa TTS per langkah (klik lembut saja); narasi tetap via tombol 🔊.
 
 ## [0.1.0] — TBD (Setup Repo)
+
 - Rencana: init Astro + Tailwind + Playwright, design tokens, base components.

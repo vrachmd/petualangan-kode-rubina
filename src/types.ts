@@ -1,13 +1,7 @@
 /** Tipe bersama untuk komponen worksheet. */
 
 export type Kategori =
-  | "pola"
-  | "sequencing"
-  | "arah"
-  | "sebab-akibat"
-  | "kartu"
-  | "bebas"
-  | "sampul";
+  "pola" | "sequencing" | "arah" | "sebab-akibat" | "kartu" | "bebas" | "sampul";
 
 export interface PageMeta {
   /** ex: "pola-01-ab" — dipakai untuk nama file output */

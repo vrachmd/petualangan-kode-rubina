@@ -1,11 +1,16 @@
 /**
- * Efek suara kecil (pop/benar/coba-lagi) via Web Audio API.
- * Tanpa file eksternal — nada disintesis langsung, gratis + offline.
+ * Efek suara — sinthesi Web Audio API + file MP3 untuk suara khusus.
+ *
+ * Suara sinthesi (gratis, offline): tap, benar, coba-lagi.
+ * Suara file (public/audio/sfx/): perayaan, bintang, notifikasi.
  */
 
 let ctx: AudioContext | null = null;
 
 const SUARA_KEY = "rubina-suara";
+
+/** Cache Audio element per path supaya tidak re-create setiap kali. */
+const audioCache = new Map<string, HTMLAudioElement>();
 
 /** Preferensi suara ortu (default nyala). */
 export function suaraAktif(): boolean {
@@ -27,7 +32,9 @@ export function setSuaraAktif(aktif: boolean): void {
 function dapatkanCtx(): AudioContext | null {
   try {
     if (!ctx) {
-      const AC = window.AudioContext ?? (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+      const AC =
+        window.AudioContext ??
+        (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
       ctx = new AC();
     }
     if (ctx.state === "suspended") void ctx.resume();
@@ -37,7 +44,13 @@ function dapatkanCtx(): AudioContext | null {
   }
 }
 
-function nada(freq: number, mulai: number, durasi: number, tipe: OscillatorType = "sine", volume = 0.15): void {
+function nada(
+  freq: number,
+  mulai: number,
+  durasi: number,
+  tipe: OscillatorType = "sine",
+  volume = 0.15,
+): void {
   if (!suaraAktif()) return;
   const ac = dapatkanCtx();
   if (!ac) return;
@@ -58,6 +71,26 @@ function nada(freq: number, mulai: number, durasi: number, tipe: OscillatorType 
   }
 }
 
+/** Mainkan file audio dari public/audio/. Path relatif, ex: "sfx/celebration.mp3". */
+function mainkanFile(path: string): void {
+  if (!suaraAktif()) return;
+  try {
+    let audio = audioCache.get(path);
+    if (!audio) {
+      audio = new Audio(`/${path}`);
+      audio.preload = "auto";
+      audio.volume = 0.8;
+      audioCache.set(path, audio);
+    }
+    audio.currentTime = 0;
+    void audio.play();
+  } catch {
+    /* abaikan — fallback ke sinthesi */
+  }
+}
+
+// ─── Suara sinthesi (offline, gratis) ───
+
 /** Bunyi tap tombol. */
 export function bunyiTap(): void {
   nada(600, 0, 0.12);
@@ -76,10 +109,19 @@ export function bunyiCobaLagi(): void {
   nada(330, 0.18, 0.25, "sine", 0.12);
 }
 
-/** Bunyi dapat bintang (fanfare mini). */
+// ─── Suara file (public/audio/sfx/) ───
+
+/** Bunyi perayaan level selesai (fanfare). */
+export function bunyiPerayaan(): void {
+  mainkanFile("audio/sfx/celebration.mp3");
+}
+
+/** Bunyi dapat bintang (sparkle). */
 export function bunyiBintang(): void {
-  nada(523, 0, 0.12);
-  nada(659, 0.1, 0.12);
-  nada(784, 0.2, 0.12);
-  nada(1047, 0.3, 0.35);
+  mainkanFile("audio/sfx/star.mp3");
+}
+
+/** Bunyi notifikasi (ding). */
+export function bunyiNotifikasi(): void {
+  mainkanFile("audio/sfx/ding.mp3");
 }

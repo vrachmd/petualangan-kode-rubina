@@ -1,0 +1,58 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import AudioButton from "../../../components/interactive/AudioButton";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import ShapeBuilderGame from "../../../components/interactive/ShapeBuilderGame";
+---
+
+<WorksheetLayout title="Game Bentuk Lingkaran">
+  <GameLayout judul="Buat Bunga Lingkaran" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <AudioButton
+        audioKey="game/bentuk-lingkaran"
+        text="Pilih bentuk lingkaran, lalu ketuk kotak yang benar untuk membuat bunga!"
+        client:load
+      />
+      <ProgressBar ids={["bentuk-lingkaran"]} client:load />
+    </div>
+    <div class="mt-4">
+      <ShapeBuilderGame
+        idHalaman="bentuk-lingkaran"
+        gridSize={3}
+        targets={[
+          {
+            row: 0,
+            col: 1,
+            shape: { type: "lingkaran", color: "#FACC15", label: "Lingkaran kuning" },
+          },
+          {
+            row: 1,
+            col: 0,
+            shape: { type: "lingkaran", color: "#FACC15", label: "Lingkaran kuning" },
+          },
+          {
+            row: 1,
+            col: 1,
+            shape: { type: "lingkaran", color: "#E85D75", label: "Lingkaran merah muda" },
+          },
+          {
+            row: 1,
+            col: 2,
+            shape: { type: "lingkaran", color: "#FACC15", label: "Lingkaran kuning" },
+          },
+          {
+            row: 2,
+            col: 1,
+            shape: { type: "lingkaran", color: "#FACC15", label: "Lingkaran kuning" },
+          },
+        ]}
+        palette={[
+          { type: "lingkaran", color: "#E85D75", label: "Lingkaran merah muda" },
+          { type: "lingkaran", color: "#FACC15", label: "Lingkaran kuning" },
+        ]}
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

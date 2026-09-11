@@ -27,10 +27,12 @@ async function main() {
         await page.goto(base + h.route, { waitUntil: "networkidle" });
         await page.evaluateHandle("document.fonts.ready");
         const overflow = await page.evaluate(
-          () => document.documentElement.scrollHeight - window.innerHeight
+          () => document.documentElement.scrollHeight - window.innerHeight,
         );
         if (overflow > 2) {
-          console.warn(`PERINGATAN ${h.id}: konten melebihi 1 halaman A4 (+${Math.round(overflow)}px)`);
+          console.warn(
+            `PERINGATAN ${h.id}: konten melebihi 1 halaman A4 (+${Math.round(overflow)}px)`,
+          );
         }
         await page.screenshot({
           path: join(OUT, `${h.id}.png`),

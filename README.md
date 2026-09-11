@@ -6,15 +6,15 @@ Belajar pola, urutan, arah, dan sebab-akibat lewat bermain bersama Rubi 🐰, Bi
 
 ## Isi Paket (20 halaman A4)
 
-| Kategori | Halaman | Karakter |
-|----------|---------|----------|
-| Cover + Panduan Orang Tua | 2 | Rubina ✨ |
-| Pola (AB, ABB, ABC, Campuran) | 4 | Rubi 🐰 |
-| Sequencing 3 langkah (cuci tangan, makan, tidur, main) | 4 | Bina 🐻 |
-| Arah (lacak garis, ikuti panah, labirin, misi Nina) | 4 | Nina 🦊 |
-| Sebab-Akibat (tombol-lampu, tarik-mainan, tekan-bunyi) | 3 | Rina 🤖 |
-| Kartu Aktivitas (6 kartu, gunting) | 1 | Semua 🎪 |
-| Free Play (buat pola, gambar robot) | 2 | Rubina ✨ |
+| Kategori                                               | Halaman | Karakter  |
+| ------------------------------------------------------ | ------- | --------- |
+| Cover + Panduan Orang Tua                              | 2       | Rubina ✨ |
+| Pola (AB, ABB, ABC, Campuran)                          | 4       | Rubi 🐰   |
+| Sequencing 3 langkah (cuci tangan, makan, tidur, main) | 4       | Bina 🐻   |
+| Arah (lacak garis, ikuti panah, labirin, misi Nina)    | 4       | Nina 🦊   |
+| Sebab-Akibat (tombol-lampu, tarik-mainan, tekan-bunyi) | 3       | Rina 🤖   |
+| Kartu Aktivitas (6 kartu, gunting)                     | 1       | Semua 🎪  |
+| Free Play (buat pola, gambar robot)                    | 2       | Rubina ✨ |
 
 Detail tiap halaman: lihat `docs/03-KONTEN_WORKSHEET.md`.
 

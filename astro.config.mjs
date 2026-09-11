@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
 import preact from "@astrojs/preact";
 
 // Base path untuk GitHub Pages project site:
@@ -11,13 +10,7 @@ const base = process.env.SITE_BASE ?? "/petualangan-kode-rubina/";
 export default defineConfig({
   base,
   prefetch: true,
-  integrations: [
-    tailwind({
-      configFile: "./tailwind.config.mjs",
-      applyBaseStyles: false,
-    }),
-    preact({ compat: false }),
-  ],
+  integrations: [preact({ compat: false })],
   build: {
     // "directory" (default Astro): pola/01-ab → pola/01-ab/index.html.
     // WAJIB untuk GitHub Pages agar URL /game/ ter-resolve.

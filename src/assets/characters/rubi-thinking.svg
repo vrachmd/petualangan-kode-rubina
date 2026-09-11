@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Rubi thinking">
+  <!-- Ears - one tilted -->
+  <ellipse cx="38" cy="22" rx="8" ry="18" fill="#E85D75" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="62" cy="20" rx="8" ry="18" fill="#E85D75" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="rotate(-10 62 20)"/>
+  <ellipse cx="38" cy="22" rx="4" ry="12" fill="#FFB3C1"/>
+  <ellipse cx="62" cy="20" rx="4" ry="12" fill="#FFB3C1" transform="rotate(-10 62 20)"/>
+  <!-- Body -->
+  <ellipse cx="50" cy="82" rx="18" ry="14" fill="#E85D75" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Left arm down -->
+  <path d="M32 78 Q26 72 28 68" stroke="#171717" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="28" cy="67" r="4" fill="#FFEDD5" stroke="#171717" stroke-width="2.5"/>
+  <!-- Right arm on chin -->
+  <path d="M68 78 Q64 70 58 62" stroke="#171717" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="58" cy="61" r="4" fill="#FFEDD5" stroke="#171717" stroke-width="2.5"/>
+  <!-- Legs -->
+  <ellipse cx="40" cy="94" rx="7" ry="5" fill="#E85D75" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="60" cy="94" rx="7" ry="5" fill="#E85D75" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Head -->
+  <circle cx="50" cy="46" r="24" fill="#FFEDD5" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Eyes looking up -->
+  <ellipse cx="42" cy="42" rx="4" ry="5" fill="#171717"/>
+  <ellipse cx="60" cy="42" rx="4" ry="5" fill="#171717"/>
+  <circle cx="43" cy="40.5" r="1.5" fill="white"/>
+  <circle cx="61" cy="40.5" r="1.5" fill="white"/>
+  <!-- Cheeks -->
+  <circle cx="32" cy="52" r="5" fill="#FFB3C1"/>
+  <circle cx="68" cy="52" r="5" fill="#FFB3C1"/>
+  <!-- Nose -->
+  <ellipse cx="50" cy="49" rx="2.5" ry="2" fill="#E85D75"/>
+  <!-- Thinking mouth -->
+  <path d="M46 54 L54 54" stroke="#171717" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Thought dots -->
+  <circle cx="72" cy="36" r="2" fill="#171717"/>
+  <circle cx="76" cy="30" r="2.5" fill="#171717"/>
+  <circle cx="80" cy="23" r="3" fill="#171717"/>
+</svg>

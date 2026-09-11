@@ -17,7 +17,9 @@ export default function Perayaan({ tampil, pesan = "Hebat!", onMainLagi }: Props
   return (
     <div class="fixed inset-0 z-50 flex items-center justify-center bg-ink/40 p-6">
       <div class="flex flex-col items-center gap-4 rounded-2xl bg-surface p-8 text-center shadow-card">
-        <span class="game-bintang text-6xl" aria-hidden="true">⭐</span>
+        <span class="game-bintang text-6xl" aria-hidden="true">
+          ⭐
+        </span>
         <p class="font-display text-2xl font-bold">{pesan}</p>
         <button
           type="button"

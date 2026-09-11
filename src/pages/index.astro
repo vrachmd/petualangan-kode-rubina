@@ -11,15 +11,52 @@ interface Menu {
   ikon: string;
   main: string;
   cetak: string;
+  warna: string;
 }
 
 const MENU: Menu[] = [
-  { nama: "Pola", ikon: "rubi-kelinci", main: "/game/pola/01-ab", cetak: "/pola/01-ab" },
-  { nama: "Urutan", ikon: "bina-beruang", main: "/game/sequencing/01-cuci-tangan", cetak: "/sequencing/01-cuci-tangan" },
-  { nama: "Arah", ikon: "nina-rubah", main: "/game/arah/01-lacak-garis", cetak: "/arah/01-lacak-garis" },
-  { nama: "Sebab-Akibat", ikon: "rina-robot", main: "/game/sebab-akibat/01-tombol-lampu", cetak: "/sebab-akibat/01-tombol-lampu" },
-  { nama: "Kartu Gerak", ikon: "lompat", main: "/game/kartu-aktivitas", cetak: "/kartu-aktivitas" },
-  { nama: "Main Bebas", ikon: "rubina-anak", main: "/game/bebas/01-buat-pola", cetak: "/bebas/01-buat-pola" },
+  {
+    nama: "Pola",
+    ikon: "rubi-kelinci",
+    main: "/game/pola/01-ab",
+    cetak: "/pola/01-ab",
+    warna: "rubina-pink",
+  },
+  {
+    nama: "Urutan",
+    ikon: "bina-beruang",
+    main: "/game/sequencing/01-cuci-tangan",
+    cetak: "/sequencing/01-cuci-tangan",
+    warna: "rubina-peach",
+  },
+  {
+    nama: "Arah",
+    ikon: "nina-rubah",
+    main: "/game/arah/01-lacak-garis",
+    cetak: "/arah/01-lacak-garis",
+    warna: "rubina-sky",
+  },
+  {
+    nama: "Sebab-Akibat",
+    ikon: "rina-robot",
+    main: "/game/sebab-akibat/01-tombol-lampu",
+    cetak: "/sebab-akibat/01-tombol-lampu",
+    warna: "rubina-lavender",
+  },
+  {
+    nama: "Kartu Gerak",
+    ikon: "lompat",
+    main: "/game/kartu-aktivitas",
+    cetak: "/kartu-aktivitas",
+    warna: "rubina-mint",
+  },
+  {
+    nama: "Main Bebas",
+    ikon: "rubina-anak",
+    main: "/game/bebas/01-buat-pola",
+    cetak: "/bebas/01-buat-pola",
+    warna: "rubina-sunny",
+  },
 ];
 
 const url = (r: string) => `${base}${r.replace(/^\//, "")}`;
@@ -28,52 +65,123 @@ const url = (r: string) => `${base}${r.replace(/^\//, "")}`;
 <WorksheetLayout title="Beranda">
   <div class="flex min-h-screen flex-col bg-background font-sans text-ink">
     <!-- Navigasi -->
-    <nav class="flex items-center justify-between px-4 py-3">
+    <nav class="flex items-center justify-between px-4 py-3 sm:px-6">
       <a href={url("/")} class="flex items-center gap-2">
         <Icon name="rubina-anak" size={44} />
         <span class="font-display text-base font-bold sm:text-lg">Petualangan Kode Rubina</span>
       </a>
       <div class="flex gap-4 font-sans text-base font-bold">
-        <a href={url("/game/")} class="text-rubina-pink-600">Main</a>
-        <a href={url("/panduan-orang-tua")} class="text-muted">Cetak</a>
+        <a
+          href={url("/game/")}
+          class="text-rubina-pink-600 transition-colors hover:text-rubina-pink-700"
+        >
+          Main
+        </a>
+        <a href={url("/panduan-orang-tua")} class="text-muted transition-colors hover:text-ink">
+          Cetak
+        </a>
       </div>
     </nav>
 
     <!-- Hero -->
-    <header class="flex flex-col items-center gap-4 px-4 py-8 text-center">
-      <div class="flex items-end justify-center gap-4">
-        <Icon name="rubi-kelinci" size={72} />
-        <Icon name="rubina-anak" size={120} />
-        <Icon name="nina-rubah" size={72} />
-      </div>
-      <div>
-        <Text as="h1" variant="title" class="text-rubina-pink-600">Petualangan Kode Rubina</Text>
-        <Text variant="body" class="mt-2">Belajar pola, urutan, dan logika untuk anak 2 tahun — main di HP/tablet atau cetak di kertas!</Text>
-      </div>
-      <div class="flex flex-wrap justify-center gap-3">
-        <a href={url("/game/")} class="game-tap flex min-h-[56px] items-center rounded-full bg-rubina-pink-500 px-8 font-display text-xl font-bold text-white shadow-card">
-          🎮 Main Sekarang
-        </a>
-        <a href={pdf} download class="game-tap flex min-h-[56px] items-center rounded-full bg-surface px-8 font-display text-xl font-bold shadow-card">
-          🖨 Download PDF
-        </a>
+    <header class="relative overflow-hidden px-4 py-12 sm:px-6 sm:py-16">
+      <!-- Gradient background -->
+      <div class="absolute inset-0 -z-10 bg-gradient-to-br from-rubina-pink-50 via-rubina-lavender-50 to-rubina-sky-50 opacity-60"></div>
+
+      <!-- Floating decorative bubbles -->
+      <div
+        class="absolute left-[8%] top-[15%] h-8 w-8 rounded-full bg-rubina-pink-200 opacity-40 animate-float"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute right-[12%] top-[25%] h-12 w-12 rounded-full bg-rubina-sky-200 opacity-30 animate-float stagger-2"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute bottom-[20%] left-[18%] h-6 w-6 rounded-full bg-rubina-lavender-200 opacity-35 animate-float stagger-3"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute bottom-[30%] right-[15%] h-10 w-10 rounded-full bg-rubina-sunny-200 opacity-30 animate-float stagger-4"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="absolute left-[5%] bottom-[10%] h-5 w-5 rounded-full bg-rubina-mint-200 opacity-25 animate-float stagger-5"
+        aria-hidden="true"
+      ></div>
+
+      <div class="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
+        <!-- Characters with stagger animation -->
+        <div class="flex items-end justify-center gap-3 sm:gap-6">
+          <div class="animate-bounce-in stagger-1 fill-forwards opacity-0">
+            <Icon name="rubi-kelinci" size={72} />
+          </div>
+          <div class="animate-bounce-in stagger-2 fill-forwards opacity-0">
+            <Icon name="rubina-anak" size={120} />
+          </div>
+          <div class="animate-bounce-in stagger-3 fill-forwards opacity-0">
+            <Icon name="nina-rubah" size={72} />
+          </div>
+        </div>
+
+        <!-- Title with gradient text -->
+        <div class="animate-slide-up stagger-2 fill-forwards opacity-0">
+          <h1 class="font-display text-3xl font-bold sm:text-4xl text-gradient">
+            Petualangan Kode Rubina
+          </h1>
+        </div>
+
+        <!-- Subtitle -->
+        <div class="animate-slide-up stagger-3 fill-forwards opacity-0">
+          <p class="max-w-lg font-sans text-lg text-muted">
+            Belajar pola, urutan, dan logika untuk anak 2 tahun — main di HP/tablet atau cetak di
+            kertas!
+          </p>
+        </div>
+
+        <!-- Enhanced CTA buttons -->
+        <div class="flex flex-wrap justify-center gap-3 animate-slide-up stagger-4 fill-forwards opacity-0">
+          <a
+            href={url("/game/")}
+            class="game-tap flex min-h-[56px] items-center gap-2 rounded-full bg-gradient-to-r from-rubina-pink-500 to-rubina-lavender-500 px-8 font-display text-xl font-bold text-white shadow-card transition-all duration-200 hover:scale-105 hover:shadow-lg hover:brightness-110 active:scale-95"
+          >
+            🎮 Main Sekarang
+          </a>
+          <a
+            href={pdf}
+            download
+            class="game-tap flex min-h-[56px] items-center gap-2 rounded-full bg-surface px-8 font-display text-xl font-bold shadow-card transition-all duration-200 border-2 border-line hover:border-rubina-pink-200 hover:scale-105 hover:shadow-lg active:scale-95"
+          >
+            🖨 Download PDF
+          </a>
+        </div>
       </div>
     </header>
 
     <!-- Pilih aktivitas -->
-    <main class="mx-auto flex w-full max-w-[720px] flex-col gap-6 px-4 pb-8">
-      <section>
-        <Text as="h2" variant="heading" class="mb-3 text-center">Pilih Aktivitasnya!</Text>
+    <main class="mx-auto flex w-full max-w-[720px] flex-col gap-8 px-4 pb-12 sm:px-6">
+      <section class="animate-slide-up stagger-5 fill-forwards opacity-0">
+        <h2 class="mb-4 font-display text-2xl font-bold text-center">Pilih Aktivitasnya!</h2>
         <div class="grid grid-cols-2 gap-4">
-          {MENU.map((m) => (
-            <div class="flex flex-col items-center gap-2 rounded-xl bg-surface p-4 text-center shadow-card">
-              <Icon name={m.ikon} size={72} />
-              <Text variant="heading">{m.nama}</Text>
+          {MENU.map((m, i) => (
+            <div
+              class={`group flex flex-col items-center gap-3 rounded-xl bg-surface p-4 text-center shadow-card transition-all duration-200 hover:-translate-y-1 hover:shadow-lg animate-slide-up stagger-${i + 1} fill-forwards opacity-0`}
+            >
+              <div class="transition-transform duration-200 group-hover:scale-110">
+                <Icon name={m.ikon} size={72} />
+              </div>
+              <h3 class="font-display text-lg font-bold">{m.nama}</h3>
               <div class="flex w-full flex-col gap-2">
-                <a href={url(m.main)} class="game-tap flex min-h-[48px] items-center justify-center rounded-full bg-rubina-mint-100 px-5 font-display text-base font-bold text-rubina-mint-600">
+                <a
+                  href={url(m.main)}
+                  class="game-tap flex min-h-[48px] items-center justify-center rounded-full bg-rubina-mint-100 px-5 font-display text-base font-bold text-rubina-mint-600 transition-all duration-200 hover:bg-rubina-mint-200 hover:scale-105 active:scale-95"
+                >
                   ▶ Main
                 </a>
-                <a href={url(m.cetak)} class="game-tap flex min-h-[48px] items-center justify-center rounded-full bg-background px-5 font-display text-base font-bold text-muted">
+                <a
+                  href={url(m.cetak)}
+                  class="game-tap flex min-h-[48px] items-center justify-center rounded-full bg-background px-5 font-display text-base font-bold text-muted transition-all duration-200 hover:bg-line hover:text-ink hover:scale-105 active:scale-95"
+                >
                   🖨 Cetak
                 </a>
               </div>
@@ -82,24 +190,37 @@ const url = (r: string) => `${base}${r.replace(/^\//, "")}`;
         </div>
       </section>
 
-      <section class="rounded-xl bg-rubina-sunny-50 border border-rubina-sunny-200 p-5 text-center">
-        <Text variant="heading">Mau cetak semua sekaligus?</Text>
-        <Text variant="body" class="mt-1">20 halaman A4 dalam 1 file PDF, gratis!</Text>
-        <a href={pdf} download class="game-tap mt-3 inline-flex min-h-[56px] items-center rounded-full bg-rubina-sunny-500 px-8 font-display text-xl font-bold text-white shadow-card">
+      <!-- Download PDF section -->
+      <section class="rounded-xl bg-gradient-to-br from-rubina-sunny-50 to-rubina-peach-50 border border-rubina-sunny-200 p-6 text-center">
+        <h3 class="font-display text-xl font-bold">Mau cetak semua sekaligus?</h3>
+        <p class="mt-1 font-sans text-base text-muted">20 halaman A4 dalam 1 file PDF, gratis!</p>
+        <a
+          href={pdf}
+          download
+          class="game-tap mt-4 inline-flex min-h-[56px] items-center gap-2 rounded-full bg-gradient-to-r from-rubina-sunny-500 to-rubina-peach-500 px-8 font-display text-xl font-bold text-white shadow-card transition-all duration-200 hover:scale-105 hover:shadow-lg hover:brightness-110 active:scale-95"
+        >
           ⬇ Download 20 Halaman (PDF)
         </a>
-        <Text variant="note" class="mt-2">Tips: buka halaman versi cetak di browser lalu tekan Ctrl+P.</Text>
+        <p class="mt-2 font-sans text-sm text-muted">
+          Tips: buka halaman versi cetak di browser lalu tekan Ctrl+P.
+        </p>
       </section>
 
+      <!-- Panduan -->
       <section class="text-center">
-        <a href={url("/panduan-orang-tua")} class="font-sans text-base font-bold text-rubina-sky-600">
+        <a
+          href={url("/panduan-orang-tua")}
+          class="font-sans text-base font-bold text-rubina-sky-600 transition-colors hover:text-rubina-sky-500"
+        >
           📖 Panduan untuk Orang Tua
         </a>
       </section>
     </main>
 
-    <footer class="border-t border-line py-3 text-center">
-      <p class="font-sans text-sm text-muted">Petualangan Kode Rubina • Gratis dicetak & dibagikan • Ikon: Twemoji © Twitter (CC-BY 4.0)</p>
+    <footer class="border-t border-line py-4 text-center">
+      <p class="font-sans text-sm text-muted">
+        Petualangan Kode Rubina • Gratis dicetak & dibagikan • Ikon: Twemoji © Twitter (CC-BY 4.0)
+      </p>
     </footer>
   </div>
 </WorksheetLayout>

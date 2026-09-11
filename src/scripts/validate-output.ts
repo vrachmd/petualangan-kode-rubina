@@ -31,7 +31,11 @@ async function main() {
   for (const h of PAGES) {
     const p = join(OUT, "pdf", `${h.id}.pdf`);
     if (!existsSync(p)) continue;
-    cek(`pdf ${h.id} < 500KB`, statSync(p).size < 500_000, `${(statSync(p).size / 1e3).toFixed(0)}KB`);
+    cek(
+      `pdf ${h.id} < 500KB`,
+      statSync(p).size < 500_000,
+      `${(statSync(p).size / 1e3).toFixed(0)}KB`,
+    );
     const pages = (await PDFDocument.load(readFileSync(p))).getPageCount();
     cek(`pdf ${h.id} tepat 1 halaman`, pages === 1, `${pages} hal`);
   }
@@ -44,7 +48,7 @@ async function main() {
     cek(
       `png ${h.id} ≥2400×3300`,
       (meta.width ?? 0) >= 2400 && (meta.height ?? 0) >= 3300,
-      `${meta.width}×${meta.height}`
+      `${meta.width}×${meta.height}`,
     );
   }
 
@@ -55,8 +59,10 @@ async function main() {
     const s = readFileSync(p, "utf8");
     cek(
       `svg ${h.id} valid`,
-      s.startsWith("<svg") && s.includes('viewBox="0 0 794 1123"') && s.trimEnd().endsWith("</svg>"),
-      `${(statSync(p).size / 1e3).toFixed(0)}KB`
+      s.startsWith("<svg") &&
+        s.includes('viewBox="0 0 794 1123"') &&
+        s.trimEnd().endsWith("</svg>"),
+      `${(statSync(p).size / 1e3).toFixed(0)}KB`,
     );
     cek(`svg ${h.id} < 200KB`, statSync(p).size < 200_000);
   }
@@ -82,7 +88,8 @@ async function main() {
   const susur = (dir: string, prefix: string) => {
     for (const e of readdirSync(dir, { withFileTypes: true })) {
       if (e.isDirectory()) susur(join(dir, e.name), `${prefix}${e.name}/`);
-      else if (e.name.endsWith(".astro")) srcPages.push(`${prefix}${e.name.replace(/\.astro$/, "")}`);
+      else if (e.name.endsWith(".astro"))
+        srcPages.push(`${prefix}${e.name.replace(/\.astro$/, "")}`);
     }
   };
   susur(join(process.cwd(), "src", "pages"), "/");

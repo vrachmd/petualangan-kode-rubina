@@ -64,7 +64,10 @@ export default function GameLayout({ judul, kembali, children }: Props) {
         </h1>
       </header>
       <main class="mx-auto flex w-full max-w-[560px] flex-1 flex-col px-4 pb-4">{children}</main>
-      <nav class="mx-auto flex w-full max-w-[560px] items-center justify-between gap-2 px-4 pb-6" aria-label="Pindah level">
+      <nav
+        class="mx-auto flex w-full max-w-[560px] items-center justify-between gap-2 px-4 pb-6"
+        aria-label="Pindah level"
+      >
         {nav.sebelum ? (
           <a
             href={`${base}${nav.sebelum.replace(/^\//, "")}`}

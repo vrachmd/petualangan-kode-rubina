@@ -3,7 +3,17 @@
  * Key: rubina-progress-v1 → { xp per halaman, bintang per kategori }
  */
 
-export type KategoriGame = "pola" | "sequencing" | "arah" | "sebab-akibat" | "kartu" | "bebas";
+export type KategoriGame =
+  | "pola"
+  | "sequencing"
+  | "arah"
+  | "sebab-akibat"
+  | "kartu"
+  | "bebas"
+  | "warna"
+  | "bentuk"
+  | "memory"
+  | "hewan";
 
 const KEY = "rubina-progress-v1";
 const XP_PER_BINTANG = 100;

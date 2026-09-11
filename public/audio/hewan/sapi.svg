@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <title>Sapi</title>
+  <circle cx="60" cy="65" r="40" fill="#FAFAFA" stroke="#757575" stroke-width="3"/>
+  <ellipse cx="22" cy="45" rx="10" ry="16" fill="#FAFAFA" stroke="#757575" stroke-width="3" transform="rotate(-20,22,45)"/>
+  <ellipse cx="22" cy="45" rx="6" ry="11" fill="#F48FB1"/>
+  <ellipse cx="98" cy="45" rx="10" ry="16" fill="#FAFAFA" stroke="#757575" stroke-width="3" transform="rotate(20,98,45)"/>
+  <ellipse cx="98" cy="45" rx="6" ry="11" fill="#F48FB1"/>
+  <circle cx="38" cy="42" r="8" fill="#424242"/>
+  <circle cx="78" cy="50" r="6" fill="#424242"/>
+  <circle cx="50" cy="82" r="5" fill="#424242"/>
+  <ellipse cx="60" cy="76" rx="22" ry="16" fill="#FFE0B2" stroke="#757575" stroke-width="2"/>
+  <circle cx="44" cy="56" r="6" fill="white"/>
+  <circle cx="44" cy="56" r="3.5" fill="#171717"/>
+  <circle cx="42.5" cy="54.5" r="1.2" fill="white"/>
+  <circle cx="76" cy="56" r="6" fill="white"/>
+  <circle cx="76" cy="56" r="3.5" fill="#171717"/>
+  <circle cx="74.5" cy="54.5" r="1.2" fill="white"/>
+  <ellipse cx="54" cy="74" rx="4" ry="3" fill="#795548"/>
+  <ellipse cx="66" cy="74" rx="4" ry="3" fill="#795548"/>
+  <path d="M52,82 Q60,88 68,82" fill="none" stroke="#757575" stroke-width="2" stroke-linecap="round"/>
+  <path d="M35,30 Q30,18 38,22" fill="none" stroke="#757575" stroke-width="3" stroke-linecap="round"/>
+  <path d="M85,30 Q90,18 82,22" fill="none" stroke="#757575" stroke-width="3" stroke-linecap="round"/>
+</svg>

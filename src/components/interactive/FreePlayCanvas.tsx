@@ -128,7 +128,10 @@ export default function FreePlayCanvas({ idHalaman }: Props) {
           <button
             key={w.key}
             type="button"
-            onClick={() => { bunyiTap(); setWarna(w.hex); }}
+            onClick={() => {
+              bunyiTap();
+              setWarna(w.hex);
+            }}
             aria-label={w.label}
             title={w.label}
             class={`game-tap h-14 w-14 rounded-full border-4 shadow-card sm:h-16 sm:w-16 ${warna === w.hex ? "border-ink" : "border-white"}`}
@@ -152,7 +155,11 @@ export default function FreePlayCanvas({ idHalaman }: Props) {
           Simpan 💾
         </button>
       </div>
-      {tersimpan && <p class="game-pop font-sans text-base font-bold text-rubina-mint-600">Tersimpan! Bagus! ✅</p>}
+      {tersimpan && (
+        <p class="game-pop font-sans text-base font-bold text-rubina-mint-600">
+          Tersimpan! Bagus! ✅
+        </p>
+      )}
     </div>
   );
 }

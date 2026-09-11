@@ -21,13 +21,17 @@ const { aksi, hasil } = Astro.props;
 <div class="flex items-stretch justify-center gap-3">
   <div class="flex flex-1 flex-col items-center gap-2 rounded-lg bg-rubina-lavender-50 border border-rubina-lavender-200 p-4 text-center">
     <Icon name={aksi.ikon} size={72} />
-    <Text variant="body"><strong>{aksi.label}</strong></Text>
+    <Text variant="body">
+      <strong>{aksi.label}</strong>
+    </Text>
   </div>
   <div class="flex items-center" aria-hidden="true">
     <Arrow arah="kanan" size={56} class="text-rubina-lavender-600" />
   </div>
   <div class="flex flex-1 flex-col items-center gap-2 rounded-lg bg-rubina-sunny-50 border border-rubina-sunny-200 p-4 text-center">
     <Icon name={hasil.ikon} size={72} />
-    <Text variant="body"><strong>{hasil.label}</strong></Text>
+    <Text variant="body">
+      <strong>{hasil.label}</strong>
+    </Text>
   </div>
 </div>

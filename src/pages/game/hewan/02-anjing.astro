@@ -1,0 +1,31 @@
+---
+import WorksheetLayout from "../../../layouts/WorksheetLayout.astro";
+import GameLayout from "../../../components/interactive/GameLayout";
+import ProgressBar from "../../../components/interactive/ProgressBar";
+import AnimalSoundGame from "../../../components/interactive/AnimalSoundGame";
+
+const ANJING_LIST = [
+  { key: "anjing", emoji: "🐶", label: "Anjing" },
+  { key: "kucing", emoji: "🐱", label: "Kucing" },
+  { key: "sapi", emoji: "🐮", label: "Sapi" },
+  { key: "burung", emoji: "🐦", label: "Burung" },
+];
+---
+
+<WorksheetLayout title="Game Suara Anjing">
+  <GameLayout judul="Suara Anjing 🐶" kembali="/game/" client:load>
+    <div class="flex items-center justify-between">
+      <p class="font-sans text-base text-muted">Dengarkan suaranya!</p>
+      <ProgressBar ids={["hewan-anjing"]} client:load />
+    </div>
+    <div class="mt-4">
+      <AnimalSoundGame
+        idHalaman="hewan-anjing"
+        hewanList={ANJING_LIST}
+        target="anjing"
+        pesanMenang="Benar! Itu suara anjing! Guk guk~ 🐶"
+        client:load
+      />
+    </div>
+  </GameLayout>
+</WorksheetLayout>

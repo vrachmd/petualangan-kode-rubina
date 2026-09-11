@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Bina happy">
+  <!-- Ears -->
+  <circle cx="30" cy="26" r="10" fill="#F97316" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="70" cy="26" r="10" fill="#F97316" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="30" cy="26" r="5" fill="#FDBA74"/>
+  <circle cx="70" cy="26" r="5" fill="#FDBA74"/>
+  <!-- Body -->
+  <ellipse cx="50" cy="82" rx="20" ry="14" fill="#F97316" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="50" cy="82" rx="13" ry="9" fill="#FDBA74"/>
+  <!-- Arms -->
+  <path d="M30 78 Q24 72 26 66" stroke="#171717" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70 78 Q76 72 74 66" stroke="#171717" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="26" cy="65" r="4" fill="#F97316" stroke="#171717" stroke-width="2.5"/>
+  <circle cx="74" cy="65" r="4" fill="#F97316" stroke="#171717" stroke-width="2.5"/>
+  <!-- Legs -->
+  <ellipse cx="38" cy="94" rx="8" ry="5" fill="#F97316" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="62" cy="94" rx="8" ry="5" fill="#F97316" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Head -->
+  <circle cx="50" cy="46" r="24" fill="#F97316" stroke="#171717" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <ellipse cx="50" cy="52" rx="10" ry="7" fill="#FDBA74" stroke="#171717" stroke-width="1.5"/>
+  <!-- Eyes closed happy -->
+  <path d="M34 42 Q38 38 42 42" stroke="#171717" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M58 42 Q62 38 66 42" stroke="#171717" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="30" cy="52" r="5" fill="#FDBA74" opacity="0.7"/>
+  <circle cx="70" cy="52" r="5" fill="#FDBA74" opacity="0.7"/>
+  <ellipse cx="50" cy="50" rx="3" ry="2" fill="#171717"/>
+  <path d="M45 54 Q50 59 55 54" stroke="#171717" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

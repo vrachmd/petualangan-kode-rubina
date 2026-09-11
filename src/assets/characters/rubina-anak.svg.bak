@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="28.08 33.08 143.84 143.84" role="img" aria-label="Rubina">
+  <!-- Rambut belakang -->
+  <circle cx="100" cy="105" r="62" fill="#E85D75" stroke="#171717" stroke-width="5"/>
+  <!-- Wajah -->
+  <circle cx="100" cy="112" r="46" fill="#FFEDD5" stroke="#171717" stroke-width="5"/>
+  <!-- Poni -->
+  <path d="M54 100c4-30 24-46 46-46s42 16 46 46c-10-12-20-14-24-4-6-10-16-12-22-3-6-9-16-7-22 3-4-10-14-8-24 4z" fill="#E85D75" stroke="#171717" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Jepit bintang -->
+  <path d="M136 62l4.5 9.2 10.1 1.5-7.3 7.1 1.7 10.1-9-4.8-9 4.8 1.7-10.1-7.3-7.1 10.1-1.5z" fill="#FACC15" stroke="#171717" stroke-width="3" stroke-linejoin="round"/>
+  <!-- Mata -->
+  <circle cx="83" cy="114" r="6.5" fill="#171717"/>
+  <circle cx="117" cy="114" r="6.5" fill="#171717"/>
+  <circle cx="85.2" cy="111.8" r="2.2" fill="#FFFFFF"/>
+  <circle cx="119.2" cy="111.8" r="2.2" fill="#FFFFFF"/>
+  <!-- Pipi -->
+  <circle cx="70" cy="130" r="7" fill="#FFADB8"/>
+  <circle cx="130" cy="130" r="7" fill="#FFADB8"/>
+  <!-- Senyum -->
+  <path d="M88 134c4 7 8 10 12 10s8-3 12-10" stroke="#171717" stroke-width="4" stroke-linecap="round" fill="none"/>
+</svg>

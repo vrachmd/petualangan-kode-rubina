@@ -10,30 +10,54 @@ import Text from "../components/base/Text.astro";
 
 <WorksheetLayout title="Panduan Orang Tua">
   <PageWrapper>
-    <Header judul="Panduan Orang Tua" karakter="Rubina" emoji="✨" maskot="rubina-anak" tint="bg-rubina-sunny-100" />
+    <Header
+      judul="Panduan Orang Tua"
+      karakter="Rubina"
+      emoji="✨"
+      maskot="rubina-anak"
+      tint="bg-rubina-sunny-100"
+    />
 
     <div class="mt-4 flex flex-col gap-3">
       <Box variant="card" class="p-4">
         <Text variant="heading">5 Aturan Main</Text>
         <ol class="mt-2 flex list-decimal flex-col gap-1 pl-6 font-sans text-base">
-          <li><strong>Singkat.</strong> 1 halaman = 3–5 menit. Berhenti saat anak bosan.</li>
-          <li><strong>Tunjuk, jangan ceramahi.</strong> Sebut 1–2 kata, minta anak menunjuk.</li>
-          <li><strong>Gerak dulu.</strong> Halaman arah: jari dulu, baru krayon.</li>
-          <li><strong>Praktik nyata.</strong> Langsung praktikkan setelah kertas.</li>
-          <li><strong>Puji proses.</strong> "Hebat, kamu coba lagi!"</li>
+          <li>
+            <strong>Singkat.</strong> 1 halaman = 3–5 menit. Berhenti saat anak bosan.
+          </li>
+          <li>
+            <strong>Tunjuk, jangan ceramahi.</strong> Sebut 1–2 kata, minta anak menunjuk.
+          </li>
+          <li>
+            <strong>Gerak dulu.</strong> Halaman arah: jari dulu, baru krayon.
+          </li>
+          <li>
+            <strong>Praktik nyata.</strong> Langsung praktikkan setelah kertas.
+          </li>
+          <li>
+            <strong>Puji proses.</strong> "Hebat, kamu coba lagi!"
+          </li>
         </ol>
       </Box>
 
-      <Text variant="body"><strong>Tanya ini berulang:</strong> "Mana berikutnya?" • "Yang mana sama?" • "Pertama apa? Lalu apa?"</Text>
+      <Text variant="body">
+        <strong>Tanya ini berulang:</strong> "Mana berikutnya?" • "Yang mana sama?" • "Pertama apa?
+        Lalu apa?"
+      </Text>
 
       <Box variant="card" class="p-4">
         <Text variant="heading">Tips Cetak</Text>
-        <Text variant="body">A4 skala 100%, krayon tebal. Laminasi + spidol whiteboard biar awet. Kartu dicetak di kertas tebal lalu digunting.</Text>
+        <Text variant="body">
+          A4 skala 100%, krayon tebal. Laminasi + spidol whiteboard biar awet. Kartu dicetak di
+          kertas tebal lalu digunting.
+        </Text>
       </Box>
     </div>
 
     <ParentNote instruksi="Tidak perlu selesai sekaligus. Acak halaman sesuai mood anak. Tidak ada jawaban salah di halaman Free Play." />
-    <Text variant="note" class="mt-3 text-center">Ikon: Twemoji © Twitter (CC-BY 4.0) • Kode + maskot Rina & Rubina: MIT</Text>
+    <Text variant="note" class="mt-3 text-center">
+      Ikon: Twemoji © Twitter (CC-BY 4.0) • Kode + maskot Rina & Rubina: MIT
+    </Text>
     <Footer nomor={2} />
   </PageWrapper>
 </WorksheetLayout>
