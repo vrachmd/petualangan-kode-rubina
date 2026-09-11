@@ -3,7 +3,7 @@ import { bunyiTap, bunyiBenar, bunyiCobaLagi, suaraAktif } from "../../utils/aud
 import { tambahXp } from "../../utils/progress";
 import Perayaan from "./Perayaan";
 
-/** Definisi hewan: emoji, label Indonesia, dan fungsi suara Web Audio API. */
+/** Definisi hewan: emoji, label Indonesia, dan path audio MP3. */
 export interface Hewan {
   key: string;
   emoji: string;
@@ -19,171 +19,39 @@ interface Props {
   pesanMenang?: string;
 }
 
-/** Fungsi bunyi hewan via Web Audio API — tanpa file eksternal. */
-function getAudioContext(): AudioContext | null {
-  try {
-    const AC =
-      window.AudioContext ??
-      (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
-    const ac = new AC();
-    if (ac.state === "suspended") void ac.resume();
-    return ac;
-  } catch {
-    return null;
-  }
-}
+/** Base URL untuk audio files */
+const AUDIO_BASE = import.meta.env.BASE_URL + "audio/hewan/";
 
-/** Kucing: meow — freq sweep naik 800→1200Hz, lalu turun. */
-function suaraKucing(): void {
+/** Cache audio elements untuk performa */
+const audioCache: Record<string, HTMLAudioElement> = {};
+
+/** Putar audio MP3 dari file */
+function putarAudio(namaFile: string): void {
   if (!suaraAktif()) return;
-  const ac = getAudioContext();
-  if (!ac) return;
   try {
-    const osc = ac.createOscillator();
-    const gain = ac.createGain();
-    osc.type = "sine";
-
-    // Sweep naik
-    osc.frequency.setValueAtTime(800, ac.currentTime);
-    osc.frequency.linearRampToValueAtTime(1200, ac.currentTime + 0.15);
-    // Sweep turun
-    osc.frequency.linearRampToValueAtTime(900, ac.currentTime + 0.4);
-    osc.frequency.linearRampToValueAtTime(1100, ac.currentTime + 0.55);
-
-    gain.gain.setValueAtTime(0.001, ac.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.2, ac.currentTime + 0.05);
-    gain.gain.setValueAtTime(0.2, ac.currentTime + 0.35);
-    gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.6);
-
-    osc.connect(gain).connect(ac.destination);
-    osc.start();
-    osc.stop(ac.currentTime + 0.65);
-  } catch {
-    /* abaikan */
-  }
-}
-
-/** Anjing: gonggong — burst pendek 200-400Hz. */
-function suaraAnjing(): void {
-  if (!suaraAktif()) return;
-  const ac = getAudioContext();
-  if (!ac) return;
-  try {
-    // Burst pertama
-    const osc1 = ac.createOscillator();
-    const gain1 = ac.createGain();
-    osc1.type = "sawtooth";
-    osc1.frequency.setValueAtTime(250, ac.currentTime);
-    osc1.frequency.linearRampToValueAtTime(350, ac.currentTime + 0.08);
-    gain1.gain.setValueAtTime(0.001, ac.currentTime);
-    gain1.gain.exponentialRampToValueAtTime(0.18, ac.currentTime + 0.02);
-    gain1.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.15);
-    osc1.connect(gain1).connect(ac.destination);
-    osc1.start();
-    osc1.stop(ac.currentTime + 0.18);
-
-    // Burst kedua (sedikit lebih panjang)
-    const osc2 = ac.createOscillator();
-    const gain2 = ac.createGain();
-    osc2.type = "sawtooth";
-    osc2.frequency.setValueAtTime(220, ac.currentTime + 0.2);
-    osc2.frequency.linearRampToValueAtTime(380, ac.currentTime + 0.3);
-    gain2.gain.setValueAtTime(0.001, ac.currentTime + 0.2);
-    gain2.gain.exponentialRampToValueAtTime(0.18, ac.currentTime + 0.22);
-    gain2.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.42);
-    osc2.connect(gain2).connect(ac.destination);
-    osc2.start(ac.currentTime + 0.2);
-    osc2.stop(ac.currentTime + 0.45);
-  } catch {
-    /* abaikan */
-  }
-}
-
-/** Burung: kicau — not-not cepat tinggi 1000-2000Hz. */
-function suaraBurung(): void {
-  if (!suaraAktif()) return;
-  const ac = getAudioContext();
-  if (!ac) return;
-  try {
-    const notes = [
-      { f: 1400, t: 0, d: 0.06 },
-      { f: 1800, t: 0.08, d: 0.05 },
-      { f: 1500, t: 0.15, d: 0.06 },
-      { f: 2000, t: 0.24, d: 0.07 },
-      { f: 1600, t: 0.34, d: 0.05 },
-      { f: 1900, t: 0.42, d: 0.08 },
-    ];
-    for (const n of notes) {
-      const osc = ac.createOscillator();
-      const gain = ac.createGain();
-      osc.type = "sine";
-      osc.frequency.value = n.f;
-      gain.gain.setValueAtTime(0.001, ac.currentTime + n.t);
-      gain.gain.exponentialRampToValueAtTime(0.15, ac.currentTime + n.t + 0.01);
-      gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + n.t + n.d);
-      osc.connect(gain).connect(ac.destination);
-      osc.start(ac.currentTime + n.t);
-      osc.stop(ac.currentTime + n.t + n.d + 0.02);
+    // Ambil dari cache atau buat baru
+    if (!audioCache[namaFile]) {
+      const audio = new Audio(`${AUDIO_BASE}${namaFile}.mp3`);
+      audio.preload = "auto";
+      audioCache[namaFile] = audio;
     }
+    const audio = audioCache[namaFile];
+    audio.currentTime = 0;
+    audio.play().catch(() => {
+      /* abaikan autoplay error */
+    });
   } catch {
     /* abaikan */
   }
 }
 
-/** Katak: suara rendah "kwek". */
-function suaraKatak(): void {
-  if (!suaraAktif()) return;
-  const ac = getAudioContext();
-  if (!ac) return;
-  try {
-    const osc = ac.createOscillator();
-    const gain = ac.createGain();
-    osc.type = "sine";
-    osc.frequency.setValueAtTime(180, ac.currentTime);
-    osc.frequency.linearRampToValueAtTime(250, ac.currentTime + 0.1);
-    osc.frequency.linearRampToValueAtTime(150, ac.currentTime + 0.3);
-    gain.gain.setValueAtTime(0.001, ac.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.2, ac.currentTime + 0.03);
-    gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.35);
-    osc.connect(gain).connect(ac.destination);
-    osc.start();
-    osc.stop(ac.currentTime + 0.4);
-  } catch {
-    /* abaikan */
-  }
-}
-
-/** Sapi: suara "moo" rendah panjang. */
-function suaraSapi(): void {
-  if (!suaraAktif()) return;
-  const ac = getAudioContext();
-  if (!ac) return;
-  try {
-    const osc = ac.createOscillator();
-    const gain = ac.createGain();
-    osc.type = "sine";
-    osc.frequency.setValueAtTime(120, ac.currentTime);
-    osc.frequency.linearRampToValueAtTime(140, ac.currentTime + 0.3);
-    osc.frequency.linearRampToValueAtTime(110, ac.currentTime + 0.7);
-    gain.gain.setValueAtTime(0.001, ac.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.18, ac.currentTime + 0.05);
-    gain.gain.setValueAtTime(0.18, ac.currentTime + 0.4);
-    gain.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.8);
-    osc.connect(gain).connect(ac.destination);
-    osc.start();
-    osc.stop(ac.currentTime + 0.85);
-  } catch {
-    /* abaikan */
-  }
-}
-
-/** Map key hewan → fungsi suara */
-const SUARA_HEWAN: Record<string, () => void> = {
-  kucing: suaraKucing,
-  anjing: suaraAnjing,
-  burung: suaraBurung,
-  katak: suaraKatak,
-  sapi: suaraSapi,
+/** Map key hewan → file audio MP3 */
+const SUARA_HEWAN: Record<string, string> = {
+  kucing: "kucing",
+  anjing: "anjing",
+  burung: "burung",
+  katak: "katak",
+  sapi: "sapi",
 };
 
 export default function AnimalSoundGame({
@@ -209,8 +77,8 @@ export default function AnimalSoundGame({
   // Putar suara target saat mount
   useEffect(() => {
     const t = setTimeout(() => {
-      const suara = SUARA_HEWAN[target];
-      if (suara) suara();
+      const namaFile = SUARA_HEWAN[target];
+      if (namaFile) putarAudio(namaFile);
       setSudahMain(true);
     }, 800);
     timerRef.current.push(t);
@@ -220,8 +88,8 @@ export default function AnimalSoundGame({
   }, [target]);
 
   const putarSuara = () => {
-    const suara = SUARA_HEWAN[target];
-    if (suara) suara();
+    const namaFile = SUARA_HEWAN[target];
+    if (namaFile) putarAudio(namaFile);
   };
 
   const ketukHewan = (key: string) => {
