@@ -164,6 +164,11 @@
   animation-delay: 0.6s;
 }
 
+/* Animation fill mode */
+.fill-forwards {
+  animation-fill-mode: forwards;
+}
+
 /* ── Reduced Motion Support ── */
 @media (prefers-reduced-motion: reduce) {
   *,
