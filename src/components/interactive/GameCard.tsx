@@ -29,16 +29,7 @@ interface Props {
   base: string;
 }
 
-export default function GameCard({
-  nama,
-  maskot,
-  tint,
-  ids,
-  main,
-  cetak,
-  index,
-  base,
-}: Props) {
+export default function GameCard({ nama, maskot, tint, ids, main, cetak, index, base }: Props) {
   const [bintang, setBintang] = useState(0);
   const [xp, setXp] = useState(0);
 
@@ -54,37 +45,26 @@ export default function GameCard({
   const offset = circ * (1 - pct);
 
   // Tint → ring stroke colour (rough match)
-  const ringColor =
-    tint.includes("pink")
-      ? "#E85D75"
-      : tint.includes("peach")
-        ? "#F97316"
-        : tint.includes("sky")
-          ? "#38BDF8"
-          : tint.includes("lavender")
-            ? "#A855F7"
-            : tint.includes("mint")
-              ? "#22C55E"
-              : "#FACC15";
+  const ringColor = tint.includes("pink")
+    ? "#E85D75"
+    : tint.includes("peach")
+      ? "#F97316"
+      : tint.includes("sky")
+        ? "#38BDF8"
+        : tint.includes("lavender")
+          ? "#A855F7"
+          : tint.includes("mint")
+            ? "#22C55E"
+            : "#FACC15";
 
   const stagger = `stagger-${Math.min(index + 1, 11)}`;
 
   return (
-    <div
-      class={`game-card ${tint} ${stagger}`}
-      style={`animation-delay: ${0.06 * index}s`}
-    >
+    <div class={`game-card ${tint} ${stagger}`} style={`animation-delay: ${0.06 * index}s`}>
       {/* ── Progress ring ── */}
       <div class="game-card__ring-wrap">
         <svg class="game-card__ring" viewBox="0 0 44 44" aria-hidden="true">
-          <circle
-            cx="22"
-            cy="22"
-            r={r}
-            fill="none"
-            stroke="rgba(0,0,0,0.08)"
-            stroke-width="4"
-          />
+          <circle cx="22" cy="22" r={r} fill="none" stroke="rgba(0,0,0,0.08)" stroke-width="4" />
           <circle
             cx="22"
             cy="22"
@@ -98,16 +78,11 @@ export default function GameCard({
             class="game-card__ring-fill"
           />
         </svg>
-        <span class="game-card__ring-label">
-          {Math.round(pct * 100)}%
-        </span>
+        <span class="game-card__ring-label">{Math.round(pct * 100)}%</span>
       </div>
 
       {/* ── Maskot ── */}
-      <div
-        class="game-card__maskot"
-        dangerouslySetInnerHTML={{ __html: svgRaw }}
-      />
+      <div class="game-card__maskot" dangerouslySetInnerHTML={{ __html: svgRaw }} />
 
       {/* ── Nama kategori ── */}
       <span class="game-card__name">{nama}</span>
@@ -122,19 +97,13 @@ export default function GameCard({
       </div>
 
       {/* ── Tombol main ── */}
-      <a
-        href={`${base}${main.replace(/^\/+/, "")}`}
-        class="game-tap game-card__btn"
-      >
+      <a href={`${base}${main.replace(/^\/+/, "")}`} class="game-tap game-card__btn">
         Main ▶
       </a>
 
       {/* ── Cetak ── */}
       {cetak ? (
-        <a
-          href={`${base}${cetak.replace(/^\/+/, "")}`}
-          class="game-card__cetak"
-        >
+        <a href={`${base}${cetak.replace(/^\/+/, "")}`} class="game-card__cetak">
           🖨 Versi cetak
         </a>
       ) : (
